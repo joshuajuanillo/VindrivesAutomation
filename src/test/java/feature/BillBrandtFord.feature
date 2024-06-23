@@ -1,5 +1,6 @@
-Feature: Dan Deery Motors Data Health Check
-  This feature deal with validating the data for each section if it has data for Dan Deery Motors
+
+Feature: Bill Brandt Ford Data Health Check
+  This feature deal with validating the data for each section if it has data for Bill Brandt Ford
 
   Scenario: Verify if totalVDPs has value
     Given a user with a correct credentials
@@ -7,7 +8,7 @@ Feature: Dan Deery Motors Data Health Check
       | password | !Pass1234               |
     When I navigate to the Result Summary Page
     And I Select "Used Inventory"
-    And I select "Dan Deery Motors"
+    And I select "Bill Brandt Ford"
     Then the totalVDPs should have data
 
   Scenario: Verify if Result Score is not empty

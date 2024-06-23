@@ -1,13 +1,13 @@
-Feature: Dan Deery Motors Data Health Check
-  This feature deal with validating the data for each section if it has data for Dan Deery Motors
+Feature: Demo Client Data Health Check
+  This feature deal with validating the data for each section if it has data for Demo Client
 
   Scenario: Verify if totalVDPs has value
     Given a user with a correct credentials
       | email    | jjuanillo@dealercmo.com |
       | password | !Pass1234               |
     When I navigate to the Result Summary Page
-    And I Select "Used Inventory"
-    And I select "Dan Deery Motors"
+    And I Select "New Inventory"
+    And I select "Demo Client"
     Then the totalVDPs should have data
 
   Scenario: Verify if Result Score is not empty
@@ -28,26 +28,14 @@ Feature: Dan Deery Motors Data Health Check
   Scenario: Verify if Average days to sell has value
     Then the Average days to sell have data
 
-  Scenario: Verify if Tippable Cargurus has data
-    Then the Tippable Cargurus column should have data
+  Scenario: Verify if Missing Photos has data
+    Then the Missing Photos column should have data
 
-  Scenario: Verify if Tippable Autotrader has data
-    Then the Tippable Autotrader column should have data
-
-  Scenario: Verify if Tippable Cars dot com has data
-    Then the Tippable Cars dot com column should have data
+  Scenario: Verify if Less than fifty Vdps has data
+    Then the Less than fifty Vdps column should have data
 
   Scenario: Verify if Zero Leads has data
     Then the Zero Leads column should have data
-
-  Scenario: Verify if Deal Ratings by channel has data for Last 7 days
-    When I navigate to the "Deal Ratings by channel"
-    Then I click "Last 7 Days"
-    And the "Deal Ratings by channel" should have data
-
-  Scenario: Verify if Tip Report has data
-    When I navigate to the "Tip Report"
-    Then the "Tip Report" should have data
 
   Scenario: Verify if Channel Stats report has data for Last 7 days
     When I navigate to the "Channel Stats report"
@@ -58,40 +46,21 @@ Feature: Dan Deery Motors Data Health Check
     When I navigate to the "Pre Shoot report"
     Then the "Pre Shoot report" should have data
 
-  Scenario: Verify if Deal Ratings by channel has data for Last Month
-    When I navigate to the "Deal Ratings by channel"
-    Then I click "Last Month"
-    And the "Deal Ratings by channel" should have data
 
   Scenario: Verify if Channel Stats report has data for Last Month
     When I navigate to the "Channel Stats report"
     Then I click "Last Month"
     And the "Channel Stats report" should have data
 
-  Scenario: Verify if Deal Ratings by channel has data for Last 30 Days
-    When I navigate to the "Deal Ratings by channel"
-    Then I click "Last 30 Days"
-    And the "Deal Ratings by channel" should have data
-
   Scenario: Verify if Channel Stats report has data for Last 30 Days
     When I navigate to the "Channel Stats report"
     Then I click "Last 30 Days"
     And the "Channel Stats report" should have data
 
-  Scenario: Verify if Deal Ratings by channel has data for Last 60 Days
-    When I navigate to the "Deal Ratings by channel"
-    Then I click "Last 60 Days"
-    And the "Deal Ratings by channel" should have data
-
   Scenario: Verify if Channel Stats report has data for Last 60 Days
     When I navigate to the "Channel Stats report"
     Then I click "Last 60 Days"
     And the "Channel Stats report" should have data
-
-  Scenario: Verify if Deal Ratings by channel has data for Last 90 Days
-    When I navigate to the "Deal Ratings by channel"
-    Then I click "Last 90 Days"
-    And the "Deal Ratings by channel" should have data
 
   Scenario: Verify if Channel Stats report has data for Last 90 Days
     When I navigate to the "Channel Stats report"
@@ -225,3 +194,4 @@ Feature: Dan Deery Motors Data Health Check
     Then I click "VDP ROI Last 90 Days"
     And the "VDP ROI" should have data
     And Close Browser
+

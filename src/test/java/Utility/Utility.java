@@ -1,10 +1,12 @@
 package Utility;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Utility {
@@ -29,5 +31,16 @@ public class Utility {
             }
         }
         Thread.sleep(10000);
+    }
+
+    public static void checkAllZeroData(ArrayList<Integer> tippableCargurus){
+        System.out.println("Array List " + tippableCargurus);
+        boolean allZeros = tippableCargurus.stream().allMatch(num -> num == 0);
+        System.out.println("All Zero List ? " + allZeros);
+        Assert.assertNotEquals("Values should not be true",true, allZeros);
+    }
+
+    public static void checkTableIfEmpty(Integer ReportTable){
+        Assert.assertTrue("Value should be greater than 3", 3 < ReportTable);
     }
 }

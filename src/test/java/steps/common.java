@@ -1,9 +1,11 @@
 package steps;
 
+import Resources.Common;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import Utility.Utility;
 import org.openqa.selenium.WebElement;
@@ -31,38 +33,61 @@ public class common {
         dropdown.click(); // assuming you have to click the "dropdown" to open it
         switch (dealerName){
             case "Demo Client":
-                List<WebElement> demoClients = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]"));
+                List<WebElement> demoClients = dropdown.findElements(By.xpath(Common.DemoClient));
                 Utility.selectDropdown(demoClients,"Demo Client");
                 break;
             case "Bill Brandt Ford" :
-                List<WebElement> billBrandt = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[2]"));
+                List<WebElement> billBrandt = dropdown.findElements(By.xpath(Common.BillBrandtFord));
                 Utility.selectDropdown(billBrandt,"Bill Brandt Ford");
                 break;
             case "Dan Deery Toyota" :
-                List<WebElement> danDeeryToyota = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[3]"));
+                List<WebElement> danDeeryToyota = dropdown.findElements(By.xpath(Common.DanDeeryToyota));
                 Utility.selectDropdown(danDeeryToyota,"Dan Deery Toyota");
                 break;
             case "Dan Deery Motors" :
-                List<WebElement> danDeeryMotors = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[4]"));
+                List<WebElement> danDeeryMotors = dropdown.findElements(By.xpath(Common.DanDeeryMotors));
                 Utility.selectDropdown(danDeeryMotors,"Dan Deery Motors");
                 break;
             case "Lost Pines Toyota" :
-                List<WebElement> lostPinesToyota = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[5]"));
+                List<WebElement> lostPinesToyota = dropdown.findElements(By.xpath(Common.LostPinesToyota));
                 Utility.selectDropdown(lostPinesToyota,"Lost Pines Toyota");
                 break;
             case "Deery Brothers CDJR Waukee" :
-                List<WebElement> deeryBrothers = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[7]"));
+                List<WebElement> deeryBrothers = dropdown.findElements(By.xpath(Common.DeeryBrothers));
                 Utility.selectDropdown(deeryBrothers,"Deery Brothers CDJR Waukee");
                 break;
             case "Valu Ford Chrysler" :
-                List<WebElement> valuFord = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[11]"));
+                List<WebElement> valuFord = dropdown.findElements(By.xpath(Common.ValuFordChrysler));
                 Utility.selectDropdown(valuFord,"Valu Ford Chrysler");
                 break;
+            case "Moses Chevrolet" :
+                List<WebElement> mosesChevrolet = dropdown.findElements(By.xpath(Common.MosesChevrolet));
+                Utility.selectDropdown(mosesChevrolet,"Moses Chevrolet");
+                break;
         }
+        Thread.sleep(10000);
     }
 
     @Then("Close Browser")
     public void close_browser() {
         Utility.driver.quit();
+    }
+
+
+    @And("I Select {string}")
+    public void i_Select_Used_Inventory(String vehiclyType) throws InterruptedException {
+        WebElement dropdown = Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[1]/button[1]"));
+        dropdown.click(); // assuming you have to click the "dropdown" to open it
+        switch (vehiclyType){
+            case "Used Inventory":
+                List<WebElement> usedInventory = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]"));
+                Utility.selectDropdown(usedInventory,"Used Inventory");
+                break;
+            case "New Inventory" :
+                List<WebElement> newInventory = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]"));
+                Utility.selectDropdown(newInventory,"New Inventory");
+                break;
+        }
+        Thread.sleep(10000);
     }
 }

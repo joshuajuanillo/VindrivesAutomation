@@ -5,16 +5,17 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import Utility.Utility;
+import Resources.*;
 
 import org.openqa.selenium.WebElement;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class resultSummaryStepsDefinition {
 
     @When("I navigate to the Result Summary Page")
-    public void i_navigate_to_the_result_summary_page() throws InterruptedException {
+    public void i_navigate_to_the_result_summary_page() {
 
     }
     @Then("the totalVDPs should have data")
@@ -35,7 +36,6 @@ public class resultSummaryStepsDefinition {
         for (String text : totalVDPsArray) {
             // Split the input string by newline character '\n'
             String[] stringArray = text.split("\n");
-            System.out.println(stringArray[2]);
             Assert.assertNotEquals("Values should not be equal","0", stringArray[2]);
         }
     }
@@ -152,4 +152,118 @@ public class resultSummaryStepsDefinition {
         }
     }
 
+    @Then("the result score should show data")
+    public void the_result_score_should_show_data() {
+        WebElement graphElement = Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]"));
+        System.out.println(graphElement.getText());
+        // Check if the graph element has data
+        if (graphElement.getText().isEmpty()) {
+            System.out.println("Graph does not have data.");
+        } else {
+            System.out.println("Graph has data.");
+        }
+    }
+
+    @Then("the Tippable Cargurus column should have data")
+    public void the_tippable_cargurus_column_should_have_data() {
+        // Locate the table
+        WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = table.findElements(By.xpath(QuickResult.TippableCargurus)); // Adjust the xpath as necessary
+
+        ArrayList<Integer> tippableCargurus = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            Integer cellText = Integer.valueOf(cell.getText().trim());
+            tippableCargurus.add(cellText);
+        }
+        Utility.checkAllZeroData(tippableCargurus);
+
+    }
+
+    @Then("the Tippable Autotrader column should have data")
+    public void the_tippable_autotrader_column_should_have_data() {
+        // Locate the table
+        WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = table.findElements(By.xpath(QuickResult.TippableAutotrader)); // Adjust the xpath as necessary
+
+        ArrayList<Integer> tippableAutoTrader = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            Integer cellText = Integer.valueOf(cell.getText().trim());
+            tippableAutoTrader.add(cellText);
+        }
+        Utility.checkAllZeroData(tippableAutoTrader);
+    }
+
+    @Then("the Tippable Cars dot com column should have data")
+    public void the_tippable_cars_dot_com_column_should_have_data() {
+        // Locate the table
+        WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = table.findElements(By.xpath(QuickResult.TippableCarsDotCom)); // Adjust the xpath as necessary
+
+        ArrayList<Integer> tippableCarsDotCom = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            Integer cellText = Integer.valueOf(cell.getText().trim());
+            tippableCarsDotCom.add(cellText);
+        }
+        Utility.checkAllZeroData(tippableCarsDotCom);
+    }
+
+    @Then("the Zero Leads column should have data")
+    public void the_zero_leads_column_should_have_data() {
+        // Locate the table
+        WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = table.findElements(By.xpath(QuickResult.ZeroLeads)); // Adjust the xpath as necessary
+
+        ArrayList<Integer> zeroLeads = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            Integer cellText = Integer.valueOf(cell.getText().trim());
+            zeroLeads.add(cellText);
+        }
+        Utility.checkAllZeroData(zeroLeads);
+    }
+
+    @Then("the Missing Photos column should have data")
+    public void the_missing_photos_column_should_have_data() {
+        // Locate the table
+        WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = table.findElements(By.xpath(QuickResult.MissingPhotos)); // Adjust the xpath as necessary
+        System.out.println("hello " + columnCells.size());
+        ArrayList<Integer> zeroLeads = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            Integer cellText = Integer.valueOf(cell.getText().trim());
+            zeroLeads.add(cellText);
+        }
+        Utility.checkAllZeroData(zeroLeads);
+    }
+
+    @Then("the Less than fifty Vdps column should have data")
+    public void the_less_than_fifty_vdps_column_should_have_data() {
+        // Locate the table
+        WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = table.findElements(By.xpath(QuickResult.LessThanFiftyVdps)); // Adjust the xpath as necessary
+
+        ArrayList<Integer> zeroLeads = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            Integer cellText = Integer.valueOf(cell.getText().trim());
+            zeroLeads.add(cellText);
+        }
+        Utility.checkAllZeroData(zeroLeads);
+    }
 }

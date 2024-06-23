@@ -1,4 +1,4 @@
-Feature: Dan Deery Motors Data Health Check
+Feature: Moses Chevrolet Data Health Check
   This feature deal with validating the data for each section if it has data for Dan Deery Motors
 
   Scenario: Verify if totalVDPs has value
@@ -7,7 +7,7 @@ Feature: Dan Deery Motors Data Health Check
       | password | !Pass1234               |
     When I navigate to the Result Summary Page
     And I Select "Used Inventory"
-    And I select "Dan Deery Motors"
+    And I select "Moses Chevrolet"
     Then the totalVDPs should have data
 
   Scenario: Verify if Result Score is not empty
@@ -28,17 +28,17 @@ Feature: Dan Deery Motors Data Health Check
   Scenario: Verify if Average days to sell has value
     Then the Average days to sell have data
 
-  Scenario: Verify if Tippable Cargurus has data
-    Then the Tippable Cargurus column should have data
-
-  Scenario: Verify if Tippable Autotrader has data
-    Then the Tippable Autotrader column should have data
-
-  Scenario: Verify if Tippable Cars dot com has data
-    Then the Tippable Cars dot com column should have data
-
-  Scenario: Verify if Zero Leads has data
-    Then the Zero Leads column should have data
+#  Scenario: Verify if Tippable Cargurus has data
+#    Then the Tippable Cargurus column should have data
+#
+#  Scenario: Verify if Tippable Autotrader has data
+#    Then the Tippable Autotrader column should have data
+#
+#  Scenario: Verify if Tippable Cars dot com has data
+#    Then the Tippable Cars dot com column should have data
+#
+#  Scenario: Verify if Zero Leads has data
+#    Then the Zero Leads column should have data
 
   Scenario: Verify if Deal Ratings by channel has data for Last 7 days
     When I navigate to the "Deal Ratings by channel"

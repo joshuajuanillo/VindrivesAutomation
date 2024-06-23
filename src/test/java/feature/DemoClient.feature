@@ -1,5 +1,5 @@
-Feature: Dan Deery Motors Data Health Check
-  This feature deal with validating the data for each section if it has data for Dan Deery Motors
+Feature: Demo Client Data Health Check
+  This feature deal with validating the data for each section if it has data for Demo Client
 
   Scenario: Verify if totalVDPs has value
     Given a user with a correct credentials
@@ -7,7 +7,7 @@ Feature: Dan Deery Motors Data Health Check
       | password | !Pass1234               |
     When I navigate to the Result Summary Page
     And I Select "Used Inventory"
-    And I select "Dan Deery Motors"
+    And I select "Demo Client"
     Then the totalVDPs should have data
 
   Scenario: Verify if Result Score is not empty
@@ -225,3 +225,4 @@ Feature: Dan Deery Motors Data Health Check
     Then I click "VDP ROI Last 90 Days"
     And the "VDP ROI" should have data
     And Close Browser
+
