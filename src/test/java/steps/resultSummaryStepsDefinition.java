@@ -218,19 +218,30 @@ public class resultSummaryStepsDefinition {
 
     @Then("the Zero Leads column should have data")
     public void the_zero_leads_column_should_have_data() {
-        // Locate the table
-        WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+        switch (Utility.DealerName) {
+            case "Demo Client":
+                // Locate the table
+                WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable));// Change to the actual table ID or selector
+                List<WebElement> columnCells = null;
+                if(Utility.vehicleType == "Used Inventory"){
+                    // Locate the specific column (e.g., the second column)
+                    columnCells = table.findElements(By.xpath(QuickResult.ZeroLeads)); // Adjust the xpath as necessary
+                }else{
+                    // Locate the specific column (e.g., the second column)
+                    columnCells = table.findElements(By.xpath(DemoClient.NewInventoryDemoClientZeroLeads)); // Adjust the xpath as necessary
+                }
 
-        // Locate the specific column (e.g., the second column)
-        List<WebElement> columnCells = table.findElements(By.xpath(QuickResult.ZeroLeads)); // Adjust the xpath as necessary
+                ArrayList<Integer> zeroLeads = new ArrayList<>();
 
-        ArrayList<Integer> zeroLeads = new ArrayList<>();
-
-        for (WebElement cell : columnCells) {
-            Integer cellText = Integer.valueOf(cell.getText().trim());
-            zeroLeads.add(cellText);
+                for (WebElement cell : columnCells) {
+                    Integer cellText = Integer.valueOf(cell.getText().trim());
+                    zeroLeads.add(cellText);
+                }
+                Utility.checkAllZeroData(zeroLeads);
+                break;
+            default:
+                break;
         }
-        Utility.checkAllZeroData(zeroLeads);
     }
 
     @Then("the Missing Photos column should have data")

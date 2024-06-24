@@ -22,4 +22,6 @@ public class Common {
     public static String LastNinetyDays = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[5]";
     public static String AllTime = "//button[contains(text(),'All Time')]";
 
+    public static String VehicleTypeUsed = "//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]";
+    public static String VehicleTypeNew = "//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]";
 }

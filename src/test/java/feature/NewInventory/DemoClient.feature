@@ -1,4 +1,4 @@
-Feature: Demo Client Data Health Check
+Feature: New Inventory Demo Client Data Health Check
   This feature deal with validating the data for each section if it has data for Demo Client
 
   Scenario: Verify if totalVDPs has value
@@ -45,7 +45,6 @@ Feature: Demo Client Data Health Check
   Scenario: Verify if Pre Shoot report has data
     When I navigate to the "Pre Shoot report"
     Then the "Pre Shoot report" should have data
-
 
   Scenario: Verify if Channel Stats report has data for Last Month
     When I navigate to the "Channel Stats report"

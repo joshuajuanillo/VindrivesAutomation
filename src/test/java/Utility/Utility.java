@@ -10,14 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Utility {
+    public static String DealerName = "";
+    public static String vehicleType = "";
     public static WebDriver driver;
-    public static WebDriver getDriver(){
+
+    public static void getDriver(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         System.setProperty("webdriver.chrome.driver","/Users/joshuajuanillo/Downloads/chromedriver/chromedriver");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        return driver;
     }
 
     public static void selectDropdown(List<WebElement> clickDealer,String dealerName) throws InterruptedException {

@@ -23,6 +23,7 @@ public class merchandisingStepsDefinition {
                 Thread.sleep(10000);
                 break;
             case "Channel Stats report":
+                Utility.driver.findElement(By.xpath(DemoClient.DealRatingsByChennelMenu)).click();
                 Utility.driver.findElement(By.xpath(DemoClient.ChannelStatReportTab)).click();
                 break;
             case "Pre Shoot report":
@@ -152,10 +153,14 @@ public class merchandisingStepsDefinition {
                 Thread.sleep(15000);
                 break;
             case "Tip Report":
+
+                // Select Provider
+                Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]")).click();
+
                 // Locate the table
                 WebElement TipReportTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
                 // Locate the table body rows (assuming tbody is used for data rows)
-                List<WebElement> TipReportTableDataRows = TipReportTable.findElements(By.xpath("//tbody[1]/tr"));
+                List<WebElement> TipReportTableDataRows = TipReportTable.findElements(By.xpath("//tbody/tr"));
                 System.out.println("Row Count " + TipReportTableDataRows.size());
 
                 // Check if the table body has data rows

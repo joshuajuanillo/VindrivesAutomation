@@ -7,7 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import Utility.Utility;
+import Utility.*;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -31,6 +31,7 @@ public class common {
     public void iSelect(String dealerName) throws InterruptedException {
         WebElement dropdown = Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/button[1]"));
         dropdown.click(); // assuming you have to click the "dropdown" to open it
+        Utility.DealerName = dealerName;
         switch (dealerName){
             case "Demo Client":
                 List<WebElement> demoClients = dropdown.findElements(By.xpath(Common.DemoClient));
@@ -78,13 +79,14 @@ public class common {
     public void i_Select_Used_Inventory(String vehiclyType) throws InterruptedException {
         WebElement dropdown = Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[1]/button[1]"));
         dropdown.click(); // assuming you have to click the "dropdown" to open it
+        Utility.vehicleType = vehiclyType;
         switch (vehiclyType){
             case "Used Inventory":
-                List<WebElement> usedInventory = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]"));
+                List<WebElement> usedInventory = dropdown.findElements(By.xpath(Common.VehicleTypeUsed));
                 Utility.selectDropdown(usedInventory,"Used Inventory");
                 break;
             case "New Inventory" :
-                List<WebElement> newInventory = dropdown.findElements(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]"));
+                List<WebElement> newInventory = dropdown.findElements(By.xpath(Common.VehicleTypeNew));
                 Utility.selectDropdown(newInventory,"New Inventory");
                 break;
         }

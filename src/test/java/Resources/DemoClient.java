@@ -12,7 +12,7 @@ public class DemoClient {
 
    public static String DealRatingsByChennelTab = "//li[contains(text(),'Deal Ratings by Channel')]";
    public static String TipReportTab = "//button[contains(text(),'Tip Report')]";
-   public static String ChannelStatReportTab = "//button[contains(text(),'Channel Stats Report')]";
+   public static String ChannelStatReportTab = "//li[contains(text(),'Channel Stats Report')]";
    public static String PreShootReportTab = "//button[contains(text(),'Pre Shoot Report')]";
 
    // VDP Result
@@ -61,4 +61,5 @@ public class DemoClient {
    public static String VdpRoiLastMonth = "//button[contains(text(),'Last Month')]";
    public static String VdpRoiLastNinetyDays = "//button[contains(text(),'Last 90 Days')]";
 
+   public static String NewInventoryDemoClientZeroLeads = "//tbody/tr/td[5]";
 }
