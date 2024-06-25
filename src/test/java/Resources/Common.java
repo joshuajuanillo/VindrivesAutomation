@@ -8,6 +8,8 @@ public class Common {
     public static String BillBrandtFord = "//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[11]";
     public static String MosesChevrolet = "//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]";
     public static String DanDeeryMotors = "//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[21]";
+    public static String DaviesFord = "//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[18]";
+    public static String MosesBMW = "//body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[23]";
 
     public static String DanDeeryToyota = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/table[1]";
     public static String LostPinesToyota = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/table[1]";

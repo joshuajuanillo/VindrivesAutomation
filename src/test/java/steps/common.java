@@ -65,6 +65,14 @@ public class common {
                 List<WebElement> mosesChevrolet = dropdown.findElements(By.xpath(Common.MosesChevrolet));
                 Utility.selectDropdown(mosesChevrolet,"Moses Chevrolet");
                 break;
+            case "Davies Ford" :
+                List<WebElement> daviesFord = dropdown.findElements(By.xpath(Common.DaviesFord));
+                Utility.selectDropdown(daviesFord,"Davies Ford");
+                break;
+            case "Moses BMW" :
+                List<WebElement> mosesBMW = dropdown.findElements(By.xpath(Common.MosesBMW));
+                Utility.selectDropdown(mosesBMW,"Moses BMW");
+                break;
         }
         Thread.sleep(10000);
     }
