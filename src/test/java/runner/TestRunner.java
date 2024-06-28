@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 //                    "src/test/java/feature/BillBrandtFord.feature",
 //                    "src/test/java/feature/DanDeeryMotors.feature",
 //                    "src/test/java/feature/MosesChevrolet.feature"},
-        features = {"src/test/java/feature/MosesBMW.feature","src/test/java/feature/NewInventory/MosesBMW.feature"},
+        features = {"src/test/java/feature/DemoClient.feature"},
         glue = "steps",
         plugin = {
                 "pretty",

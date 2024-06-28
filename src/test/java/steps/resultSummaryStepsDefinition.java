@@ -155,7 +155,7 @@ public class resultSummaryStepsDefinition {
     @Then("the result score should show data")
     public void the_result_score_should_show_data() {
         WebElement graphElement = Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]"));
-        System.out.println(graphElement.getText());
+
         // Check if the graph element has data
         if (graphElement.getText().isEmpty()) {
             System.out.println("Graph does not have data.");
@@ -165,55 +165,73 @@ public class resultSummaryStepsDefinition {
     }
 
     @Then("the Tippable Cargurus column should have data")
-    public void the_tippable_cargurus_column_should_have_data() {
-        // Locate the table
-        WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+    public void the_tippable_cargurus_column_should_have_data() throws InterruptedException{
+        switch (Utility.DealerName) {
+            case "Demo Client":
+                // Locate the table
+                WebElement DemoClientTable = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
 
-        // Locate the specific column (e.g., the second column)
-        List<WebElement> columnCells = table.findElements(By.xpath(QuickResult.TippableCargurus)); // Adjust the xpath as necessary
+                // Locate the specific column (e.g., the second column)
+                List<WebElement> columnCells = DemoClientTable.findElements(By.xpath(DemoClient.TippableCargurus)); // Adjust the xpath as necessary
 
-        ArrayList<Integer> tippableCargurus = new ArrayList<>();
+                ArrayList<Integer> DemoClientTippableCargurus = new ArrayList<>();
 
-        for (WebElement cell : columnCells) {
-            Integer cellText = Integer.valueOf(cell.getText().trim());
-            tippableCargurus.add(cellText);
+                for (WebElement cell : columnCells) {
+                    Integer cellText = Integer.valueOf(cell.getText().trim());
+                    DemoClientTippableCargurus.add(cellText);
+                }
+                Utility.checkAllZeroData(DemoClientTippableCargurus);
+                break;
+            case "Davies Ford":
+                break;
         }
-        Utility.checkAllZeroData(tippableCargurus);
 
     }
 
     @Then("the Tippable Autotrader column should have data")
     public void the_tippable_autotrader_column_should_have_data() {
-        // Locate the table
-        WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+        switch (Utility.DealerName) {
+            case "Demo Client":
+                // Locate the table
+                WebElement DemoClientTable = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
 
-        // Locate the specific column (e.g., the second column)
-        List<WebElement> columnCells = table.findElements(By.xpath(QuickResult.TippableAutotrader)); // Adjust the xpath as necessary
+                // Locate the specific column (e.g., the second column)
+                List<WebElement> columnCells = DemoClientTable.findElements(By.xpath(DemoClient.TippableAutotrader)); // Adjust the xpath as necessary
 
-        ArrayList<Integer> tippableAutoTrader = new ArrayList<>();
+                ArrayList<Integer> DemoClientTippableAutoTrader = new ArrayList<>();
 
-        for (WebElement cell : columnCells) {
-            Integer cellText = Integer.valueOf(cell.getText().trim());
-            tippableAutoTrader.add(cellText);
+                for (WebElement cell : columnCells) {
+                    Integer cellText = Integer.valueOf(cell.getText().trim());
+                    DemoClientTippableAutoTrader.add(cellText);
+                }
+                Utility.checkAllZeroData(DemoClientTippableAutoTrader);
+                break;
+            case "Davies Ford":
+                break;
         }
-        Utility.checkAllZeroData(tippableAutoTrader);
     }
 
     @Then("the Tippable Cars dot com column should have data")
     public void the_tippable_cars_dot_com_column_should_have_data() {
-        // Locate the table
-        WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+        switch (Utility.DealerName) {
+            case "Demo Client":
+                // Locate the table
+                WebElement DemoClientTable = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
 
-        // Locate the specific column (e.g., the second column)
-        List<WebElement> columnCells = table.findElements(By.xpath(QuickResult.TippableCarsDotCom)); // Adjust the xpath as necessary
+                // Locate the specific column (e.g., the second column)
+                List<WebElement> columnCells = DemoClientTable.findElements(By.xpath(DemoClient.TippableCarsDotCom)); // Adjust the xpath as necessary
 
-        ArrayList<Integer> tippableCarsDotCom = new ArrayList<>();
+                ArrayList<Integer> DemoClientTippableCarsDotCom = new ArrayList<>();
 
-        for (WebElement cell : columnCells) {
-            Integer cellText = Integer.valueOf(cell.getText().trim());
-            tippableCarsDotCom.add(cellText);
+                for (WebElement cell : columnCells) {
+                    Integer cellText = Integer.valueOf(cell.getText().trim());
+                    DemoClientTippableCarsDotCom.add(cellText);
+                }
+                Utility.checkAllZeroData(DemoClientTippableCarsDotCom);
+                break;
+            case "Davies Ford":
+                break;
         }
-        Utility.checkAllZeroData(tippableCarsDotCom);
     }
 
     @Then("the Zero Leads column should have data")
@@ -223,9 +241,10 @@ public class resultSummaryStepsDefinition {
                 // Locate the table
                 WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable));// Change to the actual table ID or selector
                 List<WebElement> columnCells = null;
-                if(Utility.vehicleType == "Used Inventory"){
+                System.out.println("Type " +  Utility.vehicleType);
+                if(Utility.vehicleType.equalsIgnoreCase("Used Inventory")){
                     // Locate the specific column (e.g., the second column)
-                    columnCells = table.findElements(By.xpath(QuickResult.ZeroLeads)); // Adjust the xpath as necessary
+                    columnCells = table.findElements(By.xpath(DemoClient.ZeroLeads)); // Adjust the xpath as necessary
                 }else{
                     // Locate the specific column (e.g., the second column)
                     columnCells = table.findElements(By.xpath(DemoClient.NewInventoryDemoClientZeroLeads)); // Adjust the xpath as necessary
@@ -238,6 +257,8 @@ public class resultSummaryStepsDefinition {
                     zeroLeads.add(cellText);
                 }
                 Utility.checkAllZeroData(zeroLeads);
+                break;
+            case "Davies Ford":
                 break;
             default:
                 break;

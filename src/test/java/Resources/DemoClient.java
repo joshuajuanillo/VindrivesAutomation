@@ -62,4 +62,9 @@ public class DemoClient {
    public static String VdpRoiLastNinetyDays = "//button[contains(text(),'Last 90 Days')]";
 
    public static String NewInventoryDemoClientZeroLeads = "//tbody/tr/td[5]";
+
+   public static String TippableCargurus = "//body[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr/td[3]";
+   public static String TippableAutotrader = "//tbody/tr/td[4]";
+   public static String TippableCarsDotCom = "//tbody/tr/td[5]";
+   public static String ZeroLeads = "//tbody/tr/td[6]";
 }
