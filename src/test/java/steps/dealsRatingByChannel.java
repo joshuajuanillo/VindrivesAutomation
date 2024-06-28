@@ -18,11 +18,11 @@ public class dealsRatingByChannel {
         Thread.sleep(10000);
     }
 
-    @Then("I click twice the sort by function in cargurus column")
-    public void i_click_twice_the_sort_by_function_in_cargurus_column() throws InterruptedException {
+    @Then("I click twice the sort by function in cargurus column and data are not unknown")
+    public void i_click_twice_the_sort_by_function_in_cargurus_column_and_data_are_not_unknown() throws InterruptedException {
         switch (Utility.DealerName) {
             case "Demo Client":
-                Utility.driver.findElement(By.xpath("//thead/tr[1]/th[3]/div[1]/div[2]/*[1]")).click();
+                Utility.driver.findElement(By.xpath(DemoClient.CargurusRankSort)).click();
 
                 // Locate the table
                 WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
@@ -35,19 +35,23 @@ public class dealsRatingByChannel {
                     String cellText = cell.getText().trim();
                     DemoClientCargurusDealsByRating.add(cellText);
                 }
-                System.out.println("Hello Here" + DemoClientCargurusDealsByRating);
-                Utility.driver.findElement(By.xpath("//thead/tr[1]/th[3]/div[1]/div[2]/*[1]")).click();
+
+                Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)).click();
+
+                // Locate the specific column (e.g., the second column)
+                List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//tbody/tr/td[3]")); // Adjust the xpath as necessary
+
+                for (WebElement cell : columnCells2) {
+                    String cellText = cell.getText().trim();
+                    DemoClientCargurusDealsByRating.add(cellText);
+                }
+
+                Utility.checkAllUnkownData(DemoClientCargurusDealsByRating);
                 Thread.sleep(20000);
-                //        Utility.checkAllZeroData(DemoClientCargurusDealsByRating);
+
                 break;
             case "Davies Ford":
                 break;
         }
-    }
-
-    @Then("all value should not unknown data")
-    public void all_value_should_not_unknown_data() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
     }
 }

@@ -7,7 +7,7 @@ Feature: Demo Client Data Health Check
       | password | !Pass1234               |
     When I navigate to the Result Summary Page
     And I select vehicle type "Used Inventory"
-    And I select "Demo Client"
+    And I select "Moses Supercenter"
     Then the totalVDPs should have data
 
   Scenario: Verify if Result Score is not empty

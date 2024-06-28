@@ -67,4 +67,6 @@ public class DemoClient {
    public static String TippableAutotrader = "//tbody/tr/td[4]";
    public static String TippableCarsDotCom = "//tbody/tr/td[5]";
    public static String ZeroLeads = "//tbody/tr/td[6]";
+
+   public static String CargurusRankSort = "//thead/tr[1]/th[3]/div[1]/div[2]/*[1]";
 }

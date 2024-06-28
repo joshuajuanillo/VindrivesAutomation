@@ -11,8 +11,8 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class merchandisingStepsDefinition {
-    @When("I navigate to the {string}")
-    public void i_navigate_to_the(String reportName) throws InterruptedException {
+    @When("I navigate to the {string} from merchandising report")
+    public void i_navigate_to_the_from_merchandising_report(String reportName) throws InterruptedException {
         switch (reportName) {
             case "Deal Ratings by channel":
                 Utility.driver.findElement(By.xpath(DemoClient.DealRatingsByChennelMenu)).click();
@@ -30,111 +30,8 @@ public class merchandisingStepsDefinition {
                 Utility.driver.findElement(By.xpath(DemoClient.PreShootReportTab)).click();
                 Thread.sleep(10000);
                 break;
-            case "VDP Result":
-                Utility.driver.findElement(By.xpath(DemoClient.VdpResults)).click();
-                Thread.sleep(10000);
-                break;
-            case "Leads":
-                Utility.driver.findElement(By.xpath(DemoClient.LeadsTab)).click();
-                Utility.driver.findElement(By.xpath(DemoClient.Leads)).click();
-                break;
-            case "Most VDPs":
-                Utility.driver.findElement(By.xpath(DemoClient.MostVdps)).click();
-                break;
-            case "Least VDPs":
-                Utility.driver.findElement(By.xpath(DemoClient.LeastVdps)).click();
-                break;
-            case "Days on Lot":
-                Utility.driver.findElement(By.xpath(DemoClient.DaysOnLot)).click();
-                break;
-            case "Budget ROI":
-                Utility.driver.findElement(By.xpath(DemoClient.BudgetRoiTab)).click();
-                Utility.driver.findElement(By.xpath(DemoClient.BudgetRoi)).click();
-                break;
-            case "Vdps by Channel":
-                Utility.driver.findElement(By.xpath(DemoClient.VdpsByChannelTab)).click();
-                Utility.driver.findElement(By.xpath(DemoClient.VdpsByChannel)).click();
-                break;
-            case "Top 10 Website":
-                Utility.driver.findElement(By.xpath(DemoClient.TopTenWebsiteTab)).click();
-                Utility.driver.findElement(By.xpath(DemoClient.TopTenWebsite)).click();
-                break;
-            case "VDP ROI":
-                Utility.driver.findElement(By.xpath(DemoClient.VdpRoiTab)).click();
-                Utility.driver.findElement(By.xpath(DemoClient.VdpRoi)).click();
-                break;
         }
 
-    }
-
-    @Then("I click {string}")
-    public void i_click_last_7_days(String DateFilter) throws InterruptedException {
-        Utility.driver.findElement(By.xpath(Common.LastSevenDays)).click();
-        switch (DateFilter) {
-            case "Last 7 Days":
-                Utility.driver.findElement(By.xpath(Common.LastSevenDays)).click();
-                break;
-            case "Last Month":
-                Utility.driver.findElement(By.xpath(Common.LastMonth)).click();
-                break;
-            case "Last 30 Days":
-                Utility.driver.findElement(By.xpath(Common.LastThirtyDays)).click();
-                break;
-            case "Last 60 Days":
-                Utility.driver.findElement(By.xpath(Common.LastSixtyDays)).click();
-                break;
-            case "Last 90 Days":
-                Utility.driver.findElement(By.xpath(Common.LastNinetyDays)).click();
-                break;
-            case "All Time":
-                Utility.driver.findElement(By.xpath(Common.AllTime)).click();
-                break;
-            case "VDP Result Last Month":
-                Utility.driver.findElement(By.xpath(DemoClient.VDPResultLastMonth)).click();
-                break;
-            case "Advance Report Last Month":
-                Utility.driver.findElement(By.xpath(DemoClient.AdvanceReportLastMonth)).click();
-                break;
-            case "Budget Roi Last 7 Days":
-                Utility.driver.findElement(By.xpath(DemoClient.BudgetRoiLastSevenDays)).click();
-                break;
-            case "Budget Roi Last Month":
-                Utility.driver.findElement(By.xpath(DemoClient.BudgetRoiLastMonth)).click();
-                break;
-            case "Budget Roi Last 90 Days":
-                Utility.driver.findElement(By.xpath(DemoClient.BudgetRoiLastNinetyDays)).click();
-                break;
-            case "Vdps by Channel Last 7 Days":
-                Utility.driver.findElement(By.xpath(DemoClient.VdpsByChannelLastSevenDays)).click();
-                break;
-            case "Vdps by Channel Last Month":
-                Utility.driver.findElement(By.xpath(DemoClient.VdpsByChannelLastMonth)).click();
-                break;
-            case "Vdps by Channel Last 90 Days":
-                Utility.driver.findElement(By.xpath(DemoClient.VdpsByChannelLastNinetyDays)).click();
-                break;
-            case "Top 10 Website Last 7 Days":
-                Utility.driver.findElement(By.xpath(DemoClient.TopTenWebsiteLastSevenDays)).click();
-                break;
-            case "Top 10 Website Last Month":
-                Utility.driver.findElement(By.xpath(DemoClient.TopTenWebsiteLastMonth)).click();
-                break;
-            case "Top 10 Website Last 90 Days":
-                Utility.driver.findElement(By.xpath(DemoClient.TopTenWebsiteLastNinetyDays)).click();
-                break;
-            case "VDP ROI Last 7 Days":
-                Utility.driver.findElement(By.xpath(DemoClient.VdpRoiLastSevenDays)).click();
-                break;
-            case "VDP ROI Last Month":
-                Utility.driver.findElement(By.xpath(DemoClient.VdpRoiLastMonth)).click();
-                break;
-            case "VDP ROI Last 90 Days":
-                Utility.driver.findElement(By.xpath(DemoClient.VdpRoiLastNinetyDays)).click();
-                break;
-            default:
-                break;
-        }
-        Thread.sleep(10000);
     }
 
     @Then("the {string} should have data")

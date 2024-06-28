@@ -6,8 +6,8 @@ Feature: Demo Client Data Health Check
       | email    | jjuanillo@dealercmo.com |
       | password | !Pass1234               |
     When I navigate to the Result Summary Page
-    And I select vehicle type "Used Inventory"
-    And I select "Demo Client"
+    And I select vehicle type "New Inventory"
+    And I select "Moses Outlet Teays Valley"
     Then the totalVDPs should have data
 
   Scenario: Verify if Result Score is not empty
@@ -36,17 +36,7 @@ Feature: Demo Client Data Health Check
     Then the "Yellow" results score has data
 
 # Quick Result Table
-  Scenario: Verify if Tippable Cargurus has data
-    Then the Tippable Cargurus column should have data
-
-  Scenario: Verify if Tippable Autotrader has data
-    Then the Tippable Autotrader column should have data
-
-  Scenario: Verify if Tippable Cars dot com has data
-    Then the Tippable Cars dot com column should have data
-
-  Scenario: Verify if Zero Leads has data
-    Then the Zero Leads column should have data
+## Not Yet Implemented
 
 ## Merchandising
   Scenario: Verify if Deal Ratings by channel has data for Last 7 days
@@ -99,14 +89,6 @@ Feature: Demo Client Data Health Check
   Scenario: Verify if Pre Shoot report has data
     When I navigate to the "Pre Shoot report" from merchandising report
     Then the "Pre Shoot report" should have data
-
-  Scenario: Verify if Deal Ratings by channel column for cargurus is not showing all unknown data
-    When I navigate to the "Deal Ratings by channel" from merchandising report
-    And I click "Last 7 Days"
-    Then the "Deal Ratings by channel" should have data
-    And I select 100 per page in pagination
-    Then the "Deal Ratings by channel" should have data
-    And I click twice the sort by function in cargurus column and data are not unknown
 
  ## VDP Result
   Scenario: Verify if VDP Result has data for Last 7 Days

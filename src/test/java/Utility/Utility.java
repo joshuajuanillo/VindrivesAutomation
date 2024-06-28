@@ -1,6 +1,7 @@
 package Utility;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,7 +18,7 @@ public class Utility {
     public static void getDriver(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        System.setProperty("webdriver.chrome.driver","/Users/joshuajuanillo/Downloads/chromedriver/chromedriver");
+        System.setProperty("webdriver.chrome.driver","C:\\UpSkill\\chromedriver-win32\\chromedriver.exe");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
@@ -44,5 +45,23 @@ public class Utility {
 
     public static void checkTableIfEmpty(Integer ReportTable){
         Assert.assertTrue("Value should be greater than 3", 3 < ReportTable);
+    }
+
+    public static void checkAllUnkownData(ArrayList<String> column){
+        System.out.println("Array List " + column);
+        boolean allUnknown = column.stream().allMatch(col -> col.equals("Unknown"));
+        System.out.println("All Zero List ? " + allUnknown);
+        Assert.assertNotEquals("Values should not be true",true, allUnknown);
+    }
+
+    public static void getArrayList(WebElement column){
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = column.findElements(By.xpath("//tbody/tr/td[3]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
     }
 }
