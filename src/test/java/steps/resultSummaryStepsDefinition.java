@@ -170,12 +170,9 @@ public class resultSummaryStepsDefinition {
             case "Demo Client":
                 // Locate the table
                 WebElement DemoClientTable = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
-
                 // Locate the specific column (e.g., the second column)
                 List<WebElement> columnCells = DemoClientTable.findElements(By.xpath(DemoClient.TippableCargurus)); // Adjust the xpath as necessary
-
                 ArrayList<Integer> DemoClientTippableCargurus = new ArrayList<>();
-
                 for (WebElement cell : columnCells) {
                     Integer cellText = Integer.valueOf(cell.getText().trim());
                     DemoClientTippableCargurus.add(cellText);

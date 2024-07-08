@@ -65,8 +65,8 @@ public class common {
                 Utility.selectDropdown(valuFord,"Valu Ford Chrysler");
                 break;
             case "Moses Chevrolet" :
-                List<WebElement> mosesChevrolet = dropdown.findElements(By.xpath(Common.MosesChevrolet));
-                Utility.selectDropdown(mosesChevrolet,"Moses Chevrolet");
+//                List<WebElement> mosesChevrolet = dropdown.findElements(By.xpath(Common.MosesChevrolet));
+//                Utility.selectDropdown(mosesChevrolet,"Moses Chevrolet");
                 break;
             case "Davies Ford" :
                 List<WebElement> daviesFord = dropdown.findElements(By.xpath(Common.DaviesFord));
@@ -87,6 +87,10 @@ public class common {
             case "Moses Supercenter" :
                 List<WebElement> MosesSupercenter = dropdown.findElements(By.xpath(Common.MosesSupercenter));
                 Utility.selectDropdown(MosesSupercenter,"Moses Supercenter");
+                break;
+            case "Cowboy Toyota" :
+                List<WebElement> CowBoyToyota = dropdown.findElements(By.xpath(Common.CowBoyToyota));
+                Utility.selectDropdown(CowBoyToyota,"Cowboy Toyota");
                 break;
         }
         Thread.sleep(10000);

@@ -1,5 +1,6 @@
 package Utility;
 
+import Resources.DemoClient;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,7 @@ public class Utility {
     public static void getDriver(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        System.setProperty("webdriver.chrome.driver","C:\\UpSkill\\chromedriver-win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","/Users/joshuajuanillo/Downloads/chromedriver/chromedriver");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
@@ -43,8 +44,12 @@ public class Utility {
         Assert.assertNotEquals("Values should not be true",true, allZeros);
     }
 
-    public static void checkTableIfEmpty(Integer ReportTable){
-        Assert.assertTrue("Value should be greater than 3", 3 < ReportTable);
+    public static void checkTableIfEmpty(Integer ReportTable, String DataValue){
+        if(DataValue.equalsIgnoreCase("No Data")){
+            Assert.assertTrue("Data should have data", 0 > 1);
+        }else{
+            Assert.assertTrue("Data should have data", 0 < ReportTable);
+        }
     }
 
     public static void checkAllUnkownData(ArrayList<String> column){

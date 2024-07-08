@@ -69,4 +69,7 @@ public class DemoClient {
    public static String ZeroLeads = "//tbody/tr/td[6]";
 
    public static String CargurusRankSort = "//thead/tr[1]/th[3]/div[1]/div[2]/*[1]";
+   public static String AutotraderRankSort = "//body[1]/div[1]/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]/thead[1]/tr[1]/th[4]/div[1]/div[2]";
+   public static String CarsDotCom = "//body[1]/div[1]/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]/thead[1]/tr[1]/th[5]/div[1]/div[2]";
+
 }

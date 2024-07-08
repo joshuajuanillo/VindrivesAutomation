@@ -36,17 +36,20 @@ public class merchandisingStepsDefinition {
 
     @Then("the {string} should have data")
     public void the_should_have_data(String reportName) throws InterruptedException {
-
+        String DataValue = "";
         switch (reportName) {
             case "Deal Ratings by channel":
                 // Locate the table
                 WebElement DealRatingByChannelTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
                 // Locate the table body rows (assuming tbody is used for data rows)
                 List<WebElement> DealRatingByChannelTableDataRows = DealRatingByChannelTable.findElements(By.xpath("//tbody[1]/tr"));
-                System.out.println("Row Count " + DealRatingByChannelTableDataRows.size());
-
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(DealRatingByChannelTableDataRows.size());
+
+                for (WebElement row : DealRatingByChannelTableDataRows) {
+                    DataValue = row.getText();
+                }
+
+                Utility.checkTableIfEmpty(DealRatingByChannelTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Tip Report":
@@ -61,7 +64,11 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + TipReportTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(TipReportTableDataRows.size());
+                for (WebElement row : TipReportTableDataRows) {
+                    DataValue = row.getText();
+                }
+
+                Utility.checkTableIfEmpty(TipReportTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Channel Stats report":
@@ -72,7 +79,10 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + ChannelStatReportTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(ChannelStatReportTableDataRows.size());
+                for (WebElement row : ChannelStatReportTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(ChannelStatReportTableDataRows.size() , DataValue );
                 Thread.sleep(15000);
                 break;
             case "Pre Shoot report":
@@ -83,7 +93,10 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + PreshootReportTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(PreshootReportTableDataRows.size());
+                for (WebElement row : PreshootReportTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(PreshootReportTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "VDP Result":
@@ -94,7 +107,10 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + VdpResultTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(VdpResultTableDataRows.size());
+                for (WebElement row : VdpResultTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(VdpResultTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Leads":
@@ -105,7 +121,10 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + LeadsTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(LeadsTableDataRows.size());
+                for (WebElement row : LeadsTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(LeadsTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Most VDPs":
@@ -116,7 +135,10 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + MostVdpsTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(MostVdpsTableDataRows.size());
+                for (WebElement row : MostVdpsTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(MostVdpsTableDataRows.size() , DataValue);
                 Thread.sleep(15000);
                 break;
             case "Least VDPs":
@@ -124,10 +146,12 @@ public class merchandisingStepsDefinition {
                 WebElement LeastVdpsTable = Utility.driver.findElement(By.xpath(DemoClient.LeastVdpsTable)); // Change to the actual table ID or selector
                 // Locate the table body rows (assuming tbody is used for data rows)
                 List<WebElement> LeastVdpsTableDataRows = LeastVdpsTable.findElements(By.xpath("//tbody[1]/tr"));
-                System.out.println("Row Count " + LeastVdpsTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(LeastVdpsTableDataRows.size());
+                for (WebElement row : LeastVdpsTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(LeastVdpsTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Days On Lot":
@@ -138,7 +162,10 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + DaysOnLotTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(DaysOnLotTableDataRows.size());
+                for (WebElement row : DaysOnLotTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(DaysOnLotTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Budget ROI":
@@ -149,7 +176,10 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + BudgetRoiTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(BudgetRoiTableDataRows.size());
+                for (WebElement row : BudgetRoiTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(BudgetRoiTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Vdps by Channel":
@@ -160,7 +190,10 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + VdpsByChannelTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(VdpsByChannelTableDataRows.size());
+                for (WebElement row : VdpsByChannelTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(VdpsByChannelTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Top 10 Website":
@@ -171,7 +204,10 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + TopTenWebsiteTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(TopTenWebsiteTableDataRows.size());
+                for (WebElement row : TopTenWebsiteTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(TopTenWebsiteTableDataRows.size() , DataValue);
                 Thread.sleep(15000);
                 break;
             case "VDP ROI":
@@ -182,7 +218,10 @@ public class merchandisingStepsDefinition {
                 System.out.println("Row Count " + VdpRoiTableDataRows.size());
 
                 // Check if the table body has data rows
-                Utility.checkTableIfEmpty(VdpRoiTableDataRows.size());
+                for (WebElement row : VdpRoiTableDataRows) {
+                    DataValue = row.getText();
+                }
+                Utility.checkTableIfEmpty(VdpRoiTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
         }

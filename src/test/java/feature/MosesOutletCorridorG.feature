@@ -1,4 +1,4 @@
-Feature: Demo Client Data Health Check
+Feature: Moses Outlet Corrider G Data Health Check
   This feature deal with validating the data for each section if it has data for Demo Client
 
   Scenario: Verify if totalVDPs has value
@@ -48,7 +48,7 @@ Feature: Demo Client Data Health Check
   Scenario: Verify if Zero Leads has data
     Then the Zero Leads column should have data
 
-## Merchandising
+# Merchandising
   Scenario: Verify if Deal Ratings by channel has data for Last 7 days
     When I navigate to the "Deal Ratings by channel" from merchandising report
     Then I click "Last 7 Days"
