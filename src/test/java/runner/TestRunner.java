@@ -7,14 +7,13 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {
-                    "src/test/java/feature/",
+                    "src/test/java/feature/DemoClient.feature",
         },
         glue = "steps",
         plugin = {
                 "pretty",
                 "junit:target/vindrivesTestRun.xml",
-                "json:target/Regression.json" },
-        tags = "@resultSummary"
+                "json:target/Regression.json" }
 )
 public class TestRunner {}
  
