@@ -238,7 +238,6 @@ public class resultSummaryStepsDefinition {
                 // Locate the table
                 WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable));// Change to the actual table ID or selector
                 List<WebElement> columnCells = null;
-                System.out.println("Type " +  Utility.vehicleType);
                 if(Utility.vehicleType.equalsIgnoreCase("Used Inventory")){
                     // Locate the specific column (e.g., the second column)
                     columnCells = table.findElements(By.xpath(DemoClient.ZeroLeads)); // Adjust the xpath as necessary

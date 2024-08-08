@@ -38,7 +38,6 @@ public class common {
             case "Demo Client":
                 List<WebElement> demoClients = dropdown.findElements(By.xpath(Common.DemoClient));
                 Utility.selectDropdown(demoClients,"Demo Client");
-                System.out.println("Dito si " + Utility.DealerName);
                 break;
             case "Bill Brandt Ford" :
                 List<WebElement> billBrandt = dropdown.findElements(By.xpath(Common.BillBrandtFord));
