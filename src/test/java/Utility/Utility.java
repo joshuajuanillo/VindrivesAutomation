@@ -19,7 +19,7 @@ public class Utility {
     public static void getDriver(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        System.setProperty("webdriver.chrome.driver","/Users/joshuajuanillo/Downloads/chromedriver/chromedriver");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\aubre\\Documents\\AUTOMATION\\chromedriver-win32\\chromedriver.exe");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
