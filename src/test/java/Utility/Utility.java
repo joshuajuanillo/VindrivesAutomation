@@ -26,6 +26,7 @@ public class Utility {
 
     public static void selectDropdown(List<WebElement> clickDealer,String dealerName) throws InterruptedException {
 
+        System.out.println(clickDealer);
         for (WebElement option : clickDealer)
         {
             if (option.getText().equals(dealerName))
