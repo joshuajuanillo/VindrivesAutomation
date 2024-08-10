@@ -55,7 +55,7 @@ public class merchandisingStepsDefinition {
             case "Tip Report":
 
                 // Select Provider
-                Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]")).click();
+//                Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]")).click();
 
                 // Locate the table
                 WebElement TipReportTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector

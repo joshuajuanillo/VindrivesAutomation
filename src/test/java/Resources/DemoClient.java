@@ -5,10 +5,10 @@ public class DemoClient {
    // Merchandising Report
    public static String DealRatingsByChennelMenu = "//body/div[@id='root']/div[2]/div[1]/ul[1]/li[2]/button[1]";
    public static String DealRatingByChannelTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]";
-   public static String TipReportTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[2]/div[2]/table[1]";
+   public static String TipReportTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]";
    public static String ChannelStatReportTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]";
    public static String PreshootReportTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[2]/div[2]/table[1]";
-   public static String VdpResultTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[1]/div[3]/table[1]";
+   public static String VdpResultTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/table[1]";
 
    public static String DealRatingsByChennelTab = "//li[contains(text(),'Deal Ratings by Channel')]";
    public static String TipReportTab = "//button[contains(text(),'Tip Report')]";

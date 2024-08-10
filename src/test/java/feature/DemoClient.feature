@@ -1,6 +1,7 @@
 Feature: Demo Client Data Health Check
   This feature deal with validating the data for each section if it has data for Demo Client
 
+  @vdpRoi
   Scenario: C96162 Verify that Total VDPs section should have value
     Given a user with a correct credentials
       | email    | jjuanillo@dealercmo.com |
@@ -27,6 +28,7 @@ Feature: Demo Client Data Health Check
 
   Scenario: C96168 Verify if Result Score is not empty
     Then the result score should show data
+
 # Needs Attention
   Scenario: C96169 Verify that Needs attention for vehicle with red results score should have value
     Then the "Red" results score has data
@@ -69,7 +71,7 @@ Feature: Demo Client Data Health Check
     Then I click "Last 90 Days"
     And the "Deal Ratings by channel" should have data
 
-  Scenario: Verify if Deal Ratings by channel column for cargurus is not showing all unknown data
+  Scenario: C96186 Verify if Deal Ratings by channel column for cargurus is not showing all unknown data
     When I navigate to the "Deal Ratings by channel" from merchandising report
     And I click "Last 7 Days"
     Then the "Deal Ratings by channel" should have data
@@ -77,10 +79,10 @@ Feature: Demo Client Data Health Check
     Then the "Deal Ratings by channel" should have data
     And I click twice the sort by function in cargurus column and data are not unknown
 
-  Scenario: Verify if Deal Ratings by channel column for AutoTrader is not showing all unknown data
+  Scenario: C96187 Verify if Deal Ratings by channel column for AutoTrader is not showing all unknown data
     And I click twice the sort by function in Autotrader column and data are not unknown
 
-  Scenario: Verify if Deal Ratings by channel column for Cargurus is not showing all unknown data
+  Scenario: C96188 Verify if Deal Ratings by channel column for Cargurus is not showing all unknown data
     And I click twice the sort by function in Cars column and data are not unknown
 
   Scenario: C168427 Verify if Tip Report has data
@@ -230,6 +232,7 @@ Feature: Demo Client Data Health Check
     Then I click "Top 10 Website Last 90 Days"
     And the "Top 10 Website" should have data
 
+## Website
   Scenario: C96646 Verify that Last 7 Days date range filter should show data
     When I navigate to the "VDP ROI" from marketing result report
     Then I click "VDP ROI Last 7 Days"
@@ -242,6 +245,42 @@ Feature: Demo Client Data Health Check
   Scenario: C96648 Verify that Last 90 Days date range filter should show data
     Then I click "VDP ROI Last 90 Days"
     And the "VDP ROI" should have data
+
+
+### Third Parties
+  @vdpRoi
+  Scenario: C96660 Verify that Last 7 Days date range filter should show data
+    When I navigate to the "VDP ROI" from marketing result report
+    Then I click "VDP ROI Last 7 Days"
+    And I click VDP ROI "Third Parties"
+    And the "VDP ROI" should have data
+
+  @vdpRoi
+  Scenario: C96661 Verify that Last Month date range filter should show data
+    Then I click "VDP ROI Last Month"
+    And the "VDP ROI" should have data
+
+  @vdpRoi
+  Scenario: C96662 Verify that Last 90 Days date range filter should show data
+    Then I click "VDP ROI Last 90 Days"
+    And the "VDP ROI" should have data
+
+ ### Combine
+  @vdpRoi
+  Scenario: C96674 Verify that Last 7 Days date range filter should show data
+    When I navigate to the "VDP ROI" from marketing result report
+    Then I click "VDP ROI Last 7 Days"
+    And I click VDP ROI "Combined"
+    And the "VDP ROI" should have data
+
+  @vdpRoi
+  Scenario: C96675 Verify that Last Month date range filter should show data
+    Then I click "VDP ROI Last Month"
+    And the "VDP ROI" should have data
+
+  @vdpRoi
+  Scenario: C96676 Verify that Last 90 Days date range filter should show data
+    Then I click "VDP ROI Last 90 Days"
+    And the "VDP ROI" should have data
     And Close Browser
-#
 
