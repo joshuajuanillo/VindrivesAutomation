@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class Utility {
     public static void getDriver(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\aubre\\Documents\\AUTOMATION\\chromedriver-win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","/Users/joshuajuanillo/Downloads/chromedriver/chromedriver");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
@@ -46,7 +47,8 @@ public class Utility {
     }
 
     public static void checkTableIfEmpty(Integer ReportTable, String DataValue){
-        if(DataValue.equalsIgnoreCase("No Data")){
+        System.out.println(DataValue);
+        if(DataValue.equalsIgnoreCase("No Data") || DataValue.equalsIgnoreCase("No results.")){
             Assert.assertTrue("Data should have data", 0 > 1);
         }else{
             Assert.assertTrue("Data should have data", 0 < ReportTable);
