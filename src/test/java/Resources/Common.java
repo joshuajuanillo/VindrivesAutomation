@@ -4,18 +4,18 @@ public class Common {
     public static String ResultSummaryQuickResultTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/table[1]";
 
     // Dealer
-    public static String DemoClient =     "//body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[7]";
-    public static String BillBrandtFord = "//body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[3]";
-    public static String CowBoyToyota = "";
+    public static String DemoClient =     "//ul[@class='styles_dropdownMenu__jok5d']/li[normalize-space(.)='Demo Client']";
+    public static String BillBrandtFord = "//ul[@class='styles_dropdownMenu__jok5d']/li[normalize-space(.)='Bill Brandt Ford']";
+    public static String CowBoyToyota = "//ul[@class='styles_dropdownMenu__jok5d']/li[normalize-space(.)='Cowboy Toyota']";
     public static String DaviesFord = "";
     public static String MosesBMW = "";
     public static String MosesOutletTeaysValley = "";
     public static String MosesOutletCorridorG = "";
     public static String MosesNissan = "";
 
-    public static String DanDeeryMotors = "//body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[4]";
+    public static String DanDeeryMotors = "//ul[@class='styles_dropdownMenu__jok5d']/li[normalize-space(.)='Dan Deery Motors']";
     public static String MosesSupercenter = "";
-    public static String DanDeeryToyota = "//body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[5]";
+    public static String DanDeeryToyota = "//ul[@class='styles_dropdownMenu__jok5d']/li[normalize-space(.)='Dan Deery Toyota']";
     public static String LostPinesToyota = "";
     public static String DeeryBrothers = "";
     public static String ValuFordChrysler = "";

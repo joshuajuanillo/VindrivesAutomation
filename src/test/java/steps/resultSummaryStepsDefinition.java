@@ -166,9 +166,6 @@ public class resultSummaryStepsDefinition {
 
     @Then("the Tippable Cargurus column should have data")
     public void the_tippable_cargurus_column_should_have_data() throws InterruptedException{
-        switch (Utility.DealerName) {
-            case "Demo Client":
-                // Locate the table
                 WebElement DemoClientTable = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
                 // Locate the specific column (e.g., the second column)
                 List<WebElement> columnCells = DemoClientTable.findElements(By.xpath(DemoClient.TippableCargurus)); // Adjust the xpath as necessary
@@ -178,11 +175,6 @@ public class resultSummaryStepsDefinition {
                     DemoClientTippableCargurus.add(cellText);
                 }
                 Utility.checkAllZeroData(DemoClientTippableCargurus);
-                break;
-            case "Davies Ford":
-                break;
-        }
-
     }
 
     @Then("the Tippable Autotrader column should have data")
@@ -210,9 +202,6 @@ public class resultSummaryStepsDefinition {
 
     @Then("the Tippable Cars dot com column should have data")
     public void the_tippable_cars_dot_com_column_should_have_data() {
-        switch (Utility.DealerName) {
-            case "Demo Client":
-                // Locate the table
                 WebElement DemoClientTable = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
 
                 // Locate the specific column (e.g., the second column)
@@ -225,17 +214,10 @@ public class resultSummaryStepsDefinition {
                     DemoClientTippableCarsDotCom.add(cellText);
                 }
                 Utility.checkAllZeroData(DemoClientTippableCarsDotCom);
-                break;
-            case "Davies Ford":
-                break;
-        }
     }
 
     @Then("the Zero Leads column should have data")
     public void the_zero_leads_column_should_have_data() {
-        switch (Utility.DealerName) {
-            case "Demo Client":
-                // Locate the table
                 WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable));// Change to the actual table ID or selector
                 List<WebElement> columnCells = null;
                 if(Utility.vehicleType.equalsIgnoreCase("Used Inventory")){
@@ -253,12 +235,6 @@ public class resultSummaryStepsDefinition {
                     zeroLeads.add(cellText);
                 }
                 Utility.checkAllZeroData(zeroLeads);
-                break;
-            case "Davies Ford":
-                break;
-            default:
-                break;
-        }
     }
 
     @Then("the Missing Photos column should have data")

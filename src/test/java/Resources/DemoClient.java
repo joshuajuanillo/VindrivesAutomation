@@ -63,10 +63,10 @@ public class DemoClient {
 
    public static String NewInventoryDemoClientZeroLeads = "//tbody/tr/td[5]";
 
-   public static String TippableCargurus = "//body[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr/td[3]";
-   public static String TippableAutotrader = "//tbody/tr/td[4]";
-   public static String TippableCarsDotCom = "//tbody/tr/td[5]";
-   public static String ZeroLeads = "//body[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr/td[5]";
+   public static String TippableCargurus = "//div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//tr/td[count( //div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//th[normalize-space(.)='Tippable CarGurus']/preceding-sibling::th) + 1]";
+   public static String TippableAutotrader = "//div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//tr/td[count( //div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//th[normalize-space(.)='Tippable Autotrader']/preceding-sibling::th) + 1]";
+   public static String TippableCarsDotCom = "//div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//tr/td[count( //div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//th[normalize-space(.)='Tippable Cars.com']/preceding-sibling::th) + 1]";
+   public static String ZeroLeads = "//div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//tr/td[count( //div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//th[normalize-space(.)='Zero Leads']/preceding-sibling::th) + 1]";
 
    public static String CargurusRankSort = "//thead/tr[1]/th[3]/div[1]/div[2]/*[1]";
    public static String AutotraderRankSort = "//body[1]/div[1]/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]/thead[1]/tr[1]/th[4]/div[1]/div[2]";
