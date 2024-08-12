@@ -1,7 +1,7 @@
 Feature: Demo Client Data Health Check
   This feature deal with validating the data for each section if it has data for Demo Client
 
-  @vdpRoi
+  @newTestCase
   Scenario: C96162 Verify that Total VDPs section should have value
     Given a user with a correct credentials
       | email    | jjuanillo@dealercmo.com |
@@ -43,17 +43,30 @@ Feature: Demo Client Data Health Check
   Scenario: C96176 Verify that tippable AutoTrader column from the quick results table should not show 0 data in all row
     Then the Tippable Autotrader column should have data
 
-  Scenario: C96177 Verify that tippable Cars.com column from the quick results table should not show 0 data in all row
-    Then the Tippable Cars dot com column should have data
-
   Scenario: C97061 Verify that Zero Leads column from the quick result table show now show all data are 0
     Then the Zero Leads column should have data
 
 ## Merchandising
+  @newTestCase
   Scenario: C96178 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Deal Ratings by channel" from merchandising report
     Then I click "Last 7 Days"
     And the "Deal Ratings by channel" should have data
+
+  Scenario: C96203 Verify that Sales Goal has value
+    Then the Sales Goal should have data
+
+  Scenario: C96204 Verify that Sales Pace has value and should match its value from the result summary page
+    Then the Sales Pace should have data and should match its value from the result summary page
+
+  Scenario: C96205 Verify that Front Line ready has value and should match its value from the result summary page
+    Then the Front Line ready should have data and should match its value from the result summary page
+
+  Scenario: C96206 Verify that Sales/FLR Ratio hase Value and should match its value from result summary page
+    Then the Sales FLR Ratio should have data and should match its value from the result summary page
+
+  Scenario: C96207 Verify that FLR to Hit Goal has value
+    Then the FLR to Hit Goal
 
   Scenario: C96179 Verify that Last Month date range filter should show data
     Then I click "Last Month"
@@ -82,13 +95,26 @@ Feature: Demo Client Data Health Check
   Scenario: C96187 Verify if Deal Ratings by channel column for AutoTrader is not showing all unknown data
     And I click twice the sort by function in Autotrader column and data are not unknown
 
-  Scenario: C96188 Verify if Deal Ratings by channel column for Cargurus is not showing all unknown data
-    And I click twice the sort by function in Cars column and data are not unknown
-
+## Tip Report
+  @newTestCase
   Scenario: C168427 Verify if Tip Report has data
     When I navigate to the "Tip Report" from merchandising report
     Then the "Tip Report" should have data
 
+  @newTestCase
+  Scenario: C168790 Verify if Tip Report has data for CarGurus
+    When I navigate to the "Tip Report" from merchandising report
+    And I select "Cargurus" provider
+    Then the "Tip Report" should have data
+
+  @newTestCase
+  Scenario: C168791 Verify if Tip Report has data for AutoTrader
+    When I navigate to the "Tip Report" from merchandising report
+    And I select "Autotrader" provider
+    Then the "Tip Report" should have data
+
+
+## Channel Stats Report
   Scenario: C96273 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Channel Stats report" from merchandising report
     Then I click "Last 7 Days"

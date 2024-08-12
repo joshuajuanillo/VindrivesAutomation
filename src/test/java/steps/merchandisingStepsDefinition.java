@@ -1,7 +1,9 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import Utility.Utility;
 import Resources.*;
@@ -53,9 +55,6 @@ public class merchandisingStepsDefinition {
                 Thread.sleep(15000);
                 break;
             case "Tip Report":
-
-                // Select Provider
-//                Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]")).click();
 
                 // Locate the table
                 WebElement TipReportTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
@@ -225,5 +224,137 @@ public class merchandisingStepsDefinition {
                 Thread.sleep(15000);
                 break;
         }
+    }
+    @Then("the Sales Goal should have data")
+    public void the_sales_goal_should_have_data() {
+        // Find the elements using Selenium
+        List<WebElement> salesGoal = Utility.driver.findElements(By.xpath("//div[@class='styles_metricCard__3b7HH styles_frontLineReadyVehicle__graph__widgets--salesGoal__vSeF5']"));
+
+        // Create an array to store the text from elements
+        String[] salesGoalArray = new String[salesGoal.size()];
+
+        // Iterate through the elements and store their text in the array
+        for (int i = 0; i < salesGoal.size(); i++) {
+            salesGoalArray[i] = salesGoal.get(i).getText();
+        }
+
+        // Print the text from the array
+        for (String text : salesGoalArray) {
+            // Split the input string by newline character '\n'
+            String[] stringArray = text.split("\n");
+            Assert.assertNotEquals("Values should not be equal","0", stringArray[1]);
+        }
+    }
+
+    @Then("the Sales Pace should have data and should match its value from the result summary page")
+    public void the_sales_pace_should_have_data_and_should_match_its_value_from_the_result_summary_page() {
+        // Find the elements using Selenium
+        List<WebElement> salesPace = Utility.driver.findElements(By.xpath("//div[@class='styles_metricCard__3b7HH styles_frontLineReadyVehicle__graph__widgets--salesPace__zqSY6']"));
+
+        // Create an array to store the text from elements
+        String[] salesPaceArray = new String[salesPace.size()];
+
+        // Iterate through the elements and store their text in the array
+        for (int i = 0; i < salesPace.size(); i++) {
+            salesPaceArray[i] = salesPace.get(i).getText();
+        }
+
+        // Print the text from the array
+        for (String text : salesPaceArray) {
+            // Split the input string by newline character '\n'
+            String[] stringArray = text.split("\n");
+            Assert.assertNotEquals("Values should not be equal","0", stringArray[1]);
+        }
+    }
+
+    @Then("the Front Line ready should have data and should match its value from the result summary page")
+    public void the_front_line_ready_should_have_data_and_should_match_its_value_from_the_result_summary_page() {
+        // Find the elements using Selenium
+        List<WebElement> frontLineReady = Utility.driver.findElements(By.xpath("//div[@class='styles_metricCard__3b7HH styles_frontLineReadyVehicle__graph__widgets--frontLineReady__lpkBF']"));
+
+        // Create an array to store the text from elements
+        String[] frontLineReadyArray = new String[frontLineReady.size()];
+
+        // Iterate through the elements and store their text in the array
+        for (int i = 0; i < frontLineReady.size(); i++) {
+            frontLineReadyArray[i] = frontLineReady.get(i).getText();
+        }
+
+        // Print the text from the array
+        for (String text : frontLineReadyArray) {
+            // Split the input string by newline character '\n'
+            String[] stringArray = text.split("\n");
+            Assert.assertNotEquals("Values should not be equal","0", stringArray[1]);
+        }
+    }
+
+    @Then("the Sales FLR Ratio should have data and should match its value from the result summary page")
+    public void the_sales_flr_ratio_should_have_data_and_should_match_its_value_from_the_result_summary_page() {
+        // Find the elements using Selenium
+        List<WebElement> salesFlrRatio = Utility.driver.findElements(By.xpath("//div[@class='styles_metricCard__3b7HH styles_frontLineReadyVehicle__graph__widgets--salesFlrRatio__unY8W']"));
+
+        // Create an array to store the text from elements
+        String[] salesFlrRatioArray = new String[salesFlrRatio.size()];
+
+        // Iterate through the elements and store their text in the array
+        for (int i = 0; i < salesFlrRatio.size(); i++) {
+            salesFlrRatioArray[i] = salesFlrRatio.get(i).getText();
+        }
+
+        // Print the text from the array
+        for (String text : salesFlrRatioArray) {
+            // Split the input string by newline character '\n'
+            String[] stringArray = text.split("\n");
+            Assert.assertNotEquals("Values should not be equal","0", stringArray[1]);
+        }
+    }
+
+    @Then("the FLR to Hit Goal")
+    public void the_flr_to_hit_goal() {
+        // Find the elements using Selenium
+        List<WebElement> flrToHitGoal = Utility.driver.findElements(By.xpath("//div[@class='styles_metricCard__3b7HH styles_frontLineReadyVehicle__graph__widgets--flrToHitGoal__PAReP']"));
+
+        // Create an array to store the text from elements
+        String[] flrToHitGoalArray = new String[flrToHitGoal.size()];
+
+        // Iterate through the elements and store their text in the array
+        for (int i = 0; i < flrToHitGoal.size(); i++) {
+            flrToHitGoalArray[i] = flrToHitGoal.get(i).getText();
+        }
+
+        // Print the text from the array
+        for (String text : flrToHitGoalArray) {
+            // Split the input string by newline character '\n'
+            String[] stringArray = text.split("\n");
+            Assert.assertNotEquals("Values should not be equal","0", stringArray[1]);
+        }
+    }
+
+    @And("I select {string} provider")
+    public void iSelectProvider(String dealerProvider) throws InterruptedException {
+        switch (dealerProvider) {
+            case "Cargurus":
+                WebElement cargurus = Utility.driver.findElement(By.xpath("//select[@class='chakra-select css-xzl4qm']"));
+                cargurus.click();
+                WebElement cargurusOption = Utility.driver.findElement(By.xpath("//option[@value='CGR']"));
+                cargurusOption.click();
+                cargurus.click();
+                break;
+            case "Autotrader":
+                WebElement Autotrader = Utility.driver.findElement(By.xpath("//select[@class='chakra-select css-xzl4qm']"));
+                Autotrader.click();
+                WebElement AutotraderOption = Utility.driver.findElement(By.xpath("//option[@value='ATC']"));
+                AutotraderOption.click();
+                Autotrader.click();
+                break;
+            case "CarsDotCom":
+                WebElement CarsDotCom = Utility.driver.findElement(By.xpath("//select[@class='chakra-select css-xzl4qm']"));
+                CarsDotCom.click();
+                WebElement CarsDotComOption = Utility.driver.findElement(By.xpath("//option[@value='CCM']"));
+                CarsDotComOption.click();
+                CarsDotCom.click();
+                break;
+        }
+        Thread.sleep(10000);
     }
 }
