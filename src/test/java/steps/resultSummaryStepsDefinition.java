@@ -270,4 +270,14 @@ public class resultSummaryStepsDefinition {
         }
         Utility.checkAllZeroData(zeroLeads);
     }
+
+    @Then("the Top Vehicle VDPs should have a list of vehicles with VDP Count")
+    public void theTopVehicleVDPSShouldHaveAListOfVehiclesWithVDPCount() {
+
+    }
+
+    @Then("the Top VDP’s by Body Style Summary should list all the available vehicle")
+    public void theTopVDPSByBodyStyleSummaryShouldListAllTheAvailableVehicle() {
+
+    }
 }

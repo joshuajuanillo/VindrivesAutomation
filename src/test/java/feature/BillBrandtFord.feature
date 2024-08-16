@@ -1,7 +1,7 @@
-Feature: Demo Client Data Health Check
+Feature: Bill Brandt Ford Data Health Check
   This feature deal with validating the data for each section if it has data for Demo Client
 
-  @newTestCase
+  @resultSummary
   Scenario: C96162 Verify that Total VDPs section should have value
     Given a user with a correct credentials
       | email    | jjuanillo@dealercmo.com |
@@ -11,43 +11,61 @@ Feature: Demo Client Data Health Check
     And I select "Bill Brandt Ford"
     Then the totalVDPs should have data
 
+  @resultSummary
   Scenario: C96163 Verify if Avg VDPs has value
     Then the Avg VDPs Vehicle should have data
 
+  @resultSummary
   Scenario: C96164 Verify if Front Line Ready has value
     Then the Front Line Ready should have data
 
+  @resultSummary
   Scenario: C96165 Verify if Sales to FLR Ratio has value
     Then the Sales to FLR Ratio should have data
 
+  @resultSummary
   Scenario: C96166 Verify if Sales Pace has value
     Then the Sales Pace should have data
 
+  @resultSummary
   Scenario: C96167 Verify if Average days to sell has value
     Then the Average days to sell have data
 
+  @resultSummary
   Scenario: C96168 Verify if Result Score is not empty
     Then the result score should show data
 
 # Needs Attention
+  @resultSummary
   Scenario: C96169 Verify that Needs attention for vehicle with red results score should have value
     Then the "Red" results score has data
 
+  @resultSummary
   Scenario: C96170 Verify that Needs attention for vehicle with yellow results score should have value
     Then the "Yellow" results score has data
 
 # Quick Result Table
+  @resultSummary
   Scenario: C96175 Verify that tippable cargurus column from the quick results table should not show 0 data in all row
     Then the Tippable Cargurus column should have data
 
+  @resultSummary
   Scenario: C96176 Verify that tippable AutoTrader column from the quick results table should not show 0 data in all row
     Then the Tippable Autotrader column should have data
 
+  @resultSummary
   Scenario: C97061 Verify that Zero Leads column from the quick result table show now show all data are 0
     Then the Zero Leads column should have data
 
+  @resultSummary
+  Scenario: C96173 Verify that Top Vehicle VDPs should have a list of vehicles with VDP Count
+    Then the Top Vehicle VDPs should have a list of vehicles with VDP Count
+
+  @resultSummary
+  Scenario: C96174 Verify that Top VDP’s by Body Style Summary should list all the available vehicle with its corresponding value
+    Then the Top VDP’s by Body Style Summary should list all the available vehicle
+
 ## Merchandising
-  @newTestCase
   Scenario: C96178 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Deal Ratings by channel" from merchandising report
     Then I click "Last 7 Days"
@@ -112,7 +130,6 @@ Feature: Demo Client Data Health Check
     When I navigate to the "Tip Report" from merchandising report
     And I select "Autotrader" provider
     Then the "Tip Report" should have data
-
 
 ## Channel Stats Report
   Scenario: C96273 Verify that Last 7 Days date range filter should show data
