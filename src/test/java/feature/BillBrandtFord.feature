@@ -1,14 +1,14 @@
 Feature: Bill Brandt Ford Data Health Check
   This feature deal with validating the data for each section if it has data for Demo Client
 
-  @resultSummary
-  Scenario: C96162 Verify that Total VDPs section should have value
-    Given a user with a correct credentials
-      | email    | jjuanillo@dealercmo.com |
-      | password | !Pass1234               |
+  @setup @resultSummary
+  Scenario: Verify if user can successfully login
     When I navigate to the Result Summary Page
     And I select vehicle type "Used Inventory"
-    And I select "Bill Brandt Ford"
+    And I select "Test Dealer"
+
+  @resultSummary
+  Scenario: C96162 Verify that Total VDPs section should have value
     Then the totalVDPs should have data
 
   @resultSummary
@@ -35,6 +35,14 @@ Feature: Bill Brandt Ford Data Health Check
   Scenario: C96168 Verify if Result Score is not empty
     Then the result score should show data
 
+  @resultSummary
+  Scenario: C96173 Verify that Top Vehicle VDPs should have a list of vehicles with VDP Count
+    Then the Top Vehicle VDPs should have a list of vehicles with VDP Count
+
+  @resultSummary
+  Scenario: C96174 Verify that Top VDP’s by Body Style Summary should list all the available vehicle with its corresponding value
+    Then the Top VDP’s by Body Style Summary should list all the available vehicle
+
 # Needs Attention
   @resultSummary
   Scenario: C96169 Verify that Needs attention for vehicle with red results score should have value
@@ -54,54 +62,61 @@ Feature: Bill Brandt Ford Data Health Check
     Then the Tippable Autotrader column should have data
 
   @resultSummary
+  Scenario: C96177 Verify that tippable Cars.com column from the quick results table should not show 0 data in all row
+    Then the Tippable Cars dot com column should have data
+
+  @resultSummary
   Scenario: C97061 Verify that Zero Leads column from the quick result table show now show all data are 0
     Then the Zero Leads column should have data
 
-  @resultSummary
-  Scenario: C96173 Verify that Top Vehicle VDPs should have a list of vehicles with VDP Count
-    Then the Top Vehicle VDPs should have a list of vehicles with VDP Count
-
-  @resultSummary
-  Scenario: C96174 Verify that Top VDP’s by Body Style Summary should list all the available vehicle with its corresponding value
-    Then the Top VDP’s by Body Style Summary should list all the available vehicle
-
-## Merchandising
+# Merchandising
+  @dealratingByChannel
   Scenario: C96178 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Deal Ratings by channel" from merchandising report
     Then I click "Last 7 Days"
     And the "Deal Ratings by channel" should have data
 
+  @dealratingByChannel
   Scenario: C96203 Verify that Sales Goal has value
     Then the Sales Goal should have data
 
+  @dealratingByChannel
   Scenario: C96204 Verify that Sales Pace has value and should match its value from the result summary page
     Then the Sales Pace should have data and should match its value from the result summary page
 
+  @dealratingByChannel
   Scenario: C96205 Verify that Front Line ready has value and should match its value from the result summary page
     Then the Front Line ready should have data and should match its value from the result summary page
 
+  @dealratingByChannel
   Scenario: C96206 Verify that Sales/FLR Ratio hase Value and should match its value from result summary page
     Then the Sales FLR Ratio should have data and should match its value from the result summary page
 
+  @dealratingByChannel
   Scenario: C96207 Verify that FLR to Hit Goal has value
     Then the FLR to Hit Goal
 
+  @dealratingByChannel
   Scenario: C96179 Verify that Last Month date range filter should show data
     Then I click "Last Month"
     And the "Deal Ratings by channel" should have data
 
+  @dealratingByChannel
   Scenario: C96180 Verify that Last 30 Days date range filter should show data
     Then I click "Last 30 Days"
     And the "Deal Ratings by channel" should have data
 
+  @dealratingByChannel
   Scenario: C96181 Verify that Last 60 Days date range filter should show data
     Then I click "Last 60 Days"
     And the "Deal Ratings by channel" should have data
 
+  @dealratingByChannel
   Scenario: C96182 Verify that Last 90 Days date range filter should show data
     Then I click "Last 90 Days"
     And the "Deal Ratings by channel" should have data
 
+  @dealratingByChannel
   Scenario: C96186 Verify if Deal Ratings by channel column for cargurus is not showing all unknown data
     When I navigate to the "Deal Ratings by channel" from merchandising report
     And I click "Last 7 Days"
@@ -110,28 +125,48 @@ Feature: Bill Brandt Ford Data Health Check
     Then the "Deal Ratings by channel" should have data
     And I click twice the sort by function in cargurus column and data are not unknown
 
+  @dealratingByChannel
   Scenario: C96187 Verify if Deal Ratings by channel column for AutoTrader is not showing all unknown data
     And I click twice the sort by function in Autotrader column and data are not unknown
 
-## Tip Report
-  @newTestCase
+  @dealratingByChannel
+  Scenario: C96188 Verify if Deal Ratings by channel column for CarsDotCom is not showing all unknown data
+    And I click twice the sort by function in Cars column and data are not unknown
+
+  @dealratingByChannel
+  Scenario: C96190 Verify if DOL is sortable and should not show 0 data in all row
+    And I click twice the sort by function in DOL column and data are not unknown
+
+# Tip Report
+  @tipReport
   Scenario: C168427 Verify if Tip Report has data
     When I navigate to the "Tip Report" from merchandising report
     Then the "Tip Report" should have data
 
-  @newTestCase
+  @tipReport
   Scenario: C168790 Verify if Tip Report has data for CarGurus
     When I navigate to the "Tip Report" from merchandising report
     And I select "Cargurus" provider
     Then the "Tip Report" should have data
 
-  @newTestCase
+  @tipReport
   Scenario: C168791 Verify if Tip Report has data for AutoTrader
-    When I navigate to the "Tip Report" from merchandising report
     And I select "Autotrader" provider
     Then the "Tip Report" should have data
 
-## Channel Stats Report
+  @tipReport
+  Scenario: C168792 Verify if Tip Report has data for CarsDotCom
+    And I select "CarsDotCom" provider
+    Then the "Tip Report" should have data
+
+  @tipReport
+  Scenario: C96211 Verify that Deal Rating is sortable and it will not show unknown data
+    When I select "Cargurus" provider
+    And I select 100 per page in pagination Vtwo
+    And the "Tip Report" should have data
+    Then I click twice the sort by function in Deal Rating column and data are not unknown
+
+# Channel Stats Report
   Scenario: C96273 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Channel Stats report" from merchandising report
     Then I click "Last 7 Days"
@@ -158,7 +193,7 @@ Feature: Bill Brandt Ford Data Health Check
     When I navigate to the "Pre Shoot report" from merchandising report
     Then the "Pre Shoot report" should have data
 
- ## VDP Result
+ # VDP Result
   Scenario: C96475 Verify that Last 7 Days date range filter should show data
     When I navigate to the VDP Result
     Then I click "Last 7 Days"

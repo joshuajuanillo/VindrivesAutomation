@@ -5,11 +5,13 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import Utility.Utility;
+import Utility.GlobalUtility;
 import Resources.*;
 
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class resultSummaryStepsDefinition {
@@ -174,30 +176,24 @@ public class resultSummaryStepsDefinition {
                     Integer cellText = Integer.valueOf(cell.getText().trim());
                     DemoClientTippableCargurus.add(cellText);
                 }
-                Utility.checkAllZeroData(DemoClientTippableCargurus);
+                GlobalUtility.checkAllZeroData(DemoClientTippableCargurus);
     }
 
     @Then("the Tippable Autotrader column should have data")
     public void the_tippable_autotrader_column_should_have_data() {
-        switch (Utility.DealerName) {
-            case "Demo Client":
-                // Locate the table
-                WebElement DemoClientTable = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable)); // Change to the actual table ID or selector
 
-                // Locate the specific column (e.g., the second column)
-                List<WebElement> columnCells = DemoClientTable.findElements(By.xpath(DemoClient.TippableAutotrader)); // Adjust the xpath as necessary
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath(DemoClient.TippableAutotrader)); // Adjust the xpath as necessary
 
-                ArrayList<Integer> DemoClientTippableAutoTrader = new ArrayList<>();
+        ArrayList<Integer> DemoClientTippableAutoTrader = new ArrayList<>();
 
-                for (WebElement cell : columnCells) {
-                    Integer cellText = Integer.valueOf(cell.getText().trim());
-                    DemoClientTippableAutoTrader.add(cellText);
-                }
-                Utility.checkAllZeroData(DemoClientTippableAutoTrader);
-                break;
-            case "Davies Ford":
-                break;
+        for (WebElement cell : columnCells) {
+            Integer cellText = Integer.valueOf(cell.getText().trim());
+            DemoClientTippableAutoTrader.add(cellText);
         }
+        GlobalUtility.checkAllZeroData(DemoClientTippableAutoTrader);
     }
 
     @Then("the Tippable Cars dot com column should have data")
@@ -213,14 +209,14 @@ public class resultSummaryStepsDefinition {
                     Integer cellText = Integer.valueOf(cell.getText().trim());
                     DemoClientTippableCarsDotCom.add(cellText);
                 }
-                Utility.checkAllZeroData(DemoClientTippableCarsDotCom);
+        GlobalUtility.checkAllZeroData(DemoClientTippableCarsDotCom);
     }
 
     @Then("the Zero Leads column should have data")
     public void the_zero_leads_column_should_have_data() {
                 WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable));// Change to the actual table ID or selector
                 List<WebElement> columnCells = null;
-                if(Utility.vehicleType.equalsIgnoreCase("Used Inventory")){
+                if(GlobalUtility.vehicleType.equalsIgnoreCase("Used Inventory")){
                     // Locate the specific column (e.g., the second column)
                     columnCells = table.findElements(By.xpath(DemoClient.ZeroLeads)); // Adjust the xpath as necessary
                 }else{
@@ -234,7 +230,7 @@ public class resultSummaryStepsDefinition {
                     Integer cellText = Integer.valueOf(cell.getText().trim());
                     zeroLeads.add(cellText);
                 }
-                Utility.checkAllZeroData(zeroLeads);
+        GlobalUtility.checkAllZeroData(zeroLeads);
     }
 
     @Then("the Missing Photos column should have data")
@@ -251,7 +247,7 @@ public class resultSummaryStepsDefinition {
             Integer cellText = Integer.valueOf(cell.getText().trim());
             zeroLeads.add(cellText);
         }
-        Utility.checkAllZeroData(zeroLeads);
+        GlobalUtility.checkAllZeroData(zeroLeads);
     }
 
     @Then("the Less than fifty Vdps column should have data")
@@ -268,16 +264,97 @@ public class resultSummaryStepsDefinition {
             Integer cellText = Integer.valueOf(cell.getText().trim());
             zeroLeads.add(cellText);
         }
-        Utility.checkAllZeroData(zeroLeads);
+        GlobalUtility.checkAllZeroData(zeroLeads);
     }
 
     @Then("the Top Vehicle VDPs should have a list of vehicles with VDP Count")
-    public void theTopVehicleVDPSShouldHaveAListOfVehiclesWithVDPCount() {
+    public void theTopVehicleVDPSShouldHaveAListOfVehiclesWithVDPCount() throws InterruptedException {
+        String DataValue = "";
+        // Locate the table
+        WebElement TopVehicleVDPSTable = Utility.driver.findElement(By.xpath(DemoClient.TopVehicleVDPs)); // Change to the actual table ID or selector
+        // Locate the table body rows (assuming tbody is used for data rows)
+        List<WebElement> TopVehicleVDPSTableRows = TopVehicleVDPSTable.findElements(By.xpath("//body[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr"));
+        System.out.println("Row Count " + TopVehicleVDPSTableRows.size());
 
+        // Check if the table body has data rows
+        for (WebElement row : TopVehicleVDPSTableRows) {
+            DataValue = row.getText();
+        }
+
+        GlobalUtility.checkTableIfEmpty(TopVehicleVDPSTableRows.size(), DataValue);
+        Thread.sleep(15000);
     }
 
     @Then("the Top VDP’s by Body Style Summary should list all the available vehicle")
     public void theTopVDPSByBodyStyleSummaryShouldListAllTheAvailableVehicle() {
 
+        // Find the elements using Selenium
+        List<WebElement> TopVdpsByBodyStyle = Utility.driver.findElements(By.xpath("//div[@class='styles_topVDP__table__3mYn6']"));
+
+        // Create an array to store the text from elements
+        String[] TopVdpsByBodyStyleArray = new String[TopVdpsByBodyStyle.size()];
+
+        // Iterate through the elements and store their text in the array
+        for (int i = 0; i < TopVdpsByBodyStyle.size(); i++) {
+            TopVdpsByBodyStyleArray[i] = TopVdpsByBodyStyle.get(i).getText();
+        }
+        System.out.println("Hello" + Arrays.toString(TopVdpsByBodyStyleArray));
+        // Print the text from the array
+        String[] stringArray = new String[0];
+        for (String text : TopVdpsByBodyStyleArray) {
+            // Split the input string by newline character '\n'
+            stringArray = text.split("\n");
+        }
+        System.out.println("Actual Count : " + stringArray.length + stringArray[1]);
+        if(stringArray.length != 2 && !stringArray[1].equals("No Data")){
+            Assert.assertNotEquals("Has Table" , 3, stringArray.length);
+        }else{
+            Assert.assertTrue("Table has Data", false   );
+        }
+    }
+
+    @When("the {string} results score has data")
+    public void the_results_score_has_data(String resultColor) {
+        switch (resultColor) {
+            case "Red":
+                // Find the elements using Selenium
+                List<WebElement> NeedAttentionRed = Utility.driver.findElements(By.xpath(NeedAttention.RedNeedAttention));
+
+                // Create an array to store the text from elements
+                String[] NeedAttentionRedArray = new String[NeedAttentionRed.size()];
+
+                // Iterate through the elements and store their text in the array
+                for (int i = 0; i < NeedAttentionRed.size(); i++) {
+                    NeedAttentionRedArray[i] = NeedAttentionRed.get(i).getText();
+                }
+                System.out.println("Hello" + Arrays.toString(NeedAttentionRedArray));
+                // Print the text from the array
+                for (String text : NeedAttentionRedArray) {
+                    // Split the input string by newline character '\n'
+                    String[] stringArray = text.split("\n");
+
+                    Assert.assertNotEquals("Values should not be equal","0", stringArray[0]);
+                }
+                break;
+            case "Yellow":
+                // Find the elements using Selenium
+                List<WebElement> NeedAttentionYellow = Utility.driver.findElements(By.xpath(NeedAttention.YellowNeedAttention));
+
+                // Create an array to store the text from elements
+                String[] NeedAttentionYellowArray = new String[NeedAttentionYellow.size()];
+
+                // Iterate through the elements and store their text in the array
+                for (int i = 0; i < NeedAttentionYellow.size(); i++) {
+                    NeedAttentionYellowArray[i] = NeedAttentionYellow.get(i).getText();
+                }
+                System.out.println("Hello" + Arrays.toString(NeedAttentionYellowArray));
+                // Print the text from the array
+                for (String text : NeedAttentionYellowArray) {
+                    // Split the input string by newline character '\n'
+                    String[] stringArray = text.split("\n");
+                    Assert.assertNotEquals("Values should not be equal","0", stringArray[0]);
+                }
+                break;
+        }
     }
 }

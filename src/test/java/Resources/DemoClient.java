@@ -2,10 +2,13 @@ package Resources;
 
 public class DemoClient {
 
+   //ResultSummary
+   public static String TopVehicleVDPs = "//div[@class='styles_tableContainer__daXYB']//table[@class='styles_table__0+Z02']";
+
    // Merchandising Report
    public static String DealRatingsByChennelMenu = "//body/div[@id='root']/div[2]/div[1]/ul[1]/li[2]/button[1]";
    public static String DealRatingByChannelTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]";
-   public static String TipReportTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]";
+   public static String TipReportTable = "//table[@class='chakra-table css-5605sr']";
    public static String ChannelStatReportTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]";
    public static String PreshootReportTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[2]/div[2]/table[1]";
    public static String VdpResultTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/table[1]";
@@ -63,13 +66,17 @@ public class DemoClient {
 
    public static String NewInventoryDemoClientZeroLeads = "//tbody/tr/td[5]";
 
+   // Provider Columns
    public static String TippableCargurus = "//div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//tr/td[count( //div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//th[normalize-space(.)='Tippable CarGurus']/preceding-sibling::th) + 1]";
    public static String TippableAutotrader = "//div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//tr/td[count( //div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//th[normalize-space(.)='Tippable Autotrader']/preceding-sibling::th) + 1]";
    public static String TippableCarsDotCom = "//div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//tr/td[count( //div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//th[normalize-space(.)='Tippable Cars.com']/preceding-sibling::th) + 1]";
    public static String ZeroLeads = "//div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//tr/td[count( //div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//th[normalize-space(.)='Zero Leads']/preceding-sibling::th) + 1]";
 
-   public static String CargurusRankSort = "//thead/tr[1]/th[3]/div[1]/div[2]/*[1]";
-   public static String AutotraderRankSort = "//body[1]/div[1]/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]/thead[1]/tr[1]/th[4]/div[1]/div[2]";
-   public static String CarsDotCom = "//body[1]/div[1]/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]/thead[1]/tr[1]/th[5]/div[1]/div[2]";
-
+   // Sorting Table
+   public static String CargurusRankSort = "//th[@id='cgr_deal_rating']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
+   public static String AutotraderRankSort = "//th[@id='atc_deal_rating']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
+   public static String CarsDotComSort = "//th[@id='ccm_deal_rating']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
+   public static String DolSort = "//th[@id='dol']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
+   public static String PriceSort = "//th[@id='price']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
+   public static String PhotoSort = "//th[@id='photos_count']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
 }

@@ -6,10 +6,12 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import Utility.Utility;
+import Utility.GlobalUtility;
 import Resources.*;
 
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class merchandisingStepsDefinition {
@@ -51,7 +53,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
 
-                Utility.checkTableIfEmpty(DealRatingByChannelTableDataRows.size(), DataValue);
+                GlobalUtility.checkTableIfEmpty(DealRatingByChannelTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Tip Report":
@@ -67,7 +69,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
 
-                Utility.checkTableIfEmpty(TipReportTableDataRows.size(), DataValue);
+                GlobalUtility.checkTableIfEmpty(TipReportTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Channel Stats report":
@@ -81,7 +83,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : ChannelStatReportTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(ChannelStatReportTableDataRows.size() , DataValue );
+                GlobalUtility.checkTableIfEmpty(ChannelStatReportTableDataRows.size() , DataValue );
                 Thread.sleep(15000);
                 break;
             case "Pre Shoot report":
@@ -95,7 +97,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : PreshootReportTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(PreshootReportTableDataRows.size(), DataValue);
+                GlobalUtility.checkTableIfEmpty(PreshootReportTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "VDP Result":
@@ -109,7 +111,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : VdpResultTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(VdpResultTableDataRows.size(), DataValue);
+                GlobalUtility.checkTableIfEmpty(VdpResultTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Leads":
@@ -123,7 +125,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : LeadsTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(LeadsTableDataRows.size(), DataValue);
+                GlobalUtility.checkTableIfEmpty(LeadsTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Most VDPs":
@@ -137,7 +139,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : MostVdpsTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(MostVdpsTableDataRows.size() , DataValue);
+                GlobalUtility.checkTableIfEmpty(MostVdpsTableDataRows.size() , DataValue);
                 Thread.sleep(15000);
                 break;
             case "Least VDPs":
@@ -150,7 +152,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : LeastVdpsTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(LeastVdpsTableDataRows.size(), DataValue);
+                GlobalUtility.checkTableIfEmpty(LeastVdpsTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Days On Lot":
@@ -164,7 +166,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : DaysOnLotTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(DaysOnLotTableDataRows.size(), DataValue);
+                GlobalUtility.checkTableIfEmpty(DaysOnLotTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Budget ROI":
@@ -178,7 +180,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : BudgetRoiTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(BudgetRoiTableDataRows.size(), DataValue);
+                GlobalUtility.checkTableIfEmpty(BudgetRoiTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Vdps by Channel":
@@ -192,7 +194,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : VdpsByChannelTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(VdpsByChannelTableDataRows.size(), DataValue);
+                GlobalUtility.checkTableIfEmpty(VdpsByChannelTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "Top 10 Website":
@@ -206,7 +208,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : TopTenWebsiteTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(TopTenWebsiteTableDataRows.size() , DataValue);
+                GlobalUtility.checkTableIfEmpty(TopTenWebsiteTableDataRows.size() , DataValue);
                 Thread.sleep(15000);
                 break;
             case "VDP ROI":
@@ -220,7 +222,7 @@ public class merchandisingStepsDefinition {
                 for (WebElement row : VdpRoiTableDataRows) {
                     DataValue = row.getText();
                 }
-                Utility.checkTableIfEmpty(VdpRoiTableDataRows.size(), DataValue);
+                GlobalUtility.checkTableIfEmpty(VdpRoiTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
         }
@@ -326,6 +328,7 @@ public class merchandisingStepsDefinition {
         for (String text : flrToHitGoalArray) {
             // Split the input string by newline character '\n'
             String[] stringArray = text.split("\n");
+            System.out.println("here" + stringArray[1]);
             Assert.assertNotEquals("Values should not be equal","0", stringArray[1]);
         }
     }
@@ -356,5 +359,125 @@ public class merchandisingStepsDefinition {
                 break;
         }
         Thread.sleep(10000);
+    }
+
+    @Then("I click twice the sort by function in cargurus column and data are not unknown")
+    public void i_click_twice_the_sort_by_function_in_cargurus_column_and_data_are_not_unknown() throws InterruptedException {
+        Utility.driver.findElement(By.xpath(DemoClient.CargurusRankSort)).click();
+
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='CarGurus']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)).click();
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='CarGurus']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @Then("I click twice the sort by function in Autotrader column and data are not unknown")
+    public void i_click_twice_the_sort_by_function_in_autotrader_column_and_data_are_not_unknown() throws InterruptedException {
+        Utility.driver.findElement(By.xpath(DemoClient.AutotraderRankSort)).click();
+
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Autotrader']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)).click();
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Autotrader']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @Then("I click twice the sort by function in Cars column and data are not unknown")
+    public void i_click_twice_the_sort_by_function_in_cars_column_and_data_are_not_unknown() throws InterruptedException {
+        Utility.driver.findElement(By.xpath(DemoClient.CarsDotComSort)).click();
+
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Cars.com']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)).click();
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Cars.com']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @And("I click twice the sort by function in DOL column and data are not unknown")
+    public void iClickTwiceTheSortByFunctionInDOLColumnAndDataAreNotUnknown() throws InterruptedException {
+        Utility.driver.findElement(By.xpath(DemoClient.DolSort)).click();
+
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='DOL']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        Utility.driver.findElement(By.xpath(DemoClient.DolSort)).click();
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='DOL']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
     }
 }
