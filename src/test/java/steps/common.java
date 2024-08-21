@@ -16,10 +16,10 @@ public class common {
 
     @Before("@setup") public static void setup() throws InterruptedException {
         Utility.getDriver();
-        Utility.driver.get("https://uat.vindrives.app");
+        Utility.driver.get("https://vindrives.app");
         Utility.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Utility.driver.findElement(By.cssSelector("input[name=email]")).sendKeys("jjuanillo@dealercmo.com");
-        Utility.driver.findElement(By.cssSelector("input[name=password]")).sendKeys("DealerCMO4321@");
+        Utility.driver.findElement(By.cssSelector("input[name=password]")).sendKeys("!Pass1234");
         Thread.sleep(30000);
         Utility.driver.findElement(By.xpath("//button[contains(text(),'Sign in')]")).click();
         Thread.sleep(10000);

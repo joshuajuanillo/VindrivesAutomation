@@ -14,7 +14,7 @@ public class DemoClient {
    public static String VdpResultTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/table[1]";
 
    public static String DealRatingsByChennelTab = "//li[contains(text(),'Deal Ratings by Channel')]";
-   public static String TipReportTab = "//button[normalize-space()='Tip Report']";
+   public static String TipReportTab = "//li[contains(text(),'Tip Report')]";
    public static String ChannelStatReportTab = "//button[normalize-space()='Channel Stats Report']";
    public static String PreShootReportTab = "//button[normalize-space()='Pre Shoot Report']";
 

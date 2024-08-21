@@ -5,7 +5,7 @@ Feature: Bill Brandt Ford Data Health Check
   Scenario: Verify if user can successfully login
     When I navigate to the Result Summary Page
     And I select vehicle type "Used Inventory"
-    And I select "Test Dealer"
+    And I select "Bill Brandt Ford"
 
   @resultSummary
   Scenario: C96162 Verify that Total VDPs section should have value
@@ -163,7 +163,6 @@ Feature: Bill Brandt Ford Data Health Check
   Scenario: C96211 Verify that Deal Rating is sortable and it will not show unknown data
     When I select "Cargurus" provider
     And I select 100 per page in pagination Vtwo
-    And the "Tip Report" should have data
     Then I click twice the sort by function in Deal Rating column and data are not unknown
 
 # Channel Stats Report

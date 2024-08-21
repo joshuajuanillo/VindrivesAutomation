@@ -23,6 +23,7 @@ public class merchandisingStepsDefinition {
                 Utility.driver.findElement(By.xpath(DemoClient.DealRatingsByChennelTab)).click();
                 break;
             case "Tip Report":
+                Utility.driver.findElement(By.xpath(DemoClient.DealRatingsByChennelMenu)).click();
                 Utility.driver.findElement(By.xpath(DemoClient.TipReportTab)).click();
                 Thread.sleep(10000);
                 break;
