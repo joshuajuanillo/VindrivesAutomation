@@ -5,7 +5,7 @@ Feature: Bill Brandt Ford Data Health Check
   Scenario: Verify if user can successfully login
     When I navigate to the Result Summary Page
     And I select vehicle type "Used Inventory"
-    And I select "Bill Brandt Ford"
+    And I select "Demo Client"
 
   @resultSummary
   Scenario: C96162 Verify that Total VDPs section should have value
@@ -143,49 +143,136 @@ Feature: Bill Brandt Ford Data Health Check
     When I navigate to the "Tip Report" from merchandising report
     Then the "Tip Report" should have data
 
+#### TipReport
+#### Provider : AutoTrader
   @tipReport
   Scenario: C168790 Verify if Tip Report has data for CarGurus
     When I navigate to the "Tip Report" from merchandising report
     And I select "Cargurus" provider
+    And I select 100 per page in pagination Vtwo
     Then the "Tip Report" should have data
 
   @tipReport
-  Scenario: C168791 Verify if Tip Report has data for AutoTrader
+  Scenario: C96242 Verify that Deal Rating is sortable and it will not show unknown data
+    Then I click twice the sort by function in Deal Rating column and data are not unknown
+
+  @tipReport
+  Scenario: C96243 Verify that Price is sortable and all data should have value
+    Then I click twice the sort by function in Price column and data are not unknown
+
+  @tipReport
+  Scenario: C96244 Verify that New Deal Rating is sortable and it will not show unknown data
+    Then I click twice the sort by function in New Deal Rating column and data are not unknown
+
+  @tipReport
+  Scenario: C96245 Verify that New Price is sortable and all data should have value
+    Then I click twice the sort by function in New Price column and data are not unknown
+
+  @tipReport
+  Scenario: C96246 Verify that Price change is sortable and all data should have value
+    Then I click twice the sort by function in Price Change column and data are not unknown
+
+  @tipReport
+  Scenario: C96247 Verify that Age is sortable and all data should have value
+    Then I click twice the sort by function in Age column and data are not unknown
+
+##### Provider : AutoTrader
+  @tipReport
+  Scenario: C168791 Verify if Tip Report has data for Autotrader
+    When I navigate to the "Tip Report" from merchandising report
     And I select "Autotrader" provider
+    And I select 100 per page in pagination Vtwo
     Then the "Tip Report" should have data
 
+  @tipReport
+  Scenario: C96220 Verify that Deal Rating is sortable and it will not show unknown data
+    Then I click twice the sort by function in Deal Rating column and data are not unknown
+
+  @tipReport
+  Scenario: C96221 Verify that Price is sortable and all data should have value
+    Then I click twice the sort by function in Price column and data are not unknown
+
+  @tipReport
+  Scenario: C96222 Verify that New Deal Rating is sortable and it will not show unknown data
+    Then I click twice the sort by function in New Deal Rating column and data are not unknown
+
+  @tipReport
+  Scenario: C96223 Verify that New Price is sortable and all data should have value
+    Then I click twice the sort by function in New Price column and data are not unknown
+
+  @tipReport
+  Scenario: C96224 Verify that Price change is sortable and all data should have value
+    Then I click twice the sort by function in Price Change column and data are not unknown
+
+  @tipReport
+  Scenario: C96227 Verify that Price at Great Deal Rating is sortable and all data should have value
+    Then I click twice the sort by function in Price at Great Deal Rating column and data are not unknown
+
+  @tipReport
+  Scenario: C96227 Verify that Great Deal Rating is sortable and all data should have value
+    Then I click twice the sort by function in Great Deal Rating column and data are not unknown
+
+  @tipReport
+  Scenario: C96228 Verify that Price change at Great Deal Rating is sortable and all data should have value
+    Then I click twice the sort by function in Price Change at Great Deal Rating column and data are not unknown
+
+  @tipReport
+  Scenario: C96225 Verify that Age is sortable and it will not show unknown data
+    Then I click twice the sort by function in Age column and data are not unknown
+
+##### Provider : CarsDotCom
   @tipReport
   Scenario: C168792 Verify if Tip Report has data for CarsDotCom
+    When I navigate to the "Tip Report" from merchandising report
     And I select "CarsDotCom" provider
+    And I select 100 per page in pagination Vtwo
     Then the "Tip Report" should have data
 
   @tipReport
   Scenario: C96211 Verify that Deal Rating is sortable and it will not show unknown data
-    When I select "Cargurus" provider
-    And I select 100 per page in pagination Vtwo
     Then I click twice the sort by function in Deal Rating column and data are not unknown
+
+  @tipReport
+  Scenario: C96212 Verify that Price is sortable and all data should have value
+    Then I click twice the sort by function in Price column and data are not unknown
+
+  @tipReport
+  Scenario: C96213 Verify that New Deal Rating is sortable and it will not show unknown data
+    Then I click twice the sort by function in New Deal Rating column and data are not unknown
+
+  @tipReport
+  Scenario: C96214 Verify that New Price is sortable and all data should have value
+    Then I click twice the sort by function in New Price column and data are not unknown
+
+  @tipReport
+  Scenario: C96215 Verify that Price change is sortable and all data should have value
+    Then I click twice the sort by function in Price Change column and data are not unknown
+
+  @tipReport
+  Scenario: C96216 Verify that Age is sortable and it will not show unknown data
+    Then I click twice the sort by function in Age column and data are not unknown
 
 # Channel Stats Report
   Scenario: C96273 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Channel Stats report" from merchandising report
-    Then I click "Last 7 Days"
+    Then I click "Last 7 Days" V2
     And the "Channel Stats report" should have data
 
   Scenario: C96274 Verify that Last Month date range filter should show data
-    Then I click "Last Month"
+    Then I click "Last Month" V2
     And the "Channel Stats report" should have data
 
   Scenario: C96275 Verify that Last 30 Days date range filter should show data
     When I navigate to the "Channel Stats report" from merchandising report
-    Then I click "Last 30 Days"
+    Then I click "Last 30 Days" V2
     And the "Channel Stats report" should have data
 
   Scenario: C96276 Verify that Last 60 Days date range filter should show data
-    Then I click "Last 60 Days"
+    Then I click "Last 60 Days" V2
     And the "Channel Stats report" should have data
 
   Scenario: C96277 Verify that Last 90 Days date range filter should show data
-    Then I click "Last 90 Days"
+    Then I click "Last 90 Days" V2
     And the "Channel Stats report" should have data
 
   Scenario: C168428 Verify if Pre Shoot report has data
@@ -195,20 +282,20 @@ Feature: Bill Brandt Ford Data Health Check
  # VDP Result
   Scenario: C96475 Verify that Last 7 Days date range filter should show data
     When I navigate to the VDP Result
-    Then I click "Last 7 Days"
+    Then I click "Last 7 Days" V2
     And the "VDP Result" should have data
 
   Scenario: C96476 Verify that Last Month date range filter should show data
     When I navigate to the VDP Result
-    Then I click "VDP Result Last Month"
+    Then I click "VDP Result Last Month" V2
     And the "VDP Result" should have data
 
   Scenario: C96479 Verify that All time data range filter will show data
     When I navigate to the VDP Result
-    Then I click "All Time"
+    Then I click "All Time" V2
     And the "VDP Result" should have data
 
-### Advance Report
+## Advance Report
   Scenario: C96495 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Leads" from advance Report
     Then I click "Last 7 Days"

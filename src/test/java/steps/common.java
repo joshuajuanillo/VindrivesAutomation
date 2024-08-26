@@ -187,8 +187,37 @@ public class common {
         Thread.sleep(10000);
     }
 
+    @Then("I click {string} V2")
+    public void iClickV2(String DateFilter) {
+        Utility.driver.findElement(By.xpath(Common.LastSevenDays)).click();
+        switch (DateFilter) {
+            case "Last 7 Days":
+                Utility.driver.findElement(By.xpath(Common.LastSevenDaysV2)).click();
+                break;
+            case "Last Month":
+                Utility.driver.findElement(By.xpath(Common.LastMonthV2)).click();
+                break;
+            case "All Time":
+                Utility.driver.findElement(By.xpath(Common.AllTimeV2)).click();
+                break;
+            case "Last 30 Days":
+                Utility.driver.findElement(By.xpath(Common.LastThirtyDaysV2)).click();
+                break;
+            case "Last 60 Days":
+                Utility.driver.findElement(By.xpath(Common.LastSixtyDaysV2)).click();
+                break;
+            case "Last 90 Days":
+                Utility.driver.findElement(By.xpath(Common.LastNinetyDaysV2)).click();
+                break;
+            default:
+                break;
+        }
+    }
+
     @Then("Close Browser")
     public void close_browser() {
         Utility.driver.quit();
     }
+
+
 }

@@ -77,7 +77,7 @@ public class merchandisingStepsDefinition {
                 // Locate the table
                 WebElement ChannelStatReportTable = Utility.driver.findElement(By.xpath(DemoClient.ChannelStatReportTable)); // Change to the actual table ID or selector
                 // Locate the table body rows (assuming tbody is used for data rows)
-                List<WebElement> ChannelStatReportTableDataRows = ChannelStatReportTable.findElements(By.xpath("//tbody[1]/tr"));
+                List<WebElement> ChannelStatReportTableDataRows = ChannelStatReportTable.findElements(By.xpath("//tbody/tr"));
                 System.out.println("Row Count " + ChannelStatReportTableDataRows.size());
 
                 // Check if the table body has data rows

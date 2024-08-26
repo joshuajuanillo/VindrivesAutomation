@@ -1,14 +1,12 @@
 package steps;
 
-import Resources.BillBrandtFord;
-import Resources.Common;
 import Resources.DemoClient;
 import Utility.Utility;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import Utility.GlobalUtility;
-import org.slf4j.helpers.Util;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +31,14 @@ public class dealsRatingByChannel {
 
     @Then("I click twice the sort by function in Deal Rating column and data are not unknown")
     public void iClickTwiceTheSortByFunctionInDealRatingColumnAndDataAreNotUnknown() throws InterruptedException {
-        Utility.driver.findElement(By.xpath("//th[@id='deal_rating']//div[@class='css-4g6ai3']")).click();
+        // Scroll to the element using Actions
+        Actions actions = new Actions(Utility.driver);
 
+        WebElement dealRatingSort =  Utility.driver.findElement(By.xpath("//th[@id='deal_rating']//div[@class='css-4g6ai3']"));
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+
+        Thread.sleep(10000);
         // Locate the table
         WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
 
@@ -47,7 +51,11 @@ public class dealsRatingByChannel {
             DemoClientCargurusDealsByRating.add(cellText);
         }
 
-        Utility.driver.findElement(By.xpath("//th[@id='deal_rating']//div[@class='css-4g6ai3']")).click();
+        System.out.println("Tip Report result: " + DemoClientCargurusDealsByRating);
+
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+        Thread.sleep(10000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Deal Rating']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -58,6 +66,283 @@ public class dealsRatingByChannel {
         }
 
         GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @Then("I click twice the sort by function in Price column and data are not unknown")
+    public void iClickTwiceTheSortByFunctionInPriceColumnAndDataAreNotUnknown() throws InterruptedException {
+        // Scroll to the element using Actions
+        Actions actions = new Actions(Utility.driver);
+
+        WebElement dealRatingSort =  Utility.driver.findElement(By.xpath("//th[@id='price']//div[@class='css-4g6ai3']"));
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+
+        Thread.sleep(10000);
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Price']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        System.out.println("Price result: " + DemoClientCargurusDealsByRating);
+
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+        Thread.sleep(10000);
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Price']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @Then("I click twice the sort by function in New Deal Rating column and data are not unknown")
+    public void iClickTwiceTheSortByFunctionInNewDealRatingColumnAndDataAreNotUnknown() throws InterruptedException {
+        // Scroll to the element using Actions
+        Actions actions = new Actions(Utility.driver);
+
+        WebElement dealRatingSort =  Utility.driver.findElement(By.xpath("//th[@id='new_deal_rating']//div[@class='css-4g6ai3']"));
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+
+        Thread.sleep(10000);
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='New Deal Rating']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        System.out.println("New Deal Rating result: " + DemoClientCargurusDealsByRating);
+
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+        Thread.sleep(10000);
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='New Deal Rating']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @Then("I click twice the sort by function in New Price column and data are not unknown")
+    public void iClickTwiceTheSortByFunctionInNewPriceColumnAndDataAreNotUnknown() throws InterruptedException {
+        // Scroll to the element using Actions
+        Actions actions = new Actions(Utility.driver);
+
+        WebElement dealRatingSort =  Utility.driver.findElement(By.xpath("//th[@id='new_price']//div[@class='css-4g6ai3']"));
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+
+        Thread.sleep(10000);
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='New Price']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        System.out.println("New Price result: " + DemoClientCargurusDealsByRating);
+
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+        Thread.sleep(10000);
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='New Price']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @Then("I click twice the sort by function in Price Change column and data are not unknown")
+    public void iClickTwiceTheSortByFunctionInPriceChangeColumnAndDataAreNotUnknown() throws InterruptedException {
+        // Scroll to the element using Actions
+        Actions actions = new Actions(Utility.driver);
+
+        WebElement dealRatingSort =  Utility.driver.findElement(By.xpath("//th[@id='price_change']//div[@class='css-4g6ai3']"));
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+
+        Thread.sleep(10000);
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Price Change']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        System.out.println("Price Change result: " + DemoClientCargurusDealsByRating);
+
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+        Thread.sleep(10000);
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Price Change']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @Then("I click twice the sort by function in Great Deal Rating column and data are not unknown")
+    public void iClickTwiceTheSortByFunctionInGreatDealRatingColumnAndDataAreNotUnknown() throws InterruptedException {
+        // Scroll to the element using Actions
+        Actions actions = new Actions(Utility.driver);
+
+        WebElement dealRatingSort =  Utility.driver.findElement(By.xpath("//th[@id='great_deal_rating']//div[@class='css-4g6ai3']"));
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+
+        Thread.sleep(10000);
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Great Deal rating']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        System.out.println("Great Deal Rating result: " + DemoClientCargurusDealsByRating);
+
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+        Thread.sleep(10000);
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Great Deal Rating']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @Then("I click twice the sort by function in Price at Great Deal Rating column and data are not unknown")
+    public void iClickTwiceTheSortByFunctionInPriceAtGreatDealRatingColumnAndDataAreNotUnknown() throws InterruptedException {
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Price at Great Deal Rating']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @Then("I click twice the sort by function in Price Change at Great Deal Rating column and data are not unknown")
+    public void iClickTwiceTheSortByFunctionInPriceChangeAtGreatDealRatingColumnAndDataAreNotUnknown() throws InterruptedException {
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Price at Great Deal Rating']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        System.out.println("Price Change at Great Deal Rating result: " + DemoClientCargurusDealsByRating);
+
+        GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @Then("I click twice the sort by function in Age column and data are not unknown")
+    public void iClickTwiceTheSortByFunctionInAgeColumnAndDataAreNotUnknown() throws InterruptedException {
+        // Scroll to the element using Actions
+        Actions actions = new Actions(Utility.driver);
+
+        WebElement dealRatingSort =  Utility.driver.findElement(By.xpath("//th[@id='age']//div[@class='css-4g6ai3']"));
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+
+        Thread.sleep(10000);
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Age']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        System.out.println("Age result: " + DemoClientCargurusDealsByRating);
+
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+        Thread.sleep(10000);
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Age']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
         Thread.sleep(20000);
     }
 }

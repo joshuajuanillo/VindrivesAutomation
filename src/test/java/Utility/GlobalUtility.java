@@ -43,6 +43,20 @@ public class GlobalUtility {
     public static void checkAllUnkownData(ArrayList<String> column){
         System.out.println("Array List " + column);
         boolean allUnknown = column.stream().allMatch(col -> col.equals("Unknown"));
+        System.out.println("All Unknown List ? " + allUnknown);
+        Assert.assertNotEquals("Values should not be true",true, allUnknown);
+    }
+
+    public static void checkAllNullData(ArrayList<String> column){
+        System.out.println("Array List " + column);
+        boolean allUnknown = column.stream().allMatch(col -> col.equals(""));
+        System.out.println("All Null List ? " + allUnknown);
+        Assert.assertNotEquals("Values should not be true",true, allUnknown);
+    }
+
+    public static void checkIfAllZeroData(ArrayList<String> column){
+        System.out.println("Array List " + column);
+        boolean allUnknown = column.stream().allMatch(col -> col.equals("0"));
         System.out.println("All Zero List ? " + allUnknown);
         Assert.assertNotEquals("Values should not be true",true, allUnknown);
     }

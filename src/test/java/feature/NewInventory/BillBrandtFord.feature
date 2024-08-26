@@ -37,31 +37,37 @@ Feature: Bill Brandt Ford Data Health Check
     Then the "Yellow" results score has data
 
 # Quick Result Table
-  Scenario: Verify that Zero Leads column from the quick result table show now show all data are 0
+  Scenario: C97058 	Verify that Missing Photos column from the quick results table should not show 0 data in all row
+    Then the Missing Photos column should have data
+
+  Scenario: C97059 Verify that Less than 50 VDPs column from the quick results table should not show 0 data in all row
+    Then the Less than fifty Vdps column should have data
+
+  Scenario: C97062 Verify that Zero Leads column from the quick result table show now show all data are 0
     Then the Zero Leads column should have data
 
 ## Merchandising
 
   Scenario: C103280 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Channel Stats report" from merchandising report
-    Then I click "Last 7 Days"
+    Then I click "Last 7 Days" V2
     And the "Channel Stats report" should have data
 
   Scenario: C103281 Verify that Last Month date range filter should show data
-    Then I click "Last Month"
+    Then I click "Last Month" V2
     And the "Channel Stats report" should have data
 
   Scenario: C103282 Verify that Last 30 Days date range filter should show data
     When I navigate to the "Channel Stats report" from merchandising report
-    Then I click "Last 30 Days"
+    Then I click "Last 30 Days" V2
     And the "Channel Stats report" should have data
 
   Scenario: C103283 Verify that Last 60 Days date range filter should show data
-    Then I click "Last 60 Days"
+    Then I click "Last 60 Days" V2
     And the "Channel Stats report" should have data
 
   Scenario: C103284 Verify that Last 90 Days date range filter should show data
-    Then I click "Last 90 Days"
+    Then I click "Last 90 Days" V2
     And the "Channel Stats report" should have data
 
   Scenario: C168429 Verify if Pre Shoot report has data
@@ -85,62 +91,62 @@ Feature: Bill Brandt Ford Data Health Check
     And the "VDP Result" should have data
 
 ### Advance Report
-  Scenario: C103419 Verify that Last 7 Days date range filter should show data
+  Scenario: C188406 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Leads" from advance Report
     Then I click "Last 7 Days"
     And the "Leads" should have data
 
-  Scenario: C103450 Verify that Last 7 Days date range filter should show data
+  Scenario: C188437 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Most VDPs" from advance Report
     Then I click "Last 7 Days"
     And the "Most VDPs" should have data
 
-  Scenario: C103481 Verify that Last 7 Days date range filter should show data
+  Scenario: C188468 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Least VDPs" from advance Report
     Then I click "Last 7 Days"
     And the "Least VDPs" should have data
 
-  Scenario: C103512 Verify that Last 7 Days date range filter should show data
+  Scenario: C188499 Verify that Last 7 Days date range filter should show data
     When I navigate to the "Days on Lot" from advance Report
     Then I click "Last 7 Days"
     And the "Days on Lot" should have data
 
-  Scenario: C103420 Verify that Last Month date range filter should show data
+  Scenario: C188407 Verify that Last Month date range filter should show data
     When I navigate to the "Leads" from advance Report
     Then I click "Advance Report Last Month"
     And the "Leads" should have data
 
-  Scenario: C103451 Verify that Last Month date range filter should show data
+  Scenario: C188438 Verify that Last Month date range filter should show data
     When I navigate to the "Most VDPs" from advance Report
     Then I click "Advance Report Last Month"
     And the "Most VDPs" should have data
 
-  Scenario: C103482 Verify that Last Month date range filter should show data
+  Scenario: C188469 Verify that Last Month date range filter should show data
     When I navigate to the "Least VDPs" from advance Report
     Then I click "Advance Report Last Month"
     And the "Least VDPs" should have data
 
-  Scenario: C103513 Verify that Last Month date range filter should show data
+  Scenario: C188500 Verify that Last Month date range filter should show data
     When I navigate to the "Days on Lot" from advance Report
     Then I click "Advance Report Last Month"
     And the "Days on Lot" should have data
 
-  Scenario: C103421 Verify that All time data range filter will show data
+  Scenario: C188408 Verify that All time data range filter will show data
     When I navigate to the "Leads" from advance Report
     Then I click "All Time"
     And the "Leads" should have data
 
-  Scenario: C103452 Verify that All time data range filter will show data
+  Scenario: C188439 Verify that All time data range filter will show data
     When I navigate to the "Most VDPs" from advance Report
     Then I click "All Time"
     And the "Most VDPs" should have data
 
-  Scenario: C103483 Verify that All time data range filter will show data
+  Scenario: C188470 Verify that All time data range filter will show data
     When I navigate to the "Least VDPs" from advance Report
     Then I click "All Time"
     And the "Least VDPs" should have data
 
-  Scenario: C103514 Verify that All time data range filter will show data
+  Scenario: C188501 Verify that All time data range filter will show data
     When I navigate to the "Days on Lot" from advance Report
     Then I click "All Time"
     And the "Days on Lot" should have data
