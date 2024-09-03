@@ -32,6 +32,7 @@ public class merchandisingStepsDefinition {
                 Utility.driver.findElement(By.xpath(DemoClient.ChannelStatReportTab)).click();
                 break;
             case "Pre Shoot report":
+                Utility.driver.findElement(By.xpath(DemoClient.DealRatingsByChennelMenu)).click();
                 Utility.driver.findElement(By.xpath(DemoClient.PreShootReportTab)).click();
                 Thread.sleep(10000);
                 break;

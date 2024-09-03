@@ -5,7 +5,7 @@ Feature: Bill Brandt Ford Data Health Check
   Scenario: Verify if user can successfully login
     When I navigate to the Result Summary Page
     And I select vehicle type "New Inventory"
-    And I select "Bill Brandt Ford"
+    And I select "Demo Client"
 
   @vdpRoi
   Scenario: C97045 Verify that Total VDPs section should have value

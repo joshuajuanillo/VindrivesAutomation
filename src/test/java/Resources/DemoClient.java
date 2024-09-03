@@ -10,13 +10,13 @@ public class DemoClient {
    public static String DealRatingByChannelTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]";
    public static String TipReportTable = "//table[@class='chakra-table css-5605sr']";
    public static String ChannelStatReportTable = "//table[@class='styles_table__0+Z02']";
-   public static String PreshootReportTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[2]/div[2]/table[1]";
+   public static String PreshootReportTable = "//table[@class='styles_table__0+Z02']";
    public static String VdpResultTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/table[1]";
 
    public static String DealRatingsByChennelTab = "//li[contains(text(),'Deal Ratings by Channel')]";
    public static String TipReportTab = "//li[contains(text(),'Tip Report')]";
    public static String ChannelStatReportTab = "//li[normalize-space()='Channel Stats Report']";
-   public static String PreShootReportTab = "//button[normalize-space()='Pre Shoot Report']";
+   public static String PreShootReportTab = "//li[normalize-space()='Pre Shoot Report']";
 
    // VDP Result
    public static String VdpResults = "//body/div[@id='root']/div[2]/div[1]/ul[1]/li[3]/button[1]";
@@ -29,11 +29,11 @@ public class DemoClient {
    public static String LeastVdps = "//button[contains(text(),'Least VDPs (10+ DOL)')]";
    public static String DaysOnLot = "//button[contains(text(),'Days on Lot')]";
 
-   public static String LeadsTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[1]/div[3]/div[3]/table[1]";
-   public static String MostVdpsTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[1]/div[3]/div[3]/table[1]";
-   public static String LeastVdpsTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[1]/div[3]/div[3]/table[1]";
-   public static String DaysOnLotTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[1]/div[3]/div[3]/table[1]";
-   public static String AdvanceReportLastMonth = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]";
+   public static String LeadsTable = "//table[@class='chakra-table css-5605sr']";
+   public static String MostVdpsTable = "//table[@class='chakra-table css-5605sr']";
+   public static String LeastVdpsTable = "//table[@class='chakra-table css-5605sr']";
+   public static String DaysOnLotTable = "//table[@class='chakra-table css-5605sr']";
+   public static String AdvanceReportLastMonth = "//div[@class='css-1q94rgb']//button[@class='styles_buttonGroup__button__v1c-M'][normalize-space()='Last Month']";
 
    // Marketing Result
    public static String BudgetRoiTab = "//body/div[@id='root']/div[2]/div[1]/ul[1]/li[5]/button[1]";
