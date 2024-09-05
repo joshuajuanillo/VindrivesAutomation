@@ -8,6 +8,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import Utility.*;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -189,13 +190,18 @@ public class common {
 
     @Then("I click {string} V2")
     public void iClickV2(String DateFilter) {
-        Utility.driver.findElement(By.xpath(Common.LastSevenDays)).click();
+        // Scroll to the element using Actions
+        Actions actions = new Actions(Utility.driver);
         switch (DateFilter) {
             case "Last 7 Days":
-                Utility.driver.findElement(By.xpath(Common.LastSevenDaysV2)).click();
+                WebElement dateFilterSevenDays =  Utility.driver.findElement(By.xpath(Common.LastSevenDaysV2));
+                actions.moveToElement(dateFilterSevenDays).perform();
+                dateFilterSevenDays.click();
                 break;
             case "Last Month":
-                Utility.driver.findElement(By.xpath(Common.LastMonthV2)).click();
+                WebElement dateFilterLastMonth =  Utility.driver.findElement(By.xpath(Common.LastMonthV2));
+                actions.moveToElement(dateFilterLastMonth).perform();
+                dateFilterLastMonth.click();
                 break;
             case "All Time":
                 Utility.driver.findElement(By.xpath(Common.AllTimeV2)).click();

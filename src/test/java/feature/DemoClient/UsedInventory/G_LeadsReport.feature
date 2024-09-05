@@ -12,3 +12,8 @@ Feature: Demo Client Data Health Check for Leads Report
   Scenario: C96497 Verify that All time data range filter will show data
     Then I click "All Time"
     And the "Leads" should have data
+
+  Scenario: C96457 Verify that Cargurus Rank is sortable and all data has value
+    And I click "Last 7 Days"
+    And I select 100 per page in pagination Vtwo
+    Then I click twice the sort by function in Price column and data are not unknown from Leads report

@@ -216,14 +216,7 @@ public class resultSummaryStepsDefinition {
     public void the_zero_leads_column_should_have_data() {
                 WebElement table = Utility.driver.findElement(By.xpath(Common.ResultSummaryQuickResultTable));// Change to the actual table ID or selector
                 List<WebElement> columnCells = null;
-                if(GlobalUtility.vehicleType.equalsIgnoreCase("Used Inventory")){
-                    // Locate the specific column (e.g., the second column)
-                    columnCells = table.findElements(By.xpath(DemoClient.ZeroLeads)); // Adjust the xpath as necessary
-                }else{
-                    // Locate the specific column (e.g., the second column)
-                    columnCells = table.findElements(By.xpath(DemoClient.NewInventoryDemoClientZeroLeads)); // Adjust the xpath as necessary
-                }
-
+                columnCells = table.findElements(By.xpath(DemoClient.ZeroLeads)); // Adjust the xpath as necessary
                 ArrayList<Integer> zeroLeads = new ArrayList<>();
 
                 for (WebElement cell : columnCells) {

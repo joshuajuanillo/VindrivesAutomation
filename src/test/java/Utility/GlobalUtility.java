@@ -54,6 +54,13 @@ public class GlobalUtility {
         Assert.assertNotEquals("Values should not be true",true, allUnknown);
     }
 
+    public static void checkAllNAData(ArrayList<String> column){
+        System.out.println("Array List " + column);
+        boolean allUnknown = column.stream().allMatch(col -> col.equals("N/A"));
+        System.out.println("All Null List ? " + allUnknown);
+        Assert.assertNotEquals("Values should not be true",true, allUnknown);
+    }
+
     public static void checkIfAllZeroData(ArrayList<String> column){
         System.out.println("Array List " + column);
         boolean allUnknown = column.stream().allMatch(col -> col.equals("0"));
@@ -61,4 +68,10 @@ public class GlobalUtility {
         Assert.assertNotEquals("Values should not be true",true, allUnknown);
     }
 
+    public static void checkIfALlZeroPercent(ArrayList<String> column){
+        System.out.println("Array List " + column);
+        boolean allUnknown = column.stream().allMatch(col -> col.equals("0.00%"));
+        System.out.println("All Unknown List ? " + allUnknown);
+        Assert.assertNotEquals("Values should not be true",true, allUnknown);
+    }
 }
