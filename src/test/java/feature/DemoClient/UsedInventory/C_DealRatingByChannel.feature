@@ -1,13 +1,8 @@
 Feature: Demo Client Data Health Check for DealRating By Channel
 
   @dealratingByChannel
-  Scenario: C96178 Verify that Last 7 Days date range filter should show data
-    When I navigate to the "Deal Ratings by channel" from merchandising report
-    Then I click "Last 7 Days"
-    And the "Deal Ratings by channel" should have data
-
-  @dealratingByChannel
   Scenario: C96203 Verify that Sales Goal has value
+    When I navigate to the "Deal Ratings by channel" from merchandising report
     Then the Sales Goal should have data
 
   @dealratingByChannel
@@ -25,6 +20,11 @@ Feature: Demo Client Data Health Check for DealRating By Channel
   @dealratingByChannel
   Scenario: C96207 Verify that FLR to Hit Goal has value
     Then the FLR to Hit Goal
+
+  @dealratingByChannel
+  Scenario: C96178 Verify that Last 7 Days date range filter should show data
+    Then I click "Last 7 Days"
+    And the "Deal Ratings by channel" should have data
 
   @dealratingByChannel
   Scenario: C96179 Verify that Last Month date range filter should show data
@@ -49,10 +49,7 @@ Feature: Demo Client Data Health Check for DealRating By Channel
   @dealratingByChannel
   Scenario: C96186 Verify if Deal Ratings by channel column for cargurus is not showing all unknown data
     When I navigate to the "Deal Ratings by channel" from merchandising report
-    And I click "Last 7 Days"
-    Then the "Deal Ratings by channel" should have data
-    And I select 100 per page in pagination
-    Then the "Deal Ratings by channel" should have data
+    Then I click "Last 7 Days"
     And I click twice the sort by function in cargurus column and data are not unknown
 
   @dealratingByChannel
@@ -64,5 +61,15 @@ Feature: Demo Client Data Health Check for DealRating By Channel
     And I click twice the sort by function in Cars column and data are not unknown
 
   @dealratingByChannel
+  Scenario: C96189 [Last 7 Days] : Verify if Price is sortable and should not show 0 data in all row
+    And I click twice the sort by function in Price column and data are not zero from DeaRating by channel
+
+  @dealratingByChannel
   Scenario: C96190 [Last 7 Days] : Verify if DOL is sortable and should not show 0 data in all row
     And I click twice the sort by function in DOL column and data are not unknown
+
+  @dealratingByChannel
+  Scenario: C96191 [Last 7 Days] : Verify if # of Photos is sortable and should not show 0 data in all row
+    And I click twice the sort by function in Photos column and data are not zero from DeaRating by channel
+
+

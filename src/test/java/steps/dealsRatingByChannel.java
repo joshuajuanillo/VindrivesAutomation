@@ -342,7 +342,87 @@ public class dealsRatingByChannel {
             DemoClientCargurusDealsByRating.add(cellText);
         }
 
+        GlobalUtility.checkIfAllZeroData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @And("I click twice the sort by function in Price column and data are not zero from DeaRating by channel")
+    public void iClickTwiceTheSortByFunctionInPriceColumnAndDataAreNotZeroFromDeaRatingByChannel() throws InterruptedException {
+        // Scroll to the element using Actions
+        Actions actions = new Actions(Utility.driver);
+
+        WebElement dealRatingSort =  Utility.driver.findElement(By.xpath("//th[@id='price']//div[@class='styles_table__header__item--sortable__d3Fzm']"));
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+
+        Thread.sleep(10000);
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Price']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        System.out.println("Price result: " + DemoClientCargurusDealsByRating);
+
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+        Thread.sleep(10000);
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Price']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
         GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+    }
+
+    @And("I click twice the sort by function in Photos column and data are not zero from DeaRating by channel")
+    public void iClickTwiceTheSortByFunctionInPhotosColumnAndDataAreNotZeroFromDeaRatingByChannel() throws InterruptedException {
+        // Scroll to the element using Actions
+        Actions actions = new Actions(Utility.driver);
+
+        WebElement dealRatingSort =  Utility.driver.findElement(By.xpath("//th[@id='photos_count']//div[@class='styles_table__header__item--sortable__d3Fzm']"));
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+
+        Thread.sleep(10000);
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='# of Photos']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        System.out.println("Photos result: " + DemoClientCargurusDealsByRating);
+
+        actions.moveToElement(dealRatingSort).perform();
+        dealRatingSort.click();
+        Thread.sleep(10000);
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='# of Photos']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+
+        for (WebElement cell : columnCells2) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkIfAllZeroData(DemoClientCargurusDealsByRating);
         Thread.sleep(20000);
     }
 }

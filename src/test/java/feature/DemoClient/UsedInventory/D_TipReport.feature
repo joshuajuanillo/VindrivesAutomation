@@ -10,7 +10,6 @@ Feature: Demo Client Data Health Check for Tip Report
   Scenario: C168790 Verify if Tip Report has data for CarGurus
     When I navigate to the "Tip Report" from merchandising report
     And I select "Cargurus" provider
-    And I select 100 per page in pagination Vtwo
     Then the "Tip Report" should have data
 
   @tipReport
@@ -42,7 +41,6 @@ Feature: Demo Client Data Health Check for Tip Report
   Scenario: C168791 Verify if Tip Report has data for Autotrader
     When I navigate to the "Tip Report" from merchandising report
     And I select "Autotrader" provider
-    And I select 100 per page in pagination Vtwo
     Then the "Tip Report" should have data
 
   @tipReport
@@ -86,7 +84,6 @@ Feature: Demo Client Data Health Check for Tip Report
   Scenario: C168792 Verify if Tip Report has data for CarsDotCom
     When I navigate to the "Tip Report" from merchandising report
     And I select "CarsDotCom" provider
-    And I select 100 per page in pagination Vtwo
     Then the "Tip Report" should have data
 
   @tipReport

@@ -25,7 +25,6 @@ public class merchandisingStepsDefinition {
             case "Tip Report":
                 Utility.driver.findElement(By.xpath(DemoClient.DealRatingsByChennelMenu)).click();
                 Utility.driver.findElement(By.xpath(DemoClient.TipReportTab)).click();
-                Thread.sleep(10000);
                 break;
             case "Channel Stats report":
                 Utility.driver.findElement(By.xpath(DemoClient.DealRatingsByChennelMenu)).click();
@@ -34,10 +33,9 @@ public class merchandisingStepsDefinition {
             case "Pre Shoot report":
                 Utility.driver.findElement(By.xpath(DemoClient.DealRatingsByChennelMenu)).click();
                 Utility.driver.findElement(By.xpath(DemoClient.PreShootReportTab)).click();
-                Thread.sleep(10000);
                 break;
         }
-
+        Thread.sleep(10000);
     }
 
     @Then("the {string} should have data")
@@ -479,7 +477,7 @@ public class merchandisingStepsDefinition {
             DemoClientCargurusDealsByRating.add(cellText);
         }
 
-        GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
+        GlobalUtility.checkIfAllZeroData(DemoClientCargurusDealsByRating);
         Thread.sleep(20000);
     }
 }
