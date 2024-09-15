@@ -1,5 +1,20 @@
 Feature: Demo Client Data Health Check for Result Summary
 
+  ## Website
+  Scenario: C96646 Verify that Last 7 Days date range filter should show data
+    When I navigate to the "VDP ROI" from marketing result report
+    Then I click "VDP ROI Last 7 Days"
+    And the "VDP ROI" should have data
+
+  Scenario: C96647 Verify that Last Month date range filter should show data
+    Then I click "VDP ROI Last Month"
+    And the "VDP ROI" should have data
+
+  Scenario: C96648 Verify that Last 90 Days date range filter should show data
+    Then I click "VDP ROI Last 90 Days"
+    And the "VDP ROI" should have data
+
+  ### Third Party
   @vdpRoi
   Scenario: C96660 Verify that Last 7 Days date range filter should show data
     When I navigate to the "VDP ROI" from marketing result report

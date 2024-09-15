@@ -480,4 +480,23 @@ public class merchandisingStepsDefinition {
         GlobalUtility.checkIfAllZeroData(DemoClientCargurusDealsByRating);
         Thread.sleep(20000);
     }
+
+    @Then("I click twice the sort by function in Price change at Great Deal Rating column and data are not unknown")
+    public void iClickTwiceTheSortByFunctionInPriceChangeAtGreatDealRatingColumnAndDataAreNotUnknown() throws InterruptedException {
+        // Locate the table
+        WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.TipReportTable)); // Change to the actual table ID or selector
+
+        // Locate the specific column (e.g., the second column)
+        List<WebElement> columnCells = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Price change at Great Deal Rating']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
+        ArrayList<String> DemoClientCargurusDealsByRating = new ArrayList<>();
+
+        for (WebElement cell : columnCells) {
+            String cellText = cell.getText().trim();
+            DemoClientCargurusDealsByRating.add(cellText);
+        }
+
+        GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
+        Thread.sleep(20000);
+
+    }
 }

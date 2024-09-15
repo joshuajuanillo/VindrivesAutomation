@@ -68,6 +68,10 @@ Feature: Demo Client Data Health Check for Tip Report
     Then I click twice the sort by function in Price at Great Deal Rating column and data are not unknown
 
   @tipReport
+  Scenario: C96229 Verify that Price change at Great Deal Rating is sortable and all data should have value
+    Then I click twice the sort by function in Price change at Great Deal Rating column and data are not unknown
+
+  @tipReport
   Scenario: C96227 Verify that Great Deal Rating is sortable and all data should have value
     Then I click twice the sort by function in Great Deal Rating column and data are not unknown
 
