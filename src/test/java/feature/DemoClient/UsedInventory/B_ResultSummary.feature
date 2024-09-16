@@ -59,5 +59,5 @@ Feature: Demo Client Data Health Check for Result Summary
     Then the Tippable Cars dot com column should have data
 
   @resultSummary
-  Scenario: C97061 Verify that Zero Leads column from the quick result table show now show all data are 0
+  Scenario: C97061 Verify that Zero Leads column from the quick result table will not show 0 data in all row
     Then the Zero Leads column should have data

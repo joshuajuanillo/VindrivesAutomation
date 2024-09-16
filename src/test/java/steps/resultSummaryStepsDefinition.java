@@ -17,8 +17,8 @@ import java.util.List;
 public class resultSummaryStepsDefinition {
 
     @When("I navigate to the Result Summary Page")
-    public void i_navigate_to_the_result_summary_page() {
-
+    public void i_navigate_to_the_result_summary_page() throws InterruptedException {
+        Thread.sleep(10000);
     }
     @Then("the totalVDPs should have data")
     public void the_totalled_should_have_data() {
