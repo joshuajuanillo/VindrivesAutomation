@@ -14,4 +14,4 @@ Step 2 Run Maven verify
 Step 3 Run trcli -y -h https://revdojo.testrail.io --project "Revdojo" --username "joshua@revdojo.com" --password "Jjuanillo1396@" parse_junit --title "Automation VIN-DC UI" --run-id 557 --case-matcher "name" -f "./target/vindrivesTestRun.xml"
 
 With Test Plan
-trcli -y -h https://revdojo.testrail.io --project "Revdojo" --username "joshua@revdojo.com" --password "Jjuanillo1396@" parse_junit --title "Demo Client" --plan-id 647 --run-id 648 --case-matcher "name" -f "./target/vindrivesTestRun.xml"
+trcli -y -h https://revdojo.testrail.io --project "Revdojo" --username "joshua@revdojo.com" --password "Jjuanillo1396@" parse_junit --title "Demo Client" --plan-id 664 --run-id 665 --case-matcher "name" -f "./target/vindrivesTestRun.xml"

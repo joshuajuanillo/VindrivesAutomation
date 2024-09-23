@@ -1,5 +1,6 @@
 package Utility;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,8 +12,13 @@ public class Utility {
     public static void getDriver(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        System.setProperty("webdriver.chrome.driver","/Users/joshuajuanillo/Downloads/chromedriver-mac-arm64/chromedriver");
+
+        // Setup WebDriverManager to manage ChromeDriver
+        WebDriverManager.chromedriver().setup();
+
+        // Create a new instance of ChromeDriver
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+
     }
 }

@@ -28,13 +28,16 @@ public class common {
 
     @And("I select {string}")
     public void i_select(String dealerName) throws InterruptedException {
+
+        Actions actions = new Actions(Utility.driver);
+
         WebElement dropdown = Utility.driver.findElement(By.xpath("//button[@id='menu-button-:rd:']"));
-        dropdown.click(); // assuming you have to click the "dropdown" to open it
-        GlobalUtility.DealerName = dealerName;
-        System.out.println(GlobalUtility.DealerName);
-        List<WebElement> TestDealer = dropdown.findElements(By.xpath("//button[contains(text(),'"+ dealerName +"')]"));
-        System.out.println(TestDealer);
-        GlobalUtility.selectDropdown(TestDealer,dealerName);
+        actions.moveToElement(dropdown).perform();
+        dropdown.click();
+
+        WebElement TestDealer = dropdown.findElement(By.xpath("//button[contains(text(),'"+ dealerName +"')]"));
+        actions.moveToElement(TestDealer).perform();
+        TestDealer.click();
 
         Thread.sleep(10000);
     }
@@ -47,13 +50,9 @@ public class common {
         switch (vehiclyType){
             case "Used Inventory":
                   dropdown.findElement(By.xpath(Common.VehicleTypeUsed)).click();
-//                List<WebElement> usedInventory = dropdown.findElements(By.xpath(Common.VehicleTypeUsed));
-//                GlobalUtility.selectDropdown(usedInventory,"Used Inventory");
                 break;
             case "New Inventory" :
                   dropdown.findElement(By.xpath(Common.VehicleTypeNew)).click();
-//                List<WebElement> newInventory = dropdown.findElements(By.xpath(Common.VehicleTypeNew));
-//                GlobalUtility.selectDropdown(newInventory,"New Inventory");
                 break;
         }
         Thread.sleep(10000);

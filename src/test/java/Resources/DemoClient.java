@@ -7,10 +7,10 @@ public class DemoClient {
 
    // Merchandising Report
    public static String DealRatingsByChennelMenu = "//li[2]//button[1]//*[name()='svg']";
-   public static String DealRatingByChannelTable = "//body/div[@id='root']/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/table[1]";
+   public static String DealRatingByChannelTable = "//table[@class='chakra-table css-5605sr']";
    public static String TipReportTable = "//table[@class='chakra-table css-5605sr']";
-   public static String ChannelStatReportTable = "//table[@class='styles_table__0+Z02']";
-   public static String PreshootReportTable = "//table[@class='styles_table__0+Z02']";
+   public static String ChannelStatReportTable = "//table[@class='chakra-table css-5605sr']";
+   public static String PreshootReportTable = "//table[@class='chakra-table css-5605sr']";
    public static String VdpResultTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/table[1]";
 
    public static String DealRatingsByChennelTab = "//li[contains(text(),'Deal Ratings by Channel')]";
@@ -73,10 +73,10 @@ public class DemoClient {
    public static String ZeroLeads = "//div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//tr/td[count( //div[@class='styles_tableContainer__daXYB styles_frontLineReadyTable__YwpoD']//table[@class='styles_table__0+Z02']//th[normalize-space(.)='Zero Leads']/preceding-sibling::th) + 1]";
 
    // Sorting Table
-   public static String CargurusRankSort = "//th[@id='cgr_deal_rating']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
-   public static String AutotraderRankSort = "//th[@id='atc_deal_rating']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
-   public static String CarsDotComSort = "//th[@id='ccm_deal_rating']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
-   public static String DolSort = "//th[@id='dol']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
-   public static String PriceSort = "//th[@id='price']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
-   public static String PhotoSort = "//th[@id='photos_count']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']";
+   public static String CargurusRankSort = "//th[@id='cgr_deal_rating']//div[@class='css-4g6ai3']//*[name()='svg']";
+   public static String AutotraderRankSort = "//th[@id='atc_deal_rating']//div[@class='css-4g6ai3']//*[name()='svg']";
+   public static String CarsDotComSort = "//th[@id='ccm_deal_rating']//div[@class='css-4g6ai3']//*[name()='svg']";
+   public static String DolSort = "//th[@id='dol']//div[@class='css-4g6ai3']//*[name()='svg']";
+   public static String PriceSort = "//th[@id='price']//div[@class='css-4g6ai3']//*[name()='svg']";
+   public static String PhotoSort = "//th[@id='photos_count']//div[@class='css-4g6ai3']//*[name()='svg']";
 }

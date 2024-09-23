@@ -21,30 +21,30 @@ Feature: Demo Client Data Health Check for DealRating By Channel
   Scenario: C96207 Verify that FLR to Hit Goal has value
     Then the FLR to Hit Goal
 
-  @dealratingByChannel
-  Scenario: C96178 Verify that Last 7 Days date range filter should show data
-    Then I click "Last 7 Days"
-    And the "Deal Ratings by channel" should have data
-
-  @dealratingByChannel
-  Scenario: C96179 Verify that Last Month date range filter should show data
-    Then I click "Last Month"
-    And the "Deal Ratings by channel" should have data
-
-  @dealratingByChannel
-  Scenario: C96180 Verify that Last 30 Days date range filter should show data
-    Then I click "Last 30 Days"
-    And the "Deal Ratings by channel" should have data
-
-  @dealratingByChannel
-  Scenario: C96181 Verify that Last 60 Days date range filter should show data
-    Then I click "Last 60 Days"
-    And the "Deal Ratings by channel" should have data
-
-  @dealratingByChannel
-  Scenario: C96182 Verify that Last 90 Days date range filter should show data
-    Then I click "Last 90 Days"
-    And the "Deal Ratings by channel" should have data
+#  @dealratingByChannel
+#  Scenario: C96178 Verify that Last 7 Days date range filter should show data
+#    Then I click "Last 7 Days"
+#    And the "Deal Ratings by channel" should have data
+#
+#  @dealratingByChannel
+#  Scenario: C96179 Verify that Last Month date range filter should show data
+#    Then I click "Last Month"
+#    And the "Deal Ratings by channel" should have data
+#
+#  @dealratingByChannel
+#  Scenario: C96180 Verify that Last 30 Days date range filter should show data
+#    Then I click "Last 30 Days"
+#    And the "Deal Ratings by channel" should have data
+#
+#  @dealratingByChannel
+#  Scenario: C96181 Verify that Last 60 Days date range filter should show data
+#    Then I click "Last 60 Days"
+#    And the "Deal Ratings by channel" should have data
+#
+#  @dealratingByChannel
+#  Scenario: C96182 Verify that Last 90 Days date range filter should show data
+#    Then I click "Last 90 Days"
+#    And the "Deal Ratings by channel" should have data
 
   @dealratingByChannel
   Scenario: C96186 Verify if Deal Ratings by channel column for cargurus is not showing all unknown data

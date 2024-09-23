@@ -1,6 +1,7 @@
 package steps;
 
 import Resources.DemoClient;
+import Resources.PreShootReport;
 import Utility.Utility;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.By;
@@ -28,7 +29,7 @@ public class preShootReport {
         // Scroll to the element using Actions
         Actions actions = new Actions(Utility.driver);
 
-        WebElement priceSort =  Utility.driver.findElement(By.xpath("//th[@id='price']//div[@class='styles_table__header__item--sortable__d3Fzm']//*[name()='svg']"));
+        WebElement priceSort =  Utility.driver.findElement(By.xpath(PreShootReport.priceSort));
         actions.moveToElement(priceSort).perform();
         priceSort.click();
 
