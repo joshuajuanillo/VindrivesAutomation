@@ -89,16 +89,16 @@ public class merchandisingStepsDefinition {
                 break;
             case "Pre Shoot report":
                 // Locate the table
-                WebElement PreshootReportTable = Utility.driver.findElement(By.xpath(DemoClient.PreshootReportTable)); // Change to the actual table ID or selector
+                WebElement PreShootTable = Utility.driver.findElement(By.xpath(DemoClient.PreshootReportTable)); // Change to the actual table ID or selector
                 // Locate the table body rows (assuming tbody is used for data rows)
-                List<WebElement> PreshootReportTableDataRows = PreshootReportTable.findElements(By.xpath("//tbody[1]/tr"));
-                System.out.println("Row Count " + PreshootReportTableDataRows.size());
-
+                List<WebElement> PreShootTableDataRows = PreShootTable.findElements(By.xpath("//tbody/tr"));
                 // Check if the table body has data rows
-                for (WebElement row : PreshootReportTableDataRows) {
+
+                for (WebElement row : PreShootTableDataRows) {
                     DataValue = row.getText();
                 }
-                GlobalUtility.checkTableIfEmpty(PreshootReportTableDataRows.size(), DataValue);
+
+                GlobalUtility.checkTableIfEmpty(PreShootTableDataRows.size(), DataValue);
                 Thread.sleep(15000);
                 break;
             case "VDP Result":
@@ -174,7 +174,7 @@ public class merchandisingStepsDefinition {
                 // Locate the table
                 WebElement BudgetRoiTable = Utility.driver.findElement(By.xpath(DemoClient.BudgetRoiTable)); // Change to the actual table ID or selector
                 // Locate the table body rows (assuming tbody is used for data rows)
-                List<WebElement> BudgetRoiTableDataRows = BudgetRoiTable.findElements(By.xpath("//tbody[1]/tr"));
+                List<WebElement> BudgetRoiTableDataRows = BudgetRoiTable.findElements(By.xpath("//tbody/tr"));
                 System.out.println("Row Count " + BudgetRoiTableDataRows.size());
 
                 // Check if the table body has data rows
@@ -188,7 +188,7 @@ public class merchandisingStepsDefinition {
                 // Locate the table
                 WebElement VdpsByChannelTable = Utility.driver.findElement(By.xpath(DemoClient.VdpsByChannelTable)); // Change to the actual table ID or selector
                 // Locate the table body rows (assuming tbody is used for data rows)
-                List<WebElement> VdpsByChannelTableDataRows = VdpsByChannelTable.findElements(By.xpath("//tbody[1]/tr"));
+                List<WebElement> VdpsByChannelTableDataRows = VdpsByChannelTable.findElements(By.xpath("//tbody/tr"));
                 System.out.println("Row Count " + VdpsByChannelTableDataRows.size());
 
                 // Check if the table body has data rows

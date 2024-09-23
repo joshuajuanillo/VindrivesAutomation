@@ -38,31 +38,31 @@ public class DemoClient {
    // Marketing Result
    public static String BudgetRoiTab = "//body/div[@id='root']/div[2]/div[1]/ul[1]/li[5]/button[1]";
    public static String BudgetRoi = "//li[contains(text(),'Budget ROI')]";
-   public static String BudgetRoiTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[3]/table[1]";
+   public static String BudgetRoiTable = "//table[@class='chakra-table css-5605sr']";
    public static String BudgetRoiLastSevenDays = "//button[contains(text(),'Last 7 Days')]";
    public static String BudgetRoiLastMonth = "//button[contains(text(),'Last Month')]";
    public static String BudgetRoiLastNinetyDays = "//button[contains(text(),'Last 90 Days')]";
 
    public static String VdpsByChannelTab = "//body/div[@id='root']/div[2]/div[1]/ul[1]/li[5]/button[1]";
    public static String VdpsByChannel = "//li[contains(text(),'VDPs by Channel')]";
-   public static String VdpsByChannelTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[3]/div[1]/div[3]/table[1]";
-   public static String VdpsByChannelLastSevenDays = "//button[contains(text(),'Last 7 Days')]";
-   public static String VdpsByChannelLastMonth = "//button[contains(text(),'Last Month')]";
-   public static String VdpsByChannelLastNinetyDays = "//button[contains(text(),'Last 90 Days')]";
+   public static String VdpsByChannelTable = "//table[@class='chakra-table css-5605sr']";
+   public static String VdpsByChannelLastSevenDays = "//button[normalize-space()='Last 7 Days']";
+   public static String VdpsByChannelLastMonth = "//button[normalize-space()='Last Month']";
+   public static String VdpsByChannelLastNinetyDays = "//button[normalize-space()='Last 90 Days']";
 
    public static String TopTenWebsiteTab = "//body/div[@id='root']/div[2]/div[1]/ul[1]/li[5]/button[1]";
    public static String TopTenWebsite = "//li[contains(text(),'Top 10 Website Sources')]";
-   public static String TopTenWebsiteTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[3]/div[1]/div[3]/table[1]";
-   public static String TopTenWebsiteLastSevenDays = "//button[contains(text(),'Last 7 Days')]";
-   public static String TopTenWebsiteLastMonth = "//button[contains(text(),'Last Month')]";
-   public static String TopTenWebsiteLastNinetyDays = "//button[contains(text(),'Last 90 Days')]";
+   public static String TopTenWebsiteTable = "//table[@class='chakra-table css-5605sr']";
+   public static String TopTenWebsiteLastSevenDays = "//button[normalize-space()='Last 7 Days']";
+   public static String TopTenWebsiteLastMonth = "//button[normalize-space()='Last Month']";
+   public static String TopTenWebsiteLastNinetyDays = "//button[normalize-space()='Last 90 Days']";
 
    public static String VdpRoiTab = "//body/div[@id='root']/div[2]/div[1]/ul[1]/li[5]/button[1]";
    public static String VdpRoi = "//li[contains(text(),'VDP ROI')]";
-   public static String VdpRoiTable = "//body/div[@id='root']/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/table[1]";
-   public static String VdpRoiLastSevenDays = "//button[contains(text(),'Last 7 Days')]";
-   public static String VdpRoiLastMonth = "//button[contains(text(),'Last Month')]";
-   public static String VdpRoiLastNinetyDays = "//button[contains(text(),'Last 90 Days')]";
+   public static String VdpRoiTable = "//table[@class='chakra-table css-5605sr']";
+   public static String VdpRoiLastSevenDays = "//button[normalize-space()='Last 7 Days']";
+   public static String VdpRoiLastMonth = "//button[normalize-space()='Last Month']";
+   public static String VdpRoiLastNinetyDays = "//button[normalize-space()='Last 90 Days']";
 
    public static String NewInventoryDemoClientZeroLeads = "//tbody/tr/td[5]";
 

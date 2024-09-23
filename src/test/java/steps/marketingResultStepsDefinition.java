@@ -64,11 +64,14 @@ public class marketingResultStepsDefinition {
     @When("I click VDP ROI {string}")
     public void IClickVrpROIType(String VrpROIType) throws InterruptedException {
         switch (VrpROIType) {
+            case "Website":
+                Utility.driver.findElement(By.xpath("//span[normalize-space()='Website']")).click();
+                break;
             case "Third Parties":
-                Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/label[2]")).click();
+                Utility.driver.findElement(By.xpath("//span[normalize-space()='Third Parties']")).click();
                 break;
             case "Combined":
-                Utility.driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/label[3]")).click();
+                Utility.driver.findElement(By.xpath("//span[normalize-space()='Combined']")).click();
                 break;
         }
     }
