@@ -65,14 +65,26 @@ public class common {
             case "Last 7 Days":
                 Utility.driver.findElement(By.xpath(Common.LastSevenDays)).click();
                 break;
+            case "Last Month DealRating":
+                Utility.driver.findElement(By.xpath(Common.LastMonthDealRating)).click();
+                break;
             case "Last Month":
                 Utility.driver.findElement(By.xpath(Common.LastMonth)).click();
+                break;
+            case "Last 30 Days DealRating":
+                Utility.driver.findElement(By.xpath(Common.LastThirtyDaysDealRating)).click();
                 break;
             case "Last 30 Days":
                 Utility.driver.findElement(By.xpath(Common.LastThirtyDays)).click();
                 break;
+            case "Last 60 Days DealRating":
+                Utility.driver.findElement(By.xpath(Common.LastSixtyDaysDealRating)).click();
+                break;
             case "Last 60 Days":
                 Utility.driver.findElement(By.xpath(Common.LastSixtyDays)).click();
+                break;
+            case "Last 90 Days DealRating":
+                Utility.driver.findElement(By.xpath(Common.LastNinetyDaysDealRating)).click();
                 break;
             case "Last 90 Days":
                 Utility.driver.findElement(By.xpath(Common.LastNinetyDays)).click();

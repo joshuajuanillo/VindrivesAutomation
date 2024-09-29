@@ -27,29 +27,15 @@ Feature: Demo Client Data Health Check for DealRating By Channel
     And the "Deal Ratings by channel" should have data
 
   @dealratingByChannel
-  Scenario: C96179 Verify that Last Month date range filter should show data
-    Then I click "Last Month"
-    And the "Deal Ratings by channel" should have data
+  Scenario: C96184 [Last 7 Days] : Verify if Stock Number is sortable
+    And I click twice the sort by function in Stock Number column and data are not unknown
 
   @dealratingByChannel
-  Scenario: C96180 Verify that Last 30 Days date range filter should show data
-    Then I click "Last 30 Days"
-    And the "Deal Ratings by channel" should have data
-
-  @dealratingByChannel
-  Scenario: C96181 Verify that Last 60 Days date range filter should show data
-    Then I click "Last 60 Days"
-    And the "Deal Ratings by channel" should have data
-
-  @dealratingByChannel
-  Scenario: C96182 Verify that Last 90 Days date range filter should show data
-    Then I click "Last 90 Days"
-    And the "Deal Ratings by channel" should have data
+  Scenario: C96185 [Last 7 Days] : Verify if Vehicle is sortable
+    And I click twice the sort by function in Vehicle column and data are not unknown
 
   @dealratingByChannel
   Scenario: C96186 Verify if Deal Ratings by channel column for cargurus is not showing all unknown data
-    When I navigate to the "Deal Ratings by channel" from merchandising report
-    Then I click "Last 7 Days"
     And I click twice the sort by function in cargurus column and data are not unknown
 
   @dealratingByChannel
@@ -72,4 +58,55 @@ Feature: Demo Client Data Health Check for DealRating By Channel
   Scenario: C96191 [Last 7 Days] : Verify if # of Photos is sortable and should not show 0 data in all row
     And I click twice the sort by function in Photos column and data are not zero from DeaRating by channel
 
+  @dealratingByChannel
+  Scenario: C96179 Verify that Last Month date range filter should show data
+    Then I click "Last Month DealRating"
+    And the "Deal Ratings by channel" should have data
+
+  @dealratingByChannel
+  Scenario: C231575 [Last Month] : Verify if Stock Number is sortable
+    And I click twice the sort by function in Stock Number column and data are not unknown
+
+  @dealratingByChannel
+  Scenario: C231576 [Last Month] : Verify if Vehicle is sortable
+    And I click twice the sort by function in Vehicle column and data are not unknown
+
+  @dealratingByChannel
+  Scenario: C231577 Verify if Deal Ratings by channel column for cargurus is not showing all unknown data
+    And I click twice the sort by function in cargurus column and data are not unknown
+
+  @dealratingByChannel
+  Scenario: C231578 Verify if Deal Ratings by channel column for AutoTrader is not showing all unknown data
+    And I click twice the sort by function in Autotrader column and data are not unknown
+
+  @dealratingByChannel
+  Scenario: C231579 Verify if Deal Ratings by channel column for CarsDotCom is not showing all unknown data
+    And I click twice the sort by function in Cars column and data are not unknown
+
+  @dealratingByChannel
+  Scenario: C231580 [Last Month] : Verify if Price is sortable and should not show 0 data in all row
+    And I click twice the sort by function in Price column and data are not zero from DeaRating by channel
+
+  @dealratingByChannel
+  Scenario: C231581 [Last Month] : Verify if DOL is sortable and should not show 0 data in all row
+    And I click twice the sort by function in DOL column and data are not unknown
+
+  @dealratingByChannel
+  Scenario: C231582 [Last Month] : Verify if # of Photos is sortable and should not show 0 data in all row
+    And I click twice the sort by function in Photos column and data are not zero from DeaRating by channel
+
+  @dealratingByChannel
+  Scenario: C96180 Verify that Last 30 Days date range filter should show data
+    Then I click "Last 30 Days DealRating"
+    And the "Deal Ratings by channel" should have data
+
+  @dealratingByChannel
+  Scenario: C96181 Verify that Last 60 Days date range filter should show data
+    Then I click "Last 60 Days DealRating"
+    And the "Deal Ratings by channel" should have data
+
+  @dealratingByChannel
+  Scenario: C96182 Verify that Last 90 Days date range filter should show data
+    Then I click "Last 90 Days DealRating"
+    And the "Deal Ratings by channel" should have data
 

@@ -5,8 +5,8 @@ Feature: Demo Client Data Health Check for Channel Stats Report
     Then I click "Last 7 Days" V2
     And the "Channel Stats report" should have data
 
-#  Scenario: Setup provider
-#    When I click customize Button and select all provider
+  Scenario: Setup provider
+    When I click customize Button and select all provider
 
   Scenario: C96274 Verify that Last Month date range filter should show data
     Then I click "Last Month" V2

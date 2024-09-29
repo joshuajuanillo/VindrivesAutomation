@@ -563,19 +563,23 @@ public class ChannelStatReportStepsDefinition {
     @When("I click customize Button and select all provider")
     public void iClickCustomizeButtonAndSelectAllProvider() throws InterruptedException {
         List<WebElement> AutoTrader = Utility.driver.findElements(By.xpath("//th[@id='1_Autotrader_atc_price']"));
-        Actions actions = new Actions(Utility.driver);
+        List<WebElement> Cargurus = Utility.driver.findElements(By.xpath("//th[@id='1_CarGurus_cgr_price']"));
+        List<WebElement> CarsDotCom = Utility.driver.findElements(By.xpath("//th[@id='1_Cars.com_ccm_price']"));
+
         Thread.sleep(10000);
         if(AutoTrader.isEmpty()){
-            Utility.driver.findElement(By.cssSelector("button[id='popover-trigger-:r1m:']")).click();
+            Utility.driver.findElement(By.xpath("//button[@id='popover-trigger-:r1p:']")).click();
+            Utility.driver.findElement(By.xpath("//body//div[@id='root']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[1]//div[2]//button[1]")).click();
         }
-
-//        WebElement CarGurus = Utility.driver.findElement(By.xpath("//th[@id='1_CarGurus_cgr_price']"));
-//        WebElement CarsDotCom = Utility.driver.findElement(By.xpath("//th[@id='1_Cars.com_ccm_price']"));
-
-
-
-
-        Utility.driver.findElement(By.xpath("//button[@id='popover-trigger-:r1m:']")).click();
+        if(Cargurus.isEmpty()){
+            Utility.driver.findElement(By.xpath("//div[@id='popover-body-:r1p:']//div[2]//div[2]//button[1]//*[name()='svg']")).click();
+        }
+        if(CarsDotCom.isEmpty()){
+            Utility.driver.findElement(By.xpath("//div[@class='css-1qm3vnl']//div[3]//div[2]//button[1]//*[name()='svg']")).click();
+        }
+        Thread.sleep(10000);
+        Utility.driver.findElement(By.xpath("//button[@id='popover-trigger-:r1p:']")).click();
+        Thread.sleep(10000);
 
     }
 }

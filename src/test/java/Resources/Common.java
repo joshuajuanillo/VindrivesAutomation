@@ -6,9 +6,13 @@ public class Common {
 
     // Filter
     public static String LastSevenDays = "//button[normalize-space()='Last 7 Days']";
+    public static String LastMonthDealRating = "//div[@class='css-1q94rgb']//button[@class='styles_buttonGroup__button__v1c-M'][normalize-space()='Last Month']";
     public static String LastMonth = "//button[normalize-space()='Last Month']";
+    public static String LastThirtyDaysDealRating = "//button[normalize-space()='Last 30 Days']";
     public static String LastThirtyDays = "//div[@class='css-1q94rgb']//button[@class='styles_buttonGroup__button__v1c-M'][normalize-space()='Last 30 Days']";
+    public static String LastSixtyDaysDealRating = "//div[@class='css-1q94rgb']//button[@class='styles_buttonGroup__button__v1c-M'][normalize-space()='Last 60 Days']";
     public static String LastSixtyDays = "//div[@class='css-1q94rgb']//button[@class='styles_buttonGroup__button__v1c-M'][normalize-space()='Last 60 Days']";
+    public static String LastNinetyDaysDealRating = "//div[@class='css-1q94rgb']//button[@class='styles_buttonGroup__button__v1c-M'][normalize-space()='Last 90 Days']";
     public static String LastNinetyDays = "//button[normalize-space()='Last 90 Days']";
     public static String AllTime = "//button[contains(text(),'All Time')]";
 
