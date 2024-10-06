@@ -83,7 +83,7 @@ Feature: Demo Client Data Health Check for Tip Report
   Scenario: C96225 Verify that Age is sortable and it will not show unknown data
     Then I click twice the sort by function in Age column and data are not unknown
 
-##### Provider : CarsDotCom
+#### Provider : CarsDotCom
   @tipReport
   Scenario: C168792 Verify if Tip Report has data for CarsDotCom
     When I navigate to the "Tip Report" from merchandising report
