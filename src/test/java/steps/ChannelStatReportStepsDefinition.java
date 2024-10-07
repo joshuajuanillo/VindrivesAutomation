@@ -567,12 +567,17 @@ public class ChannelStatReportStepsDefinition {
         List<WebElement> CarsDotCom = Utility.driver.findElements(By.xpath("//th[@id='1_Cars.com_ccm_price']"));
 
         Thread.sleep(10000);
+        Utility.driver.findElement(By.xpath("//button[@id='popover-trigger-:r1q:']")).click();
+
         if(AutoTrader.isEmpty()){
-            Utility.driver.findElement(By.xpath("//button[@id='popover-trigger-:r1p:']")).click();
-            Utility.driver.findElement(By.xpath("//body//div[@id='root']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[1]//div[2]//button[1]")).click();
+            List<WebElement> checkAutrader = Utility.driver.findElements(By.xpath("//body//div[@id='root']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[1]//div[2]//button[1]//*[name()='svg']"));
+            Thread.sleep(10000);
+            if(!checkAutrader.isEmpty()){
+                Utility.driver.findElement(By.xpath("//body//div[@id='root']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[1]//div[2]//button[1]//*[name()='svg']")).click();
+            }
         }
         if(Cargurus.isEmpty()){
-            Utility.driver.findElement(By.xpath("//div[@id='popover-body-:r1p:']//div[2]//div[2]//button[1]//*[name()='svg']")).click();
+            Utility.driver.findElement(By.xpath("//div[@id='popover-body-:r1q:']//div[2]//div[2]//button[1]//*[name()='svg']")).click();
         }
         if(CarsDotCom.isEmpty()){
             Utility.driver.findElement(By.xpath("//div[@class='css-1qm3vnl']//div[3]//div[2]//button[1]//*[name()='svg']")).click();

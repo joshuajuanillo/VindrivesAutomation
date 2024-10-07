@@ -11,7 +11,7 @@ Demo Client : DC
 ## To Create and upload testrail result
 Step 1 Run script
 Step 2 Run Maven verify
-Step 3 Run trcli -y -h https://revdojo.testrail.io --project "Revdojo" --username "joshua@revdojo.com" --password "Jjuanillo1396@" parse_junit --title "Automation VIN-DC UI" --run-id 557 --case-matcher "name" -f "./target/vindrivesTestRun.xml"
+Step 3 Run trcli -y -h https://revdojo.testrail.io --project "Revdojo" --username "joshua@revdojo.com" --password "Jjuanillo1396@" parse_junit --title "Test Automation for Vindrives" --run-id 725 --case-matcher "name" -f "./target/vindrivesTestRun.xml"
 
 With Test Plan
 trcli -y -h https://revdojo.testrail.io --project "Revdojo" --username "joshua@revdojo.com" --password "Jjuanillo1396@" parse_junit --title "Dan Deery Motors" --plan-id 701 --run-id 708 --case-matcher "name" -f "./target/vindrivesTestRun.xml"
