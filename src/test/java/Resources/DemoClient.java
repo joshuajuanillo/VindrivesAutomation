@@ -25,9 +25,9 @@ public class DemoClient {
    //Advance Report
    public static String LeadsTab = "//body/div[@id='root']/div[2]/div[1]/ul[1]/li[4]/button[1]";
    public static String Leads = "//li[contains(text(),'Leads')]";
-   public static String MostVdps = "//button[contains(text(),'Most VDPs')]";
-   public static String LeastVdps = "//button[contains(text(),'Least VDPs (10+ DOL)')]";
-   public static String DaysOnLot = "//button[contains(text(),'Days on Lot')]";
+   public static String MostVdps = "//li[contains(text(),'Most VDPs')]";
+   public static String LeastVdps = "//li[normalize-space()='Least VDPs (10+DOL)']";
+   public static String DaysOnLot = "//li[normalize-space()='Days on Lot']";
 
    public static String LeadsTable = "//table[@class='chakra-table css-5605sr']";
    public static String MostVdpsTable = "//table[@class='chakra-table css-5605sr']";

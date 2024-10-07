@@ -14,12 +14,15 @@ public class advanceReportStepsDifinition {
                 Utility.driver.findElement(By.xpath(DemoClient.Leads)).click();
                 break;
             case "Most VDPs":
+                Utility.driver.findElement(By.xpath(DemoClient.LeadsTab)).click();
                 Utility.driver.findElement(By.xpath(DemoClient.MostVdps)).click();
                 break;
             case "Least VDPs":
+                Utility.driver.findElement(By.xpath(DemoClient.LeadsTab)).click();
                 Utility.driver.findElement(By.xpath(DemoClient.LeastVdps)).click();
                 break;
             case "Days on Lot":
+                Utility.driver.findElement(By.xpath(DemoClient.LeadsTab)).click();
                 Utility.driver.findElement(By.xpath(DemoClient.DaysOnLot)).click();
                 break;
         }
