@@ -5,6 +5,9 @@ Feature: Demo Client Data Health Check for Leads Report
     Then I click "Last 7 Days"
     And the "Leads" should have data
 
+  Scenario: Setup provider
+    When I click customize Button and select all provider
+
   Scenario: C96496 Verify that Last Month date range filter should show data
     Then I click "Advance Report Last Month"
     And the "Leads" should have data
