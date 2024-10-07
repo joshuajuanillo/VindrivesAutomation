@@ -570,21 +570,29 @@ public class ChannelStatReportStepsDefinition {
         Utility.driver.findElement(By.xpath("//button[@id='popover-trigger-:r1q:']")).click();
 
         if(AutoTrader.isEmpty()){
-            List<WebElement> checkAutrader = Utility.driver.findElements(By.xpath("//body//div[@id='root']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[1]//div[2]//button[1]//*[name()='svg']"));
+            List<WebElement> checkAutorader = Utility.driver.findElements(By.xpath("//body//div[@id='root']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[1]//div[2]//button[1]//*[name()='svg']"));
             Thread.sleep(10000);
-            if(!checkAutrader.isEmpty()){
+            if(!checkAutorader.isEmpty()){
                 Utility.driver.findElement(By.xpath("//body//div[@id='root']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[1]//div[2]//button[1]//*[name()='svg']")).click();
             }
         }
         if(Cargurus.isEmpty()){
-            Utility.driver.findElement(By.xpath("//div[@id='popover-body-:r1q:']//div[2]//div[2]//button[1]//*[name()='svg']")).click();
+            List<WebElement> CheckCargurus = Utility.driver.findElements(By.xpath("//div[@id='popover-body-:r1q:']//div[2]//div[2]//button[1]//*[name()='svg']"));
+            Thread.sleep(10000);
+            if(!CheckCargurus.isEmpty()){
+                Utility.driver.findElement(By.xpath("//div[@id='popover-body-:r1q:']//div[2]//div[2]//button[1]//*[name()='svg']")).click();
+            }
         }
         if(CarsDotCom.isEmpty()){
-            Utility.driver.findElement(By.xpath("//div[@class='css-1qm3vnl']//div[3]//div[2]//button[1]//*[name()='svg']")).click();
+            List<WebElement> CheckCarsDotcom = Utility.driver.findElements(By.xpath("//div[@class='css-1qm3vnl']//div[3]//div[2]//button[1]//*[name()='svg']"));
+            Thread.sleep(10000);
+            System.out.println("Dito yan : " + CheckCarsDotcom.isEmpty());
+            if(!CheckCarsDotcom.isEmpty()){
+                Utility.driver.findElement(By.xpath("//div[@class='css-1qm3vnl']//div[3]//div[2]//button[1]//*[name()='svg']")).click();
+            }
         }
-        Thread.sleep(10000);
-        Utility.driver.findElement(By.xpath("//button[@id='popover-trigger-:r1p:']")).click();
-        Thread.sleep(10000);
 
+        Utility.driver.findElement(By.xpath("//button[@aria-label='Close']")).click();
+        Thread.sleep(10000);
     }
 }
