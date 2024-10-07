@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 
                 "src/test/java/feature/DemoClient/NewInventory/ApplicationSetup.feature",
 //                "src/test/java/feature/DemoClient/NewInventory/B_ResultSummary.feature",
-                "src/test/java/feature/DemoClient/NewInventory/E_ChannelStatReport.feature",
+//                "src/test/java/feature/DemoClient/NewInventory/E_ChannelStatReport.feature",
 //                "src/test/java/feature/DemoClient/NewInventory/F_PreShootReport.feature",
 //                "src/test/java/feature/DemoClient/NewInventory/F_VDPResult.feature",
 //                "src/test/java/feature/DemoClient/NewInventory/G_LeadsReport.feature",
@@ -32,7 +32,7 @@ import org.junit.runner.RunWith;
 //                "src/test/java/feature/DemoClient/UsedInventory/E_ChannelStatReport.feature",
 //                "src/test/java/feature/DemoClient/UsedInventory/F_PreShootReport.feature",
 //                "src/test/java/feature/DemoClient/UsedInventory/F_VDPResult.feature",
-//                "src/test/java/feature/DemoClient/UsedInventory/G_LeadsReport.feature",
+                "src/test/java/feature/DemoClient/UsedInventory/G_LeadsReport.feature",
 //                "src/test/java/feature/DemoClient/UsedInventory/H_MostVDPsReport.feature",
 //                "src/test/java/feature/DemoClient/UsedInventory/I_LeastVDPsReport.feature",
 //                "src/test/java/feature/DemoClient/UsedInventory/J_DaysOnLotReport.feature",
