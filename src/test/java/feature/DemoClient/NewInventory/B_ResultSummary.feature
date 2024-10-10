@@ -5,11 +5,15 @@ Feature: Demo Client Data Health Check for Result Summary
     Then the totalVDPs should have data
 
   @resultSummary
-  Scenario: C97046 Verify if Avg VDPs has value
-    Then the Avg VDPs Vehicle should have data
+  Scenario: C97046 Verify that VDP Pace section should have value
+    Then the Verify that VDP Pace section should have value
 
   @resultSummary
-  Scenario: C97047 Verify if Front Line Ready has value
+  Scenario: C238774 Verify if Avg VDPs has value
+    Then the Verify if Avg VDPs has value
+
+  @resultSummary
+  Scenario: C97047 Verify if Front Line Ready should have data
     Then the Front Line Ready should have data
 
   @resultSummary
@@ -19,10 +23,6 @@ Feature: Demo Client Data Health Check for Result Summary
   @resultSummary
   Scenario: C97049 Verify if Sales Pace has value
     Then the Sales Pace should have data
-
-  @resultSummary
-  Scenario: C97050 Verify if Average days to sell has value
-    Then the Average days to sell have data
 
   @resultSummary
   Scenario: C97051 Verify if Result Score is not empty

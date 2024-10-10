@@ -42,8 +42,8 @@ public class resultSummaryStepsDefinition {
         }
     }
 
-    @Then("the Avg VDPs Vehicle should have data")
-    public void the_avg_vd_ps_vehicle_should_have_data() {
+    @Then("the Verify that VDP Pace section should have value")
+    public void the_vdp_pace_vehicle_should_have_data() {
 
         List<WebElement> avgVDPs = Utility.driver.findElements(By.xpath("//body[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]"));
 
@@ -64,8 +64,8 @@ public class resultSummaryStepsDefinition {
         }
     }
 
-    @Then("the Front Line Ready should have data")
-    public void the_front_line_ready_should_have_data() {
+    @Then("the Verify if Avg VDPs has value")
+    public void the_avg_vdps_should_have_data() {
 
         List<WebElement> totalFrontLine = Utility.driver.findElements(By.xpath("//body[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]"));
 
@@ -86,10 +86,33 @@ public class resultSummaryStepsDefinition {
         }
     }
 
+    @Then("the Front Line Ready should have data")
+    public void the_front_line_ready_should_have_data() {
+
+        List<WebElement> totalFrontLine = Utility.driver.findElements(By.xpath("//body[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[3]"));
+
+        // Create an array to store the text from elements
+        String[] frontLineReadyArray = new String[totalFrontLine.size()];
+
+        // Iterate through the elements and store their text in the array
+        for (int i = 0; i < totalFrontLine.size(); i++) {
+            frontLineReadyArray[i] = totalFrontLine.get(i).getText();
+        }
+
+        // Print the text from the array
+        for (String text : frontLineReadyArray) {
+            // Split the input string by newline character '\n'
+            String[] stringArray = text.split("\n");
+            System.out.println(stringArray[2]);
+            Assert.assertNotEquals("Values should not be equal","0", stringArray[2]);
+        }
+    }
+
+
     @Then("the Sales to FLR Ratio should have data")
     public void the_sales_to_flr_ratio_should_have_data() {
         // Find the elements using Selenium
-        List<WebElement> totalSalesFLR = Utility.driver.findElements(By.xpath("//body[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[3]"));
+        List<WebElement> totalSalesFLR = Utility.driver.findElements(By.xpath("//body[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[3]/div[1]"));
 
         // Create an array to store the text from elements
         String[] totalSalesFLRArray = new String[totalSalesFLR.size()];
@@ -112,7 +135,7 @@ public class resultSummaryStepsDefinition {
     public void the_sales_pace_should_have_data() {
 
         // Find the elements using Selenium
-        List<WebElement> totalSalesPace = Utility.driver.findElements(By.xpath("//body[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[3]/div[1]"));
+        List<WebElement> totalSalesPace = Utility.driver.findElements(By.xpath("//body[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[3]/div[3]"));
 
         // Create an array to store the text from elements
         String[] totalSPsArray = new String[totalSalesPace.size()];
