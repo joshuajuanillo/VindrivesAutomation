@@ -28,13 +28,15 @@ public class DemoClient {
    public static String MostVdps = "//li[contains(text(),'Most VDPs')]";
    public static String LeastVdps = "//li[normalize-space()='Least VDPs (10+DOL)']";
    public static String DaysOnLot = "//li[normalize-space()='Days on Lot']";
+   public static String VDPBoost = "//li[normalize-space()='VDP Boost']";
 
    public static String LeadsTable = "//table[@class='chakra-table css-5605sr']";
    public static String MostVdpsTable = "//table[@class='chakra-table css-5605sr']";
    public static String LeastVdpsTable = "//table[@class='chakra-table css-5605sr']";
    public static String DaysOnLotTable = "//table[@class='chakra-table css-5605sr']";
-   public static String AdvanceReportLastMonth = "//div[@class='css-1q94rgb']//button[@class='styles_buttonGroup__button__v1c-M'][normalize-space()='Last Month']";
+   public static String VDPBoostTable = "//table[@class='ka-table']";
 
+   public static String AdvanceReportLastMonth = "//div[@class='css-1q94rgb']//button[@class='styles_buttonGroup__button__v1c-M'][normalize-space()='Last Month']";
    // Marketing Result
    public static String BudgetRoiTab = "//body/div[@id='root']/div[2]/div[1]/ul[1]/li[5]/button[1]";
    public static String BudgetRoi = "//li[contains(text(),'Budget ROI')]";

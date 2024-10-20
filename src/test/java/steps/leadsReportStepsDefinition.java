@@ -178,7 +178,7 @@ public class leadsReportStepsDefinition {
         actions.moveToElement(defaultMarketPercentage).perform();
         defaultMarketPercentage.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         // Locate the table
         WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.LeadsTable)); // Change to the actual table ID or selector
 
@@ -194,7 +194,7 @@ public class leadsReportStepsDefinition {
 
         actions.moveToElement(defaultMarketPercentage).perform();
         defaultMarketPercentage.click();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Leads']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -205,7 +205,7 @@ public class leadsReportStepsDefinition {
         }
 
         GlobalUtility.checkIfAllZeroData(DemoClientCargurusDealsByRating);
-        Thread.sleep(20000);
+        Thread.sleep(5000);
     }
 
     @And("I click twice the sort by function in VDPs column and data are not unknown from Leads Report")
@@ -256,7 +256,7 @@ public class leadsReportStepsDefinition {
         actions.moveToElement(defaultMarketPercentage).perform();
         defaultMarketPercentage.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         // Locate the table
         WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.LeadsTable)); // Change to the actual table ID or selector
 
@@ -272,7 +272,7 @@ public class leadsReportStepsDefinition {
 
         actions.moveToElement(defaultMarketPercentage).perform();
         defaultMarketPercentage.click();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Leads/VDP']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -283,7 +283,7 @@ public class leadsReportStepsDefinition {
         }
 
         GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
-        Thread.sleep(20000);
+        Thread.sleep(5000);
     }
 
     @And("I click twice the sort by function in Carfax Pulls column and data are not unknown from Leads Report")
@@ -295,7 +295,7 @@ public class leadsReportStepsDefinition {
         actions.moveToElement(dealRatingSort).perform();
         dealRatingSort.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         // Locate the table
         WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.LeadsTable)); // Change to the actual table ID or selector
 
@@ -311,7 +311,7 @@ public class leadsReportStepsDefinition {
 
         actions.moveToElement(dealRatingSort).perform();
         dealRatingSort.click();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Carfax Pulls']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -322,7 +322,7 @@ public class leadsReportStepsDefinition {
         }
 
         GlobalUtility.checkIfAllZeroData(DemoClientCargurusDealsByRating);
-        Thread.sleep(20000);
+        Thread.sleep(5000);
     }
 
     @And("I click twice the sort by function in AutoTrader Rank column and data are not unknown from Leads report")
@@ -334,7 +334,7 @@ public class leadsReportStepsDefinition {
         actions.moveToElement(dealRatingSort).perform();
         dealRatingSort.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         // Locate the table
         WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.LeadsTable)); // Change to the actual table ID or selector
 
@@ -350,7 +350,7 @@ public class leadsReportStepsDefinition {
 
         actions.moveToElement(dealRatingSort).perform();
         dealRatingSort.click();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Autotrader Rank']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -361,7 +361,7 @@ public class leadsReportStepsDefinition {
         }
 
         GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
-        Thread.sleep(20000);
+        Thread.sleep(5000);
     }
 
     @And("I click twice the sort by function in CarsDotCom Rank column and data are not unknown from Leads report")
@@ -373,7 +373,7 @@ public class leadsReportStepsDefinition {
         actions.moveToElement(dealRatingSort).perform();
         dealRatingSort.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         // Locate the table
         WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.LeadsTable)); // Change to the actual table ID or selector
 
@@ -389,7 +389,7 @@ public class leadsReportStepsDefinition {
 
         actions.moveToElement(dealRatingSort).perform();
         dealRatingSort.click();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Cars.com Rank']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -400,7 +400,7 @@ public class leadsReportStepsDefinition {
         }
 
         GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
-        Thread.sleep(20000);
+        Thread.sleep(5000);
     }
 
     @Then("I click twice the sort by function in Cargurus Rank column and data are not unknown from Leads report")
@@ -412,7 +412,7 @@ public class leadsReportStepsDefinition {
         actions.moveToElement(dealRatingSort).perform();
         dealRatingSort.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         // Locate the table
         WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.LeadsTable)); // Change to the actual table ID or selector
 
@@ -428,7 +428,7 @@ public class leadsReportStepsDefinition {
 
         actions.moveToElement(dealRatingSort).perform();
         dealRatingSort.click();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='CarGurus Rank']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -439,6 +439,6 @@ public class leadsReportStepsDefinition {
         }
 
         GlobalUtility.checkIfAllZeroData(DemoClientCargurusDealsByRating);
-        Thread.sleep(20000);
+        Thread.sleep(5000);
     }
 }

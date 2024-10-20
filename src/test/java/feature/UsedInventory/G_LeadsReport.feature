@@ -1,7 +1,22 @@
 Feature: Demo Client Data Health Check for Leads Report
 
-  Scenario: C96495 Verify that Last 7 Days date range filter should show data
+  Scenario: C96570 Verify that Sales Goal has value
     When I navigate to the "Leads" from advance Report
+    Then the Sales Goal should have data
+
+  Scenario: C96571 Verify that Sales Pace has value and should match its value from the result summary page
+    Then the Sales Pace should have data and should match its value from the result summary page
+
+  Scenario: C96572 Verify that Front Line ready has value and should match its value from the result summary page
+    Then the Front Line ready should have data and should match its value from the result summary page
+
+  Scenario: C96573 Verify that Sales/FLR Ratio hase Value and should match its value from result summary page
+    Then the Sales FLR Ratio should have data and should match its value from the result summary page
+
+  Scenario: C96574 Verify that FLR to Hit Goal has value
+    Then the FLR to Hit Goal
+
+  Scenario: C96495 Verify that Last 7 Days date range filter should show data
     Then I click "Last 7 Days"
     And the "Leads" should have data
 

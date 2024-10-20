@@ -18,5 +18,6 @@ public class ChannelStatReport {
     public static String carsDotComSrpSort = "//th[@id='ccm_total_srps']//div[@class='css-4g6ai3']//*[name()='svg']";
     public static String carsDotComVdpSort = "//th[@id='ccm_total_vdps']//div[@class='css-4g6ai3']//*[name()='svg']";
     public static String carsDotComSRPVDPsSort = "//th[@id='ccm_srps_vdps']//div[@class='css-4g6ai3']//*[name()='svg']";
+    public static String gaWebsite = "//th[@id='ga_total_vdps']//div[@class='css-4g6ai3']//*[name()='svg']";
 
 }

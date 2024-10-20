@@ -9,7 +9,7 @@ import java.util.List;
 public class GlobalUtility {
     public static String DealerName = "";
     public static String vehicleType = "";
-
+    public static String type = "";
     public static void selectDropdown(List<WebElement> clickDealer, String dealerName) throws InterruptedException {
 
         System.out.println(clickDealer);
@@ -71,7 +71,7 @@ public class GlobalUtility {
     public static void checkIfALlZeroPercent(ArrayList<String> column){
         System.out.println("Array List " + column);
         boolean allUnknown = column.stream().allMatch(col -> col.equals("0.00%"));
-        System.out.println("All Unknown List ? " + allUnknown);
+        System.out.println("All zero percent List ? " + allUnknown);
         Assert.assertNotEquals("Values should not be true",true, allUnknown);
     }
 }

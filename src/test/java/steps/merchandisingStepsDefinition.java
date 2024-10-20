@@ -36,7 +36,7 @@ public class merchandisingStepsDefinition {
                 Utility.driver.findElement(By.xpath(DemoClient.PreShootReportTab)).click();
                 break;
         }
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
     @Then("the {string} should have data")
@@ -55,7 +55,7 @@ public class merchandisingStepsDefinition {
                 }
 
                 GlobalUtility.checkTableIfEmpty(DealRatingByChannelTableDataRows.size(), DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "Tip Report":
 
@@ -71,7 +71,7 @@ public class merchandisingStepsDefinition {
                 }
 
                 GlobalUtility.checkTableIfEmpty(TipReportTableDataRows.size(), DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "Channel Stats report":
                 // Locate the table
@@ -85,7 +85,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
                 GlobalUtility.checkTableIfEmpty(ChannelStatReportTableDataRows.size() , DataValue );
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "Pre Shoot report":
                 // Locate the table
@@ -99,7 +99,7 @@ public class merchandisingStepsDefinition {
                 }
 
                 GlobalUtility.checkTableIfEmpty(PreShootTableDataRows.size(), DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "VDP Result":
                 // Locate the table
@@ -113,7 +113,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
                 GlobalUtility.checkTableIfEmpty(VdpResultTableDataRows.size(), DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "Leads":
                 // Locate the table
@@ -127,7 +127,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
                 GlobalUtility.checkTableIfEmpty(LeadsTableDataRows.size(), DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "Most VDPs":
                 // Locate the table
@@ -141,7 +141,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
                 GlobalUtility.checkTableIfEmpty(MostVdpsTableDataRows.size() , DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "Least VDPs":
                 // Locate the table
@@ -154,7 +154,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
                 GlobalUtility.checkTableIfEmpty(LeastVdpsTableDataRows.size(), DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "Days On Lot":
                 // Locate the table
@@ -168,7 +168,22 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
                 GlobalUtility.checkTableIfEmpty(DaysOnLotTableDataRows.size(), DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
+                break;
+            case "VDP Boost":
+                // Locate the table
+                WebElement VdpBoostTable = Utility.driver.findElement(By.xpath(DemoClient.VDPBoostTable)); // Change to the actual table ID or selector
+                // Locate the table body rows (assuming tbody is used for data rows)
+                Thread.sleep(5000);
+                List<WebElement> VDPBoostTableDataRows = VdpBoostTable.findElements(By.xpath("//tbody[1]/tr"));
+                System.out.println("Row Count " + VDPBoostTableDataRows.size());
+
+                // Check if the table body has data rows
+                for (WebElement row : VDPBoostTableDataRows) {
+                    DataValue = row.getText();
+                }
+                GlobalUtility.checkTableIfEmpty(VDPBoostTableDataRows.size(), DataValue);
+                Thread.sleep(5000);
                 break;
             case "Budget ROI":
                 // Locate the table
@@ -182,7 +197,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
                 GlobalUtility.checkTableIfEmpty(BudgetRoiTableDataRows.size(), DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "Vdps by Channel":
                 // Locate the table
@@ -196,7 +211,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
                 GlobalUtility.checkTableIfEmpty(VdpsByChannelTableDataRows.size(), DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "Top 10 Website":
                 // Locate the table
@@ -210,7 +225,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
                 GlobalUtility.checkTableIfEmpty(TopTenWebsiteTableDataRows.size() , DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
             case "VDP ROI":
                 // Locate the table
@@ -224,7 +239,7 @@ public class merchandisingStepsDefinition {
                     DataValue = row.getText();
                 }
                 GlobalUtility.checkTableIfEmpty(VdpRoiTableDataRows.size(), DataValue);
-                Thread.sleep(15000);
+                Thread.sleep(5000);
                 break;
         }
     }
@@ -359,7 +374,7 @@ public class merchandisingStepsDefinition {
                 CarsDotCom.click();
                 break;
         }
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
     @Then("I click twice the sort by function in cargurus column and data are not unknown")
@@ -371,7 +386,7 @@ public class merchandisingStepsDefinition {
         actions.moveToElement(cargurusSort).perform();
         cargurusSort.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         // Locate the table
         WebElement DemoClientTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
 
@@ -385,7 +400,7 @@ public class merchandisingStepsDefinition {
         }
 
         Utility.driver.findElement(By.xpath(DemoClient.CargurusRankSort)).click();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DemoClientTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='CarGurus']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -399,7 +414,7 @@ public class merchandisingStepsDefinition {
         GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
         GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
     @Then("I click twice the sort by function in Autotrader column and data are not unknown")
@@ -411,7 +426,7 @@ public class merchandisingStepsDefinition {
         actions.moveToElement(autoTraderSort).perform();
         autoTraderSort.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         // Locate the table
         WebElement DealRatingByChannelTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
 
@@ -425,7 +440,7 @@ public class merchandisingStepsDefinition {
         }
 
         Utility.driver.findElement(By.xpath(DemoClient.AutotraderRankSort)).click();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DealRatingByChannelTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Autotrader']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -439,7 +454,7 @@ public class merchandisingStepsDefinition {
         GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
         GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
     @Then("I click twice the sort by function in Cars column and data are not unknown")
@@ -451,7 +466,7 @@ public class merchandisingStepsDefinition {
         actions.moveToElement(carsDotComSort).perform();
         carsDotComSort.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         // Locate the table
         WebElement DealRatingByChannelTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
 
@@ -465,7 +480,7 @@ public class merchandisingStepsDefinition {
         }
 
         Utility.driver.findElement(By.xpath(DemoClient.CarsDotComSort)).click();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DealRatingByChannelTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='Cars.com']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -479,7 +494,7 @@ public class merchandisingStepsDefinition {
         GlobalUtility.checkAllUnkownData(DemoClientCargurusDealsByRating);
         GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
     @And("I click twice the sort by function in DOL column and data are not unknown")
@@ -491,7 +506,7 @@ public class merchandisingStepsDefinition {
         actions.moveToElement(dolSort).perform();
         dolSort.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         // Locate the table
         WebElement DealRatingByChannelTable = Utility.driver.findElement(By.xpath(DemoClient.DealRatingByChannelTable)); // Change to the actual table ID or selector
 
@@ -505,7 +520,7 @@ public class merchandisingStepsDefinition {
         }
 
         Utility.driver.findElement(By.xpath(DemoClient.DolSort)).click();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         // Locate the specific column (e.g., the second column)
         List<WebElement> columnCells2 = DealRatingByChannelTable.findElements(By.xpath("//table//tr/td[count((//table//th[normalize-space(.)='DOL']/preceding-sibling::th)) + 1]")); // Adjust the xpath as necessary
@@ -518,7 +533,7 @@ public class merchandisingStepsDefinition {
 
         GlobalUtility.checkIfAllZeroData(DemoClientCargurusDealsByRating);
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
     @Then("I click twice the sort by function in Price change at Great Deal Rating column and data are not unknown")
@@ -536,7 +551,7 @@ public class merchandisingStepsDefinition {
         }
 
         GlobalUtility.checkAllNullData(DemoClientCargurusDealsByRating);
-        Thread.sleep(20000);
+        Thread.sleep(5000);
 
     }
 }

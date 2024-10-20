@@ -49,9 +49,11 @@ public class common {
         GlobalUtility.vehicleType = vehiclyType;
         switch (vehiclyType){
             case "Used Inventory":
+                  GlobalUtility.type = "Used";
                   dropdown.findElement(By.xpath(Common.VehicleTypeUsed)).click();
                 break;
             case "New Inventory" :
+                  GlobalUtility.type = "New";
                   dropdown.findElement(By.xpath(Common.VehicleTypeNew)).click();
                 break;
         }
@@ -137,7 +139,7 @@ public class common {
             default:
                 break;
         }
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
     @Then("I click {string} V2")

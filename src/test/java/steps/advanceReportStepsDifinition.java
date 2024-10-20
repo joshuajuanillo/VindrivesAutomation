@@ -25,6 +25,10 @@ public class advanceReportStepsDifinition {
                 Utility.driver.findElement(By.xpath(DemoClient.LeadsTab)).click();
                 Utility.driver.findElement(By.xpath(DemoClient.DaysOnLot)).click();
                 break;
+            case "VDP Boost":
+                Utility.driver.findElement(By.xpath(DemoClient.LeadsTab)).click();
+                Utility.driver.findElement(By.xpath(DemoClient.VDPBoost)).click();
+                break;
         }
 
     }
