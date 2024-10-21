@@ -3,8 +3,8 @@ Feature: Application Login Setup
   @setup
   Scenario: Verify if user can successfully login
     When I navigate to the Result Summary Page
-    And I select "Demo Client"
-    And I select vehicle type "Used Inventory"
+    And I select "Street Volkswagen"
+    And I select vehicle type "New Inventory"
 
   @resultSummary
   Scenario: C259495 Verify that Total VDPs section should have value

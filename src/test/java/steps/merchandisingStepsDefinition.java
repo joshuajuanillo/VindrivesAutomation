@@ -260,7 +260,7 @@ public class merchandisingStepsDefinition {
         for (String text : salesGoalArray) {
             // Split the input string by newline character '\n'
             String[] stringArray = text.split("\n");
-            Assert.assertNotEquals("Values should not be equal","0", stringArray[1]);
+            Assert.assertNotEquals("Values should not be equal",0, stringArray[1]);
         }
     }
 
@@ -302,7 +302,7 @@ public class merchandisingStepsDefinition {
         for (String text : frontLineReadyArray) {
             // Split the input string by newline character '\n'
             String[] stringArray = text.split("\n");
-            Assert.assertNotEquals("Values should not be equal","0", stringArray[1]);
+            Assert.assertNotEquals("Values should not be equal",0, stringArray[1]);
         }
     }
 
@@ -323,7 +323,7 @@ public class merchandisingStepsDefinition {
         for (String text : salesFlrRatioArray) {
             // Split the input string by newline character '\n'
             String[] stringArray = text.split("\n");
-            Assert.assertNotEquals("Values should not be equal","0", stringArray[1]);
+            Assert.assertNotEquals("Values should not be equal",0, stringArray[1]);
         }
     }
 
@@ -345,7 +345,7 @@ public class merchandisingStepsDefinition {
             // Split the input string by newline character '\n'
             String[] stringArray = text.split("\n");
             System.out.println("here" + stringArray[1]);
-            Assert.assertNotEquals("Values should not be equal","0", stringArray[1]);
+            Assert.assertNotEquals("Values should not be equal",0, stringArray[1]);
         }
     }
 
