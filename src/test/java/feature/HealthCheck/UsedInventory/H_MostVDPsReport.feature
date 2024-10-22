@@ -1,7 +1,7 @@
 Feature: Daily Health Check for Most VDPs Report
 
   Scenario: Verify that Sales Goal has value
-    When I navigate to the "Leads" from advance Report
+    When I navigate to the "Most VDPs" from advance Report
     Then the Sales Goal should have data
 
   Scenario: C258469 Verify that Sales Pace has value and should match its value from the result summary page
@@ -21,7 +21,7 @@ Feature: Daily Health Check for Most VDPs Report
 
   Scenario: C258473 Verify that Last 7 Days date range filter should show data
     Then I click "Last 7 Days"
-    And the "Leads" should have data
+    And the "Most VDPs" should have data
 
   Scenario: C258474 Verify that Cargurus Rank is sortable and all data has value
     Then I click twice the sort by function in Cargurus Rank column and data are not unknown from Leads report
@@ -43,7 +43,7 @@ Feature: Daily Health Check for Most VDPs Report
 
   Scenario: C258480 Verify that Last Month date range filter should show data
     Then I click "Last Month DealRating"
-    And the "Leads" should have data
+    And the "Most VDPs" should have data
 
   Scenario: C258481 Verify that Cargurus Rank is sortable and all data has value
     Then I click twice the sort by function in Cargurus Rank column and data are not unknown from Leads report
@@ -65,7 +65,7 @@ Feature: Daily Health Check for Most VDPs Report
 
   Scenario: C258487 Verify that All Time date range filter should show data
     Then I click "All Time"
-    And the "Leads" should have data
+    And the "Most VDPs" should have data
 
   Scenario: C258488 Verify that Cargurus Rank is sortable and all data has value
     Then I click twice the sort by function in Cargurus Rank column and data are not unknown from Leads report
