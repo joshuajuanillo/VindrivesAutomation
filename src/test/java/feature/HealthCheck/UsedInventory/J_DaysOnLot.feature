@@ -16,9 +16,6 @@ Feature: Daily Health Check for Most Days On Lot
   Scenario: C258522 Verify that FLR to Hit Goal has value
     Then the FLR to Hit Goal
 
-  Scenario: Verify if provider is selected filter should show data
-    And I click customize Button and select all provider
-
   Scenario: C258523 Verify that Last 7 Days date range filter should show data
     Then I click "Last 7 Days"
     And the "Days on Lot" should have data

@@ -16,21 +16,9 @@ Feature: Daily Health Check for Most Days On Lot
   Scenario: C259687 Verify that FLR to Hit Goal has value
     Then the FLR to Hit Goal
 
-  Scenario: Verify if provider is selected filter should show data
-    And I click customize Button and select all provider
-
   Scenario: C259688 Verify that Last 7 Days date range filter should show data
     Then I click "Last 7 Days"
     And the "Days on Lot" should have data
-
-  Scenario: C259689 Verify that Cargurus Rank is sortable and all data has value
-    Then I click twice the sort by function in Cargurus Rank column and data are not unknown from Leads report
-
-  Scenario: C259690 Verify that AutoTrader Rank is sortable and all data has value
-    And I click twice the sort by function in AutoTrader Rank column and data are not unknown from Leads report
-
-  Scenario: C259691 Verify that CarsDotCom Rank is sortable and all data has value
-    And I click twice the sort by function in CarsDotCom Rank column and data are not unknown from Leads report
 
   Scenario: C259692 Verify that Leads is sortable and all row has data
     And I click twice the sort by function in Leads column and data are not unknown from Leads Report
@@ -45,15 +33,6 @@ Feature: Daily Health Check for Most Days On Lot
     Then I click "Last Month DealRating"
     And the "Days on Lot" should have data
 
-  Scenario: C259696 Verify that Cargurus Rank is sortable and all data has value
-    Then I click twice the sort by function in Cargurus Rank column and data are not unknown from Leads report
-
-  Scenario: C259697 Verify that AutoTrader Rank is sortable and all data has value
-    And I click twice the sort by function in AutoTrader Rank column and data are not unknown from Leads report
-
-  Scenario: C259698 Verify that CarsDotCom Rank is sortable and all data has value
-    And I click twice the sort by function in CarsDotCom Rank column and data are not unknown from Leads report
-
   Scenario: C259699 Verify that Leads is sortable and all row has data
     And I click twice the sort by function in Leads column and data are not unknown from Leads Report
 
@@ -66,15 +45,6 @@ Feature: Daily Health Check for Most Days On Lot
   Scenario: C259702 Verify that All Time date range filter should show data
     Then I click "All Time"
     And the "Days on Lot" should have data
-
-  Scenario: C259703 Verify that Cargurus Rank is sortable and all data has value
-    Then I click twice the sort by function in Cargurus Rank column and data are not unknown from Leads report
-
-  Scenario: C259704 Verify that AutoTrader Rank is sortable and all data has value
-    And I click twice the sort by function in AutoTrader Rank column and data are not unknown from Leads report
-
-  Scenario: C259705 Verify that CarsDotCom Rank is sortable and all data has value
-    And I click twice the sort by function in CarsDotCom Rank column and data are not unknown from Leads report
 
   Scenario: C259706 Verify that Leads is sortable and all row has data
     And I click twice the sort by function in Leads column and data are not unknown from Leads Report

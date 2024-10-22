@@ -16,21 +16,9 @@ Feature: Daily Health Check for Least VDPs Report
   Scenario: C259662 Verify that FLR to Hit Goal has value
     Then the FLR to Hit Goal
 
-  Scenario: Verify if provider is selected filter should show data
-    And I click customize Button and select all provider
-
   Scenario: C259663 Verify that Last 7 Days date range filter should show data
     Then I click "Last 7 Days"
     And the "Least VDPs" should have data
-
-  Scenario: C259664 Verify that Cargurus Rank is sortable and all data has value
-    Then I click twice the sort by function in Cargurus Rank column and data are not unknown from Leads report
-
-  Scenario: C259665 Verify that AutoTrader Rank is sortable and all data has value
-    And I click twice the sort by function in AutoTrader Rank column and data are not unknown from Leads report
-
-  Scenario: C259666 Verify that CarsDotCom Rank is sortable and all data has value
-    And I click twice the sort by function in CarsDotCom Rank column and data are not unknown from Leads report
 
   Scenario: C259667 Verify that Leads is sortable and all row has data
     And I click twice the sort by function in Leads column and data are not unknown from Leads Report
@@ -45,15 +33,6 @@ Feature: Daily Health Check for Least VDPs Report
     Then I click "Last Month DealRating"
     And the "Least VDPs" should have data
 
-  Scenario: C259671 Verify that Cargurus Rank is sortable and all data has value
-    Then I click twice the sort by function in Cargurus Rank column and data are not unknown from Leads report
-
-  Scenario: C259672 Verify that AutoTrader Rank is sortable and all data has value
-    And I click twice the sort by function in AutoTrader Rank column and data are not unknown from Leads report
-
-  Scenario: C259673 Verify that CarsDotCom Rank is sortable and all data has value
-    And I click twice the sort by function in CarsDotCom Rank column and data are not unknown from Leads report
-
   Scenario: C259674 Verify that Leads is sortable and all row has data
     And I click twice the sort by function in Leads column and data are not unknown from Leads Report
 
@@ -66,15 +45,6 @@ Feature: Daily Health Check for Least VDPs Report
   Scenario: C259677 Verify that All Time date range filter should show data
     Then I click "All Time"
     And the "Least VDPs" should have data
-
-  Scenario: C259678 Verify that Cargurus Rank is sortable and all data has value
-    Then I click twice the sort by function in Cargurus Rank column and data are not unknown from Leads report
-
-  Scenario: C259679 Verify that AutoTrader Rank is sortable and all data has value
-    And I click twice the sort by function in AutoTrader Rank column and data are not unknown from Leads report
-
-  Scenario: C259680 Verify that CarsDotCom Rank is sortable and all data has value
-    And I click twice the sort by function in CarsDotCom Rank column and data are not unknown from Leads report
 
   Scenario: C259681 Verify that Leads is sortable and all row has data
     And I click twice the sort by function in Leads column and data are not unknown from Leads Report

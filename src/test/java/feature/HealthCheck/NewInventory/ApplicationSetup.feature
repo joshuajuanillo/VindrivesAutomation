@@ -3,7 +3,7 @@ Feature: Application Login Setup
   @setup
   Scenario: Verify if user can successfully login
     When I navigate to the Result Summary Page
-    And I select "Street Volkswagen"
+    And I select "Cowboy Toyota"
     And I select vehicle type "New Inventory"
 
   @resultSummary
@@ -52,18 +52,12 @@ Feature: Application Login Setup
     Then the "Yellow" results score has data
 
 # Quick Result Table
-  @resultSummary
-  Scenario: C259506 Verify that tippable cargurus column from the quick results table should not show 0 data in all row
-    Then the Tippable Cargurus column should have data
+  Scenario: C259506 Verify that Missing Photos column from the quick results table should not show 0 data in all row
+    Then the Missing Photos column should have data
+
+  Scenario: C259507 Verify that Less than 50 VDPs column from the quick results table should not show 0 data in all row
+    Then the Less than fifty Vdps column should have data
 
   @resultSummary
-  Scenario: C259507 Verify that tippable AutoTrader column from the quick results table should not show 0 data in all row
-    Then the Tippable Autotrader column should have data
-
-  @resultSummary
-  Scenario: C259508 Verify that tippable Cars.com column from the quick results table should not show 0 data in all row
-    Then the Tippable Cars dot com column should have data
-
-  @resultSummary
-  Scenario: C259509 Verify that Zero Leads column from the quick result table will not show 0 data in all row
+  Scenario: C259508 Verify that Zero Leads column from the quick result table will not show 0 data in all row
     Then the Zero Leads column should have data
