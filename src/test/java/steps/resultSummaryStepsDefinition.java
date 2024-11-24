@@ -343,14 +343,9 @@ public class resultSummaryStepsDefinition {
                 for (int i = 0; i < NeedAttentionRed.size(); i++) {
                     NeedAttentionRedArray[i] = NeedAttentionRed.get(i).getText();
                 }
-                System.out.println("Hello" + Arrays.toString(NeedAttentionRedArray));
-                // Print the text from the array
-                for (String text : NeedAttentionRedArray) {
-                    // Split the input string by newline character '\n'
-                    String[] stringArray = text.split("\n");
 
-                    Assert.assertNotEquals("Values should not be equal","0", stringArray[0]);
-                }
+                Assert.assertNotEquals("Values should not be equal",0, NeedAttentionRedArray[0]);
+
                 break;
             case "Yellow":
                 // Find the elements using Selenium
@@ -368,7 +363,7 @@ public class resultSummaryStepsDefinition {
                 for (String text : NeedAttentionYellowArray) {
                     // Split the input string by newline character '\n'
                     String[] stringArray = text.split("\n");
-                    Assert.assertNotEquals("Values should not be equal","0", stringArray[0]);
+                    Assert.assertNotEquals("Values should not be equal",0, stringArray[0]);
                 }
                 break;
         }
