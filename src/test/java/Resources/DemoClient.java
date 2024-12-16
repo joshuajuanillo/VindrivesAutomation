@@ -79,6 +79,7 @@ public class DemoClient {
    public static String AutotraderRankSort = "//th[@id='atc_deal_rating']//div[@class='css-4g6ai3']//*[name()='svg']";
    public static String CarsDotComSort = "//th[@id='ccm_deal_rating']//div[@class='css-4g6ai3']//*[name()='svg']";
    public static String DolSort = "//th[@id='dol']//div[@class='css-4g6ai3']//*[name()='svg']";
+   public static String CarfaxSort = "//th[@id='cfx_deal_rating']//div[@class='css-4g6ai3']//*[name()='svg']";
    public static String PriceSort = "//th[@id='price']//div[@class='css-4g6ai3']//*[name()='svg']";
    public static String PhotoSort = "//th[@id='photos_count']//div[@class='css-4g6ai3']//*[name()='svg']";
    public static String StockNumberSort = "//th[@id='stock_number']//div[@class='css-4g6ai3']//*[name()='svg']";

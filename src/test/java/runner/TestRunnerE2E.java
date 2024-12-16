@@ -27,7 +27,7 @@ import org.junit.runner.RunWith;
 
                 "src/test/java/feature/e2e/UsedInventory/ApplicationSetup.feature",
                 "src/test/java/feature/e2e/UsedInventory/B_ResultSummary.feature",
-                "src/test/java/feature/e2e/UsedInventory/C_DealRatingByChannel.feature",
+                "src/test/java/feature/e2e/UsedInventory/B_DealRatingByChannel.feature",
                 "src/test/java/feature/e2e/UsedInventory/D_TipReport.feature",
                 "src/test/java/feature/e2e/UsedInventory/E_ChannelStatReport.feature",
                 "src/test/java/feature/e2e/UsedInventory/F_PreShootReport.feature",
