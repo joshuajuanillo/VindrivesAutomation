@@ -20,7 +20,7 @@ public class DealRatingByChannel {
         List<WebElement> dynamicDivs = Utility.driver.findElements(By.xpath("//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']/div"));
 
         // Check if the element exists
-        By locator = By.xpath("//div[contains(text(),'VDP')]"); // Change this to your locator
+        By locator = By.xpath("//div[contains(text(),'Website')]"); // Change this to your locator
 
         boolean elementExists = false;
         int provider = 0;

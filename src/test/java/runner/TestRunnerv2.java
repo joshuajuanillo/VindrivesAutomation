@@ -10,6 +10,8 @@ import org.junit.runner.RunWith;
 //                "src/test/java/feature/v2/B_DealRatingByChannel.feature",
 //                "src/test/java/feature/v2/C_TipReport.feature",
                 "src/test/java/feature/v2/D_ChannelStatReport.feature",
+//                "src/test/java/feature/v2/E_PreShootReport.feature",
+                "src/test/java/feature/v2/F_VDPResult.feature",
                 "src/test/java/feature/v2/Z_Logout.feature"
         },
         glue = "steps",
