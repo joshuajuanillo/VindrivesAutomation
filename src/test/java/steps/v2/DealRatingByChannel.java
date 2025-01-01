@@ -36,7 +36,7 @@ public class DealRatingByChannel {
         } else {
             provider = dynamicDivs.size();
         }
-
+        System.out.println("provider " + provider + " element exist " + elementExists);
         for (int i = 0; i < provider; i++) {
             int count = i + 1;
             Utility.driver.findElement(By.xpath("//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']//div[@class='css-1qm3vnl']/div[" + count + "]//div[2]//button[1]//*[name()='svg']")).click();
