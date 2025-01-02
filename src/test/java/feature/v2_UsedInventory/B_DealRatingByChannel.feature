@@ -61,7 +61,7 @@ Feature: Data Health Check for DealRating By Channel
   Scenario: C321591 Verify that Price are not showing Empty Data
     Then Price are not showing Empty Data
 
-  Scenario: C321593 Verify that DOL are not showing 0 Data
+  Scenario: C321592 Verify that DOL are not showing 0 Data
     Then DOL are not showing Empty Data
 
   Scenario: C321593 Verify that No of Photos are not showing 0 Data

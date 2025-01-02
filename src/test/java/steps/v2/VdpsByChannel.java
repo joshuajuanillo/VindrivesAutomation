@@ -1,6 +1,6 @@
 package steps.v2;
+
 import Utility.Utility;
-import com.fasterxml.jackson.databind.util.ArrayBuilders;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,11 +8,13 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import Utility.BudgetROIRprt;
 
-public class BudgetROI {
-    @When("All data are not zero")
-    public void AllDataAreNotZero() {
+import Utility.VdpsByChannelRprt;
+
+public class VdpsByChannel {
+
+    @When("All data are not zero from VDPs By Channel")
+    public void AllDataAreNotZeroFromVDPsByChannel() {
         try {
 
             // Locate the table (adjust the selector as per your HTML structure)
@@ -57,18 +59,10 @@ public class BudgetROI {
             String[][] dataArray = new String[rowData.size()][];
             dataArray = rowData.toArray(dataArray);
 
-            BudgetROIRprt.Providers = Arrays.deepToString(dataArray);
+            VdpsByChannelRprt.Providers = Arrays.deepToString(dataArray);
             System.out.println(Arrays.deepToString(dataArray).length());
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
-        }
-    }
-
-    @When("Budget from Autotrader is not zero")
-    public void BudgetFromAutoTraderIsNotZero() {
-        String[] providerList = BudgetROIRprt.Providers.split(" ");
-        for (String provider : providerList){
-            System.out.println("Dito Yan" + provider);
         }
     }
 }
