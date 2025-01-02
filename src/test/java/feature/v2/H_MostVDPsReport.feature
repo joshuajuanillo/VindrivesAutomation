@@ -4,7 +4,6 @@ Feature: Data Health Check for Most Vdps Report
     When I navigate to the "Most VDPs" from advance Report
     Then I click "Last 7 Days" V2
     And the "Most VDPs" should have data
-    And I select all providers available from customize button
     And I click sort from cargurus rank from Most VDPs
     And I click sort from AutoTrader rank from Most VDPs
     And I click sort from CarsDotCom rank from Most VDPs

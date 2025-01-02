@@ -4,7 +4,6 @@ Feature: Data Health Check for Least VDPs Report
     When I navigate to the "Least VDPs" from advance Report
     Then I click "Last 7 Days" V2
     And the "Least VDPs" should have data
-    And I select all providers available from customize button
     And I click sort from cargurus rank from Least VDPs
     And I click sort from AutoTrader rank from Least VDPs
     And I click sort from CarsDotCom rank from Least VDPs

@@ -4,7 +4,6 @@ Feature: Data Health Check for Days On Lot Report
     When I navigate to the "Days on Lot" from advance Report
     Then I click "Last 7 Days" V2
     And the "Days on Lot" should have data
-    And I select all providers available from customize button
     And I click sort from cargurus rank from Days On Lot
     And I click sort from AutoTrader rank from Days On Lot
     And I click sort from CarsDotCom rank from Days On Lot
